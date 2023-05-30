@@ -1,0 +1,75 @@
+.intro-container {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    .intro-title {
+        display: flex;
+        flex-direction: column;
+        font-family: "black-fonts";
+        letter-spacing: 2px;
+        line-height: 1;
+        font-size: 4.5em;
+        position: absolute;
+        .hadrien-smet {
+            position: relative;
+            text-transform: uppercase;
+            background: linear-gradient(
+                90deg,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op5,
+                $clr-1,
+                $clr-1-op4,
+                $clr-1,
+                $clr-1-op5
+            );
+            background-position: 0%;
+            background-size: 1000%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: backgroundTitleAnim 20s linear alternate infinite;
+            // color: transparent;
+            // -webkit-text-stroke: 1px $clr-1;
+            // &::before {
+            //     content: attr(data-text);
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 0;
+            //     height: 100%;
+            //     white-space: nowrap;
+            //     color: $clr-1;
+            //     border-right: 2px solid $clr-1;
+            //     overflow: hidden;
+            //     animation: titleAnim 2s linear 0.2s forwards;
+            // }
+        }
+        .web-developer {
+            font-size: 0.7em;
+            background: linear-gradient(
+                90deg,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op4,
+                $clr-1,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op5
+            );
+            background-position: 90%;
+            background-size: 1000%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: backgroundTitleAnim 17s linear alternate-reverse infinite;
+        }
+    }
+    img {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-45%, -50%);
+    }
+}

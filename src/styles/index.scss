@@ -1,5 +1,12 @@
 @import "./1.Base/global";
 @import "./1.Base/fonts";
+@import "./2.Utils/keyframes";
 @import "./2.Utils/variables";
 @import "./3.Components/header";
+
+@import "./3.Components/pageHome/sectionIntro/intro";
+@import "./3.Components/pageHome/sectionIntro/introContainer";
+@import "./3.Components/pageHome/sectionIntro/linksContainer";
+
+@import "./3.Components/ui/gradientBorder";
 @import "./4.Pages/home";

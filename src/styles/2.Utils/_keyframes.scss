@@ -1,0 +1,23 @@
+@import "./variables";
+@keyframes titleAnim {
+    0% {
+        border-right: 2px solid $clr-1;
+        width: 0%;
+    }
+    95% {
+        border-right: 2px solid $clr-1;
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+        border-right: none;
+    }
+}
+@keyframes backgroundTitleAnim {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 90%;
+    }
+}

@@ -1,25 +1,6 @@
 .home-page {
-    padding: 0px calc((100vw - 16px) / 12);
-    &__section-intro {
-        height: calc(100vh - 150px);
-        padding-top: 150px;
-        h1 {
-            font-family: "title-fonts";
-            letter-spacing: 2px;
-            line-height: 1;
-            font-size: 3em;
-            position: absolute;
-            color: white;
-            span {
-                font-size: 0.7em;
-            }
-        }
-        img {
-            z-index: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translate(-10%, -45%);
-        }
+    section {
+        padding-left: calc((100vw - 16px) / 12);
+        padding-right: calc((100vw - 16px) / 12);
     }
 }
