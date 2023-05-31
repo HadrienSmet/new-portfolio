@@ -1,9 +1,10 @@
-import React from "react";
+import DetailsContainer from "./DetailsContainer";
 import DoubleImageContainer from "./DoubleImageContainer";
 
 const DoubleImageDivision = () => {
     return (
-        <div className="double-image__division">
+        <div className="double-image-division">
+            <DetailsContainer />
             <DoubleImageContainer />
         </div>
     );

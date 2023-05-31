@@ -28,21 +28,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             animation: backgroundTitleAnim 20s linear alternate infinite;
-            // color: transparent;
-            // -webkit-text-stroke: 1px $clr-1;
-            // &::before {
-            //     content: attr(data-text);
-            //     position: absolute;
-            //     top: 0;
-            //     left: 0;
-            //     width: 0;
-            //     height: 100%;
-            //     white-space: nowrap;
-            //     color: $clr-1;
-            //     border-right: 2px solid $clr-1;
-            //     overflow: hidden;
-            //     animation: titleAnim 2s linear 0.2s forwards;
-            // }
         }
         .web-developer {
             font-size: 0.7em;

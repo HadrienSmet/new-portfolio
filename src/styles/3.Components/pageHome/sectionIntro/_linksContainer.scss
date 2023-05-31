@@ -7,6 +7,20 @@
     position: relative;
     height: 70%;
     width: 30%;
+    em {
+        position: relative;
+        text-align: center;
+        width: 75%;
+        font-size: 1.5em;
+        line-height: 1.5;
+        color: $clr-2-op7;
+    }
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
     .icons {
         width: 100%;
         display: flex;

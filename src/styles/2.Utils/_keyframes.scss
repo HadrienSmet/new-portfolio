@@ -1,8 +1,16 @@
 @import "./variables";
+@keyframes increaseOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @keyframes titleAnim {
     0% {
         border-right: 2px solid $clr-1;
-        width: 0%;
+        width: 0;
     }
     95% {
         border-right: 2px solid $clr-1;
@@ -11,6 +19,34 @@
     100% {
         width: 100%;
         border-right: none;
+    }
+}
+@keyframes myTitleAnim {
+    0% {
+        border-right: 2px solid $clr-1;
+        width: 0;
+    }
+    98% {
+        border-right: 2px solid $clr-1;
+        width: 100%;
+    }
+    100% {
+        border-right: none;
+        width: 100%;
+    }
+}
+@keyframes titleRightAnim {
+    0% {
+        border-left: 2px solid $clr-1;
+        width: 0%;
+    }
+    95% {
+        border-left: 2px solid $clr-1;
+        width: 50%;
+    }
+    100% {
+        width: 50%;
+        border-left: none;
     }
 }
 @keyframes backgroundTitleAnim {
