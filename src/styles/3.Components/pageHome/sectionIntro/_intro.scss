@@ -1,6 +1,7 @@
 .home-page__section-intro {
-    height: 100vh;
     padding-top: 250px;
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
 }

@@ -1,5 +1,5 @@
 header {
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     padding: 0 50px;
     top: 0;
@@ -8,8 +8,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $clr-2-op7;
+    background: linear-gradient(0deg, $clr-2, $clr-2-op7);
+    backdrop-filter: blur(5px);
     transition: 0.2s ease-in-out;
+    &:hover {
+        background-color: $clr-2;
+    }
     h1 {
         cursor: pointer;
         font-family: "graff-fonts";
@@ -24,38 +28,38 @@ header {
             pointer-events: none;
         }
     }
-}
-.line {
-    fill: none;
-    stroke: $clr-1;
-    stroke-width: 2;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.line1 {
-    stroke-dasharray: 60 207;
-    stroke-width: 2;
-}
-.line2 {
-    stroke-dasharray: 60 60;
-    stroke-width: 2;
-}
-.line3 {
-    stroke-dasharray: 60 207;
-    stroke-width: 2;
-}
-.opened .line1 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 2;
-}
-.opened .line2 {
-    stroke-dasharray: 1 60;
-    stroke-dashoffset: -30;
-    stroke-width: 2;
-}
-.opened .line3 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 2;
+    .line {
+        fill: none;
+        stroke: $clr-1;
+        stroke-width: 2;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 2;
+    }
+    .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 2;
+    }
+    .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 2;
+    }
+    .opened .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 2;
+    }
+    .opened .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 2;
+    }
+    .opened .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 2;
+    }
 }

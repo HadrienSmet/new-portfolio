@@ -1,5 +1,5 @@
 import Image from "next/image";
-import splashInk from "../../../../public/images/7468.jpg";
+import splashInk from "../../../../public/images/ink-splash.jpg";
 
 const IntroContainer = () => {
     return (

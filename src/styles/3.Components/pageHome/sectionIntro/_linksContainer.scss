@@ -52,7 +52,15 @@
         width: calc(100% - 6px);
         transition: 0.2s;
         &:hover {
+            background: linear-gradient($clr-1, $clr-1),
+                linear-gradient($clr-2, $clr-2);
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
             transform: translateY(-3px) scale(1.05, 0.95);
+            a {
+                background: $clr-2;
+                background-clip: text;
+            }
         }
         a {
             padding: 8px 15px;
