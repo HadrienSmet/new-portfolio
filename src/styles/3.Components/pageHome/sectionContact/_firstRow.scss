@@ -1,0 +1,88 @@
+.contact {
+    &__first-row {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            left: 10%;
+            bottom: -45px;
+            background-color: $clr-2-op5;
+        }
+    }
+    &__links-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        p {
+            font-size: 2em;
+            color: $clr-2-op7;
+        }
+        .social-media-container {
+            height: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            a {
+                &:not(:last-of-type) {
+                    position: relative;
+                    height: 80px;
+                    width: 80px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        .link-border {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
+                    .link-border {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border: 3px solid $clr-2;
+                        border-radius: 4px;
+                        transition: transform 0.11s ease-in-out,
+                            opacity 0.19s ease-in;
+                        transform: scale(0.8);
+                        opacity: 0;
+                    }
+                    svg {
+                        color: $clr-2;
+                        height: 65px;
+                        width: 65px;
+                    }
+                }
+                &:last-of-type {
+                    border: 2px solid $clr-2;
+                    text-transform: uppercase;
+                    border-radius: 8px;
+                    background-color: $clr-2;
+                    color: $clr-1;
+                    height: 70%;
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.12s ease-in-out;
+                    &:hover {
+                        transform: translate(-2px) scale(1.05, 0.95);
+                        background-color: $clr-1;
+                        color: $clr-2;
+                    }
+                }
+            }
+        }
+    }
+    &__future-picture {
+        height: 100%;
+        width: 241px;
+        border-radius: 50%;
+        background-color: $clr-2;
+    }
+}

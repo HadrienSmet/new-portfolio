@@ -1,0 +1,109 @@
+@media screen and (min-width: 1025px) {
+    .footer {
+        &.welcome {
+            position: absolute;
+            transform: translateY(-190px);
+        }
+        &__link-container:hover {
+            svg:first-child {
+                transform: translateY(0);
+            }
+            svg:last-child {
+                transform: translateY(75px);
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .footer {
+        &__links-container {
+            font-size: 60px;
+        }
+        &__link-container {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer {
+        > svg {
+            display: none;
+        }
+        em {
+            display: none;
+        }
+        &__links-container {
+            font-size: 45px;
+        }
+        &__link-container {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+@media screen and (max-width: 310px) {
+    .footer {
+        justify-content: center;
+        align-items: flex-end;
+        > svg {
+            transform: translateY(-120px);
+        }
+        &__links-container {
+            font-size: 30px;
+            gap: 5px;
+        }
+    }
+}
+
+.footer {
+    padding: 20px 35px;
+    width: 100%;
+    height: 150px;
+    background-color: $clr-2;
+    color: $clr-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > svg {
+        cursor: pointer;
+        font-size: 45px;
+        z-index: 2;
+    }
+    a {
+        color: $clr-1;
+    }
+    em {
+        font-family: "graff-fonts";
+    }
+    &__links-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 25px;
+        #footer-facebook > svg.active {
+            color: #1972eb;
+        }
+        #footer-linkedin > svg.active {
+            color: #0172b1;
+        }
+        #footer-mail > svg.active {
+            color: #df574b;
+        }
+    }
+    &__link-container {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            position: absolute;
+            transition: 0.2s ease-in-out;
+        }
+        svg.active {
+            transform: translateY(-75px);
+        }
+    }
+}

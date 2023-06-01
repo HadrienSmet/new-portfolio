@@ -3,7 +3,7 @@ import LinksContainer from "./LinksContainer";
 
 const Intro = () => {
     return (
-        <section className="home-page__section-intro">
+        <section className="intro">
             <IntroContainer />
             <LinksContainer />
         </section>

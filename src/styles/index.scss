@@ -1,8 +1,19 @@
 @import "./1.Base/global";
 @import "./1.Base/fonts";
+/************************************************************************************************/
+@import "./2.Utils/functions";
 @import "./2.Utils/keyframes";
 @import "./2.Utils/variables";
+/************************************************************************************************/
+@import "./3.Components/footer";
 @import "./3.Components/header";
+@import "./3.Components/navigation";
+
+@import "./3.Components/pageAboutMe/fewWords";
+@import "./3.Components/pageAboutMe/hobbies/hobbies";
+@import "./3.Components/pageAboutMe/hobbies/hobbiesPictures";
+@import "./3.Components/pageAboutMe/personality";
+@import "./3.Components/pageAboutMe/softSkills";
 
 @import "./3.Components/pageHome/sectionAbout/about";
 @import "./3.Components/pageHome/sectionAbout/doubleImage/detailsContainer";
@@ -12,9 +23,15 @@
 @import "./3.Components/pageHome/sectionAbout/onlineProjects/onlineProjectsContainer";
 @import "./3.Components/pageHome/sectionAbout/onlineProjects/onlineProjectsDivision";
 
+@import "./3.Components/pageHome/sectionContact/contact";
+@import "./3.Components/pageHome/sectionContact/form";
+@import "./3.Components/pageHome/sectionContact/firstRow";
+
 @import "./3.Components/pageHome/sectionIntro/intro";
 @import "./3.Components/pageHome/sectionIntro/introContainer";
 @import "./3.Components/pageHome/sectionIntro/linksContainer";
 
 @import "./3.Components/ui/gradientBorder";
+/************************************************************************************************/
+@import "./4.Pages/aboutMe";
 @import "./4.Pages/home";

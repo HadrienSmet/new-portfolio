@@ -1,3 +1,4 @@
+import { useMyNavigationContext } from "@/context/NavigationContext";
 import {
     MouseEvent,
     MutableRefObject,
@@ -32,13 +33,20 @@ const useHeaderOnScroll = ({ headerRef }: PropsType) => {
 };
 
 const useHeaderButton = ({ headerRef }: PropsType) => {
+    const [isNavOpen, setIsNavOpen] = useMyNavigationContext();
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
     const classToggler = (target: Element) => {
-        const isBrowser = typeof window !== "undefined";
-        if (isBrowser) document.body.classList.toggle("opened");
-        target.classList.toggle("opened");
-        // navigation?.classList.toggle("opened");
-        headerRef.current!.classList.toggle("opened");
+        setIsNavOpen(!isNavOpen);
     };
+    useEffect(() => {
+        if (isNavOpen) {
+            buttonRef.current?.classList.add("opened");
+            headerRef.current!.classList.add("opened");
+        } else {
+            buttonRef.current?.classList.remove("opened");
+            headerRef.current!.classList.remove("opened");
+        }
+    }, [isNavOpen, headerRef]);
 
     const targetAttributeToggler = (target: Element) => {
         const isExpanded = target.getAttribute("aria-expanded") === "true";
@@ -52,18 +60,20 @@ const useHeaderButton = ({ headerRef }: PropsType) => {
     };
 
     return {
+        buttonRef,
         handleButtonBehavior,
     };
 };
 
 const Header = () => {
     const headerRef = useRef<HTMLDivElement | null>(null);
-    const { handleButtonBehavior } = useHeaderButton({ headerRef });
+    const { buttonRef, handleButtonBehavior } = useHeaderButton({ headerRef });
     useHeaderOnScroll({ headerRef });
     return (
         <header ref={headerRef}>
             <h1>Hadri</h1>
             <button
+                ref={buttonRef}
                 className="menu"
                 onClick={handleButtonBehavior}
                 aria-label="Main Menu"

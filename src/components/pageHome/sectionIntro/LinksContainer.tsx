@@ -13,7 +13,9 @@ const LinksContainer = () => {
             >
                 After a few years working in differents fields, I chose to
                 follow my dream and I started studying to become a web
-                developer. Wants to know more about my work?
+                developer.
+                <br />
+                Wants to know more about my work?
             </em>
             <div className="links-container-buttons">
                 <div className="icons">

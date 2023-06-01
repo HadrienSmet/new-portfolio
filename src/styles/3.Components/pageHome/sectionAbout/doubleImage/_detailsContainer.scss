@@ -9,15 +9,18 @@
         justify-content: space-between;
         align-items: flex-end;
         > div {
+            cursor: pointer;
             position: relative;
-            opacity: 0;
-            transition: 0.2s ease-in-out;
-            width: 50%;
             padding: 35px 25px;
+            width: 50%;
             height: 75%;
             color: $clr-1;
+
             display: flex;
             flex-direction: column;
+
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             &.visible {
                 opacity: 1;
                 h3::before {
@@ -29,12 +32,16 @@
                     white-space: nowrap;
                     color: $clr-1;
                     overflow: hidden;
-                    animation: titleAnim 1s linear 0.2s forwards;
+                    animation: titleAnim 2s linear 0.2s forwards;
                 }
             }
             &:first-of-type {
                 background: linear-gradient(90deg, $clr-2-op7, $clr-2-op0 95%);
                 border-radius: 25px 0 0 25px;
+                transform: translateX(15%);
+                &.visible {
+                    transform: translateX(0);
+                }
                 ul li {
                     padding-left: 15px;
                     &::before {
@@ -47,6 +54,10 @@
                 text-align: right;
                 background: linear-gradient(270deg, $clr-2-op7, $clr-2-op0 95%);
                 border-radius: 0 25px 25px 0;
+                transform: translateX(-15%);
+                &.visible {
+                    transform: translateX(0);
+                }
                 ul li {
                     padding-right: 15px;
                     &::before {
@@ -55,6 +66,7 @@
                 }
             }
             h3 {
+                pointer-events: none;
                 position: absolute;
                 width: unset;
                 font-family: "black-fonts";
@@ -81,6 +93,7 @@
                 flex-direction: column;
                 gap: 8px;
                 li {
+                    pointer-events: none;
                     font-size: 1.2em;
                     position: relative;
                     &::before {

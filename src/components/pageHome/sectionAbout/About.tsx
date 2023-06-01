@@ -9,7 +9,7 @@ type PropsType = {
 const About = ({ projects }: PropsType) => {
     console.log(projects);
     return (
-        <section className="home-page__section-about">
+        <section className="about">
             <OnlineProjectsContainer projects={projects} />
             <DoubleImageDivision />
         </section>

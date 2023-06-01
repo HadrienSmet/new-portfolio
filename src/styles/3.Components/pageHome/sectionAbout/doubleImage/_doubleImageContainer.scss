@@ -13,15 +13,12 @@
     }
     @media screen and (min-height: 901px) {
         .double-img-container {
-            // width: 40%;
-            width: 408px;
-            min-width: calc(950px * 0.4);
+            width: 400px;
             > div {
                 height: 45vh !important;
                 > img {
                     height: auto;
-                    width: calc((100vw - 900px) * 0.4);
-                    min-width: calc(950px * 0.4);
+                    width: 400px;
                 }
             }
         }
@@ -154,6 +151,7 @@
         overflow: hidden;
         position: relative;
         > img {
+            pointer-events: none;
             position: absolute;
         }
     }
