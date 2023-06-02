@@ -4,6 +4,26 @@ import { useMousePosition } from "@/hooks/useMousePosition";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useState, useEffect, MouseEvent } from "react";
 import HobbyImage from "./HobbyImage";
+import Hobby from "./Hobby";
+
+const hobbyArray = [
+    {
+        index: 0,
+        text: "Travelling alone with my backpack",
+    },
+    {
+        index: 1,
+        text: "Coding",
+    },
+    {
+        index: 2,
+        text: "Learning new things",
+    },
+    {
+        index: 3,
+        text: "Reading philosophy",
+    },
+];
 
 const useHobbiesSize = () => {
     const windowSize = useWindowSize();
@@ -48,34 +68,15 @@ const Hobbies = () => {
         <div className="about-me__hobbies">
             <h2>Hobbies</h2>
             <ul>
-                <li
-                    id="hobby-0"
-                    onMouseEnter={handleActiveIndex}
-                    onMouseLeave={resetActiveIndex}
-                >
-                    Travelling alone with my backpack
-                </li>
-                <li
-                    id="hobby-1"
-                    onMouseEnter={handleActiveIndex}
-                    onMouseLeave={resetActiveIndex}
-                >
-                    Coding
-                </li>
-                <li
-                    id="hobby-2"
-                    onMouseEnter={handleActiveIndex}
-                    onMouseLeave={resetActiveIndex}
-                >
-                    Learning new things
-                </li>
-                <li
-                    id="hobby-3"
-                    onMouseEnter={handleActiveIndex}
-                    onMouseLeave={resetActiveIndex}
-                >
-                    Reading philosophy
-                </li>
+                {hobbyArray.map((hobby) => (
+                    <Hobby
+                        key={hobby.index}
+                        text={hobby.text}
+                        index={hobby.index}
+                        handleActiveIndex={handleActiveIndex}
+                        resetActiveIndex={resetActiveIndex}
+                    />
+                ))}
             </ul>
             {screenWidth && screenWidth > 1024 && (
                 <div className="hobbies-pictures">

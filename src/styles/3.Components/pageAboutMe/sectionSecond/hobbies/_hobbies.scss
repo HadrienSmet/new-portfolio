@@ -1,12 +1,16 @@
 .about-me__hobbies {
-    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     ul {
-        padding: 0 15%;
-        li {
-            font-family: "graff-fonts";
-            font-size: 4vh;
-            color: $clr-2-op6;
-            letter-spacing: 2px;
+        padding-left: 5%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+            .hobby {
+                color: $clr-2-op5;
+            }
         }
     }
 }

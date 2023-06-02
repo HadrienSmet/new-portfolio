@@ -1,6 +1,6 @@
 const Personality = () => {
     return (
-        <div className="about-me__personality">
+        <div id="perso" className="about-me__personality">
             <h2>Personality</h2>
             <p>
                 If you wants to learn more about what kind of person I am here
@@ -8,14 +8,14 @@ const Personality = () => {
             </p>
             <div className="about-me__personality-links">
                 <a
-                    href="https://hadrien-smet-my-portfolio.vercel.app/aboutMe"
+                    href="https://www.16personalities.com/profiles/e1c56a2322a0e"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     MBTI
                 </a>
                 <a
-                    href="https://hadrien-smet-my-portfolio.vercel.app/aboutMe"
+                    href="https://drive.google.com/file/d/1t7oAlXpJPd9hf5D8XtfAjNhEVxJVACWR/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

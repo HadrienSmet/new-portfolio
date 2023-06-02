@@ -24,11 +24,11 @@ const SoftSkills = () => {
                 <FaHandsHelping />
                 <h4>Inclusive</h4>
             </div>
-            <p>
+            <a href="#perso">
                 How?
                 <br />
                 Come see the results from my personality tests!
-            </p>
+            </a>
         </div>
     );
 };
