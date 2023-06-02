@@ -12,6 +12,7 @@ type PropsType = {
 };
 
 const useHeaderOnScroll = ({ headerRef }: PropsType) => {
+    const [isNavOpen, setIsNavOpen] = useMyNavigationContext();
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -23,11 +24,10 @@ const useHeaderOnScroll = ({ headerRef }: PropsType) => {
             }
             setScrollY(window.scrollY);
         };
-
-        window.addEventListener("scroll", handleScroll);
+        if (!isNavOpen) window.addEventListener("scroll", handleScroll);
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [scrollY, headerRef]);
+    }, [scrollY, headerRef, isNavOpen]);
 
     return { headerRef };
 };

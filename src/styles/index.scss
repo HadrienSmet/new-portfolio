@@ -5,15 +5,17 @@
 @import "./2.Utils/keyframes";
 @import "./2.Utils/variables";
 /************************************************************************************************/
+@import "./3.Components/backgroundLayout";
 @import "./3.Components/footer";
 @import "./3.Components/header";
 @import "./3.Components/navigation";
 
-@import "./3.Components/pageAboutMe/fewWords";
-@import "./3.Components/pageAboutMe/hobbies/hobbies";
-@import "./3.Components/pageAboutMe/hobbies/hobbiesPictures";
-@import "./3.Components/pageAboutMe/personality";
-@import "./3.Components/pageAboutMe/softSkills";
+@import "./3.Components/pageAboutMe/sectionFirst/fewWords";
+@import "./3.Components/pageAboutMe/sectionFirst/firstSection";
+@import "./3.Components/pageAboutMe/sectionFirst/softSkills";
+@import "./3.Components/pageAboutMe/sectionSecond/hobbies/hobbies";
+@import "./3.Components/pageAboutMe/sectionSecond/hobbies/hobbiesPictures";
+@import "./3.Components/pageAboutMe/sectionSecond/personality";
 
 @import "./3.Components/pageHome/sectionAbout/about";
 @import "./3.Components/pageHome/sectionAbout/doubleImage/detailsContainer";

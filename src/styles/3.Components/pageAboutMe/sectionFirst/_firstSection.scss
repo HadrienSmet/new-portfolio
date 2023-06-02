@@ -1,0 +1,7 @@
+.about-me__first-section {
+    height: calc(100vh - 255px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: calc(100vw / 12);
+}

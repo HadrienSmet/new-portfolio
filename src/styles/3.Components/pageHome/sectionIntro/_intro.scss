@@ -4,4 +4,51 @@
     z-index: 1;
     display: flex;
     justify-content: center;
+    .intro-title {
+        display: flex;
+        flex-direction: column;
+        font-family: "black-fonts";
+        letter-spacing: 2px;
+        line-height: 1;
+        font-size: 4.5em;
+        position: absolute;
+        .hadrien-smet {
+            text-transform: uppercase;
+            background: linear-gradient(
+                90deg,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op5,
+                $clr-1,
+                $clr-1-op4,
+                $clr-1,
+                $clr-1-op5
+            );
+            background-position: 0%;
+            background-size: 1000%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: backgroundTitleAnim 20s linear alternate infinite;
+        }
+        .web-developer {
+            font-size: 0.7em;
+            background: linear-gradient(
+                90deg,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op4,
+                $clr-1,
+                $clr-1-op3,
+                $clr-1,
+                $clr-1-op5
+            );
+            background-position: 90%;
+            background-size: 1000%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: backgroundTitleAnim 17s linear alternate-reverse infinite;
+        }
+    }
 }
