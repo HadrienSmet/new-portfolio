@@ -1,4 +1,4 @@
-const FacebookSVG = () => {
+const SvgFacebook = () => {
     return (
         <svg viewBox="0 0 128 128">
             <rect
@@ -18,4 +18,4 @@ const FacebookSVG = () => {
     );
 };
 
-export default FacebookSVG;
+export default SvgFacebook;

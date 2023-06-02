@@ -1,4 +1,4 @@
-const GithubSVG = () => {
+const SvgGithub = () => {
     return (
         <svg viewBox="0 0 128 128">
             <g fill="#181616">
@@ -13,4 +13,4 @@ const GithubSVG = () => {
     );
 };
 
-export default GithubSVG;
+export default SvgGithub;

@@ -1,6 +1,6 @@
 import { FaRegEnvelope } from "react-icons/fa";
-import GithubSVG from "../../../../assets/svg/GithubSVG";
-import LinkedInSVG from "../../../../assets/svg/LinkedInSVG";
+import GithubSVG from "../../../../assets/svg/SvgGithub";
+import LinkedInSVG from "../../../../assets/svg/SvgLinkedIn";
 import GradientBorder from "@/components/ui/GradientBorder";
 
 const LinksContainer = () => {

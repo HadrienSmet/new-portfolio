@@ -1,7 +1,7 @@
-import FacebookSVG from "../../../../assets/svg/FacebookSVG";
-import GithubSVG from "../../../../assets/svg/GithubSVG";
-import LinkedInSVG from "../../../../assets/svg/LinkedInSVG";
-import TwitterSVG from "../../../../assets/svg/TwitterSVG";
+import SvgFacebook from "../../../../assets/svg/SvgFacebook";
+import SvgGithub from "../../../../assets/svg/SvgGithub";
+import SvgLinkedIn from "../../../../assets/svg/SvgLinkedIn";
+import SvgTwitter from "../../../../assets/svg/SvgTwitter";
 
 const FirstRow = () => {
     return (
@@ -12,19 +12,19 @@ const FirstRow = () => {
                 <div className="social-media-container">
                     <a href="https://github.com/HadrienSmet">
                         <span className="link-border"></span>
-                        <GithubSVG />
+                        <SvgGithub />
                     </a>
                     <a href="https://github.com/HadrienSmet">
                         <span className="link-border"></span>
-                        <LinkedInSVG />
+                        <SvgLinkedIn />
                     </a>
                     <a href="https://github.com/HadrienSmet">
                         <span className="link-border"></span>
-                        <FacebookSVG />
+                        <SvgFacebook />
                     </a>
                     <a href="https://github.com/HadrienSmet">
                         <span className="link-border"></span>
-                        <TwitterSVG />
+                        <SvgTwitter />
                     </a>
                     <a
                         href="https://i.ibb.co/KsCMMqL/CV-Frontend-developer.jpg"

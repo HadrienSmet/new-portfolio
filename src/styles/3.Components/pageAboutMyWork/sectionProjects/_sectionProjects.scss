@@ -1,0 +1,11 @@
+.section-projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .projects-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}

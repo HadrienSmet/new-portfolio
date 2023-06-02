@@ -16,6 +16,133 @@ const seedDataBase = async () => {
         await prisma.projects.createMany({
             data: [
                 {
+                    name: "Booki - First project for OpenClassrooms",
+                    image_link: "booki-square.webp",
+                    images: [
+                        "booki.webp",
+                        "booki-mobile.webp",
+                        "booki-pad.webp",
+                    ],
+                    legends: [
+                        "Desktop version",
+                        "Mobile version",
+                        "Pad version",
+                    ],
+                    description:
+                        "The goal of this project was to teach us how to integrate a basic template only using HTML and CSS. So we learned how to improve our workflow and wich details required most attention.",
+                    tools: ["HTML", "CSS"],
+                    code_link:
+                        "https://github.com/HadrienSmet/OpenClassroom-P2",
+                },
+                {
+                    name: "OhMyFood - Second project for OpenClassrooms",
+                    image_link: "ohMyFood-square.webp",
+                    images: [
+                        "ohMyFood.webp",
+                        "ohmyfood-home.webp",
+                        "ohmyfood-pad.webp",
+                    ],
+                    legends: [
+                        "Desktop version of the menu page",
+                        "Desktop version of the home page",
+                        "Pad version of the home page",
+                    ],
+                    description:
+                        "The goal of this project was to teach us how to integrate a template and to handle basic animations only using HTML and CSS, but we were allowed to compile our style sheets with Sass. So we learned how to handle pseudo-classes, pseudo-elements and pseudo-selectors but also the keyframes to implement more complexe animations",
+                    tools: ["HTML", "Sass"],
+                    code_link:
+                        "https://github.com/HadrienSmet/OpenClassroom-P3",
+                },
+                {
+                    name: "LaPanthere - Third project for OpenClassrooms",
+                    image_link: "lapanthere-square.webp",
+                    images: [
+                        "previous-mobile.webp",
+                        "previous-contact.webp",
+                        "lapanthere-home.webp",
+                        "lapanthere-contact.webp",
+                        "lapanthere-report.webp",
+                    ],
+                    legends: [
+                        "Version that needed to be optimized, home page",
+                        "Version that needed to be optimized, contact page",
+                        "Optimized version, home page",
+                        "Optimized version, contact page",
+                        "Lighthouse report, couldn't reach a better score using only HTML and CSS and without changig the intrinsic structure of the website",
+                    ],
+                    description:
+                        "The goal of this project was to teach us how to improve the SEO and the accessibility of an already existing website. So we learned how to fix bad practices and wich good practices we had to implement in order to be appreciated by the search engines. We also learned wich details were important during a website creation if you want that your services can be reach by a lot of users",
+                    tools: ["HTML", "CSS"],
+                    code_link: "https://github.com/HadrienSmet/lapanthere",
+                },
+                {
+                    name: "Kanap - Fourth project for OpenClassrooms",
+                    image_link: "kanap-square.webp",
+                    images: [
+                        "kanap-home.webp",
+                        "kanap-products.webp",
+                        "kanap-basket.webp",
+                        "kanap.webp",
+                    ],
+                    legends: [
+                        "Viewport of the home page",
+                        "Products standing on the home page",
+                        "Basket page",
+                        "Basket page",
+                    ],
+                    description:
+                        "The goal of this project was to introduce us JavaScript. We only had to develop the JS, the HTML, CSS and the back were already done. We had to connect the pages together, to set a basket and all the functionalities related to it. Basically, we had to learn how to create a dynamic website using functions and loops",
+                    tools: ["JavaScript"],
+                    code_link: "https://github.com/HadrienSmet/go-fullstack",
+                },
+                {
+                    name: "PIIIQUANTE - Fifth project for OpenClassrooms",
+                    image_link: "piiiquante-square.webp",
+                    images: [
+                        "piiiquante.webp",
+                        "piiiquante-menu.webp",
+                        "piiiquante-sauce.webp",
+                        "piiiquante-add-form.webp",
+                    ],
+                    legends: [
+                        "Sign in page",
+                        "Home page, screenshot from my exam",
+                        "Page of a sauce, screenshot from my exam",
+                        "Page to add a sauce, screenshot from my exam",
+                    ],
+                    description:
+                        "The goal of this project was to teach us how to create a REST with NodeJS. The front-end was already set we just had to create the routes, the middlewares and the controllers in order to realize a CRUD. We had to create an app where the user can add, delete or modificate a sauce of his invention. And also like or dislike the sauce on the app",
+                    tools: ["NodeJS", "multer"],
+                    code_link: "https://github.com/HadrienSmet/Projet6",
+                },
+                {
+                    name: "Groupomania - Sixth project for OpenClassrooms",
+                    image_link: "groupomania-square.webp",
+                    images: [
+                        "groupomania.webp",
+                        "groupomania-home.webp",
+                        "groupomania.webp",
+                    ],
+                    legends: [
+                        "Welcome page",
+                        "Sign up page",
+                        "Home page (screenshot took during my presentation. The data base does not exist anymore",
+                    ],
+                    description:
+                        "For this project we had to build a really basic social network from scratch. The use a framework between Angular, React and Vue was mandatory. I chose React. We had to set a logic to signing up and signing in on the app thanks to a mail adress and a password. Then the user had to be able to realise some posts on the platform. The user had to be able to modificate or delete each one of his posts. An admin had to have the same rights on every posts made on the app. Each user had to be able to like or dislike the posts. I also implemented a logic to let the user provides a picture and chose a pseudo",
+                    tools: [
+                        "Sass",
+                        "JavaScript",
+                        "NodeJS",
+                        "React",
+                        "Redux",
+                        "Multer",
+                        "Mongoose",
+                    ],
+                    code_link:
+                        "https://github.com/HadrienSmet/Projet-Groupomania",
+                },
+                {
                     name: "Travel App - First project on my own",
                     images: [
                         "travel-app-signup-album.webp",
@@ -109,16 +236,16 @@ const seedDataBase = async () => {
     }
 };
 
-seedDataBase()
-    .catch((error) => {
-        console.error(
-            "Erreur lors de l'initialisation de la base de données : ",
-            error
-        );
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
+// seedDataBase()
+//     .catch((error) => {
+//         console.error(
+//             "Erreur lors de l'initialisation de la base de données : ",
+//             error
+//         );
+//     })
+//     .finally(async () => {
+//         await prisma.$disconnect();
+//     });
 
 // async function removeDuplicateProjects() {
 //     try {
@@ -148,5 +275,23 @@ seedDataBase()
 //         error
 //     );
 // });
+
+// async function resetDatabase() {
+//     try {
+//         // Supprimer toutes les données de toutes les tables
+//         await prisma.$executeRaw`TRUNCATE "public"."Projects" RESTART IDENTITY CASCADE;`;
+
+//         console.log("Les données ont été réinitialisées avec succès.");
+//     } catch (error) {
+//         console.error(
+//             "Une erreur est survenue lors de la réinitialisation des données :",
+//             error
+//         );
+//     } finally {
+//         await prisma.$disconnect();
+//     }
+// }
+
+// resetDatabase();
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;

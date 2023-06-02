@@ -11,9 +11,14 @@ const OnlineProjectsContainer = ({ projects }: PropsType) => {
             <h2>My online projects</h2>
             <div className="online-projects-container">
                 {projects &&
-                    projects.map((project) => (
-                        <OnlineProjectCard key={project.id} project={project} />
-                    ))}
+                    projects
+                        .filter((project) => project.link !== null)
+                        .map((project) => (
+                            <OnlineProjectCard
+                                key={project.id}
+                                project={project}
+                            />
+                        ))}
             </div>
         </div>
     );

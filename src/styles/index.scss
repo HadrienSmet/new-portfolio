@@ -19,6 +19,10 @@
 @import "./3.Components/pageAboutMe/sectionSecond/personality";
 @import "./3.Components/pageAboutMe/sectionSecond/secondSection";
 
+@import "./3.Components/pageAboutMyWork/sectionProjects/projectCard";
+@import "./3.Components/pageAboutMyWork/sectionProjects/sectionProjects";
+@import "./3.Components/pageAboutMyWork/sectionTools";
+
 @import "./3.Components/pageHome/sectionAbout/about";
 @import "./3.Components/pageHome/sectionAbout/doubleImage/detailsContainer";
 @import "./3.Components/pageHome/sectionAbout/doubleImage/doubleImageContainer";
@@ -38,4 +42,5 @@
 @import "./3.Components/ui/gradientBorder";
 /************************************************************************************************/
 @import "./4.Pages/aboutMe";
+@import "./4.Pages/aboutMyWork";
 @import "./4.Pages/home";

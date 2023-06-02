@@ -1,4 +1,4 @@
-const TwitterSVG = () => {
+const SvgTwitter = () => {
     return (
         <svg viewBox="0 0 128 128">
             <path
@@ -9,4 +9,4 @@ const TwitterSVG = () => {
     );
 };
 
-export default TwitterSVG;
+export default SvgTwitter;

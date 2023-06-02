@@ -1,0 +1,36 @@
+.about-my-work {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    .background-layout > img {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(40%, -45%) rotate(250deg);
+    }
+    h1 {
+        padding-top: 110px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-family: "black-fonts";
+        text-transform: uppercase;
+        font-size: 5em;
+        color: transparent;
+        -webkit-text-stroke: 3px $clr-2;
+    }
+    h2 {
+        font-family: "black-fonts";
+        text-transform: uppercase;
+        color: $clr-2-op8;
+        font-size: 2em;
+    }
+    section {
+        position: relative;
+        padding-left: calc((100vw - 16px) / 12);
+        padding-right: calc((100vw - 16px) / 12);
+    }
+}
