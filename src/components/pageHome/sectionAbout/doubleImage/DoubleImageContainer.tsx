@@ -3,6 +3,11 @@ import { MutableRefObject, useEffect, useRef } from "react";
 import Image from "next/image";
 import pictureAboutWork from "../../../../../public/images/photo-cv_pochoir-rsz.webp";
 import pictureAboutMe from "../../../../../public/images/photo-cv_151222-bgless.webp";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
+type ImgOnScrollPropsType = {
+    doubleImgRef: MutableRefObject<HTMLDivElement | null>;
+};
 
 const handleDoubleImageTranslateX = (
     ratio: number,
@@ -70,34 +75,18 @@ const useImageMouseMove = () => {
     };
 };
 
-const useImageOnScroll = () => {
+const useImageOnScroll = ({ doubleImgRef }: ImgOnScrollPropsType) => {
+    const observer = useIntersectionObserver();
     useEffect(() => {
-        const isBrowser = typeof window !== "undefined";
-        const doubleImgEl =
-            isBrowser && (document.getElementById("double-image") as Element);
-
-        const options = {
-            root: null,
-            threshold: 0.5,
-            rootMargin: "0px",
-        };
-        const observer = new IntersectionObserver(function (entries, observer) {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                } else {
-                    entry.target.classList.remove("visible");
-                }
-            });
-        }, options);
-        if (doubleImgEl !== false) observer.observe(doubleImgEl);
-    }, []);
+        if (doubleImgRef.current !== null && observer !== null)
+            observer.observe(doubleImgRef.current);
+    }, [doubleImgRef, observer]);
 };
 
 const DoubleImageContainer = () => {
     const { doubleImgRef, firstImgContainerRef, secondImgContainerRef } =
         useImageMouseMove();
-    useImageOnScroll();
+    useImageOnScroll({ doubleImgRef });
     return (
         <div
             id="double-image"

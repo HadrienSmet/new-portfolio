@@ -1,13 +1,19 @@
 import { ProjectInterface } from "@/interfaces/Project";
 import Image from "next/image";
+import { MouseEvent } from "react";
 
 type PropsType = {
     project: ProjectInterface;
+    handleProjectName: (event: MouseEvent) => void;
 };
 
-const OnlineProjectCard = ({ project }: PropsType) => {
+const OnlineProjectCard = ({ project, handleProjectName }: PropsType) => {
     return (
-        <div className="online-project__card">
+        <div
+            onClick={handleProjectName}
+            className="online-project__card"
+            id={project.name}
+        >
             <Image
                 src={`/images/${project.image_link}`}
                 alt={`Illustration du projet: ${project.name}`}

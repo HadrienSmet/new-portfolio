@@ -1,4 +1,3 @@
-import React from "react";
 import SvgReact from "../../../assets/svg/SvgReact";
 import SvgNextJS from "../../../assets/svg/SvgNextJS";
 import SvgSass from "../../../assets/svg/SvgSass";
@@ -12,15 +11,18 @@ import SvgTypeScript from "../../../assets/svg/SvgTypeScript";
 const SectionTools = () => {
     return (
         <section className="section-tools">
-            <SvgSass />
-            <SvgTypeScript />
-            <SvgReact />
-            <SvgNextJS />
-            <SvgNodeJS />
-            <SvgExpress />
-            <SvgSocketIO />
-            <SvgMongoDB />
-            <SvgPostgreSQL />
+            <h2>Stacks</h2>
+            <div className="tools-container">
+                <SvgSass />
+                <SvgTypeScript />
+                <SvgReact />
+                <SvgNextJS />
+                <SvgNodeJS />
+                <SvgExpress />
+                <SvgSocketIO />
+                <SvgMongoDB />
+                <SvgPostgreSQL />
+            </div>
         </section>
     );
 };

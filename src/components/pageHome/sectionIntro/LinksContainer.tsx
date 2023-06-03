@@ -1,11 +1,25 @@
+"use client";
+import { useEffect, useRef } from "react";
 import { FaRegEnvelope } from "react-icons/fa";
 import GithubSVG from "../../../../assets/svg/SvgGithub";
 import LinkedInSVG from "../../../../assets/svg/SvgLinkedIn";
 import GradientBorder from "@/components/ui/GradientBorder";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
+const useLinksContainer = () => {
+    const linksContainerRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver();
+    useEffect(() => {
+        if (linksContainerRef.current)
+            observer?.observe(linksContainerRef.current);
+    }, [linksContainerRef, observer]);
+    return { linksContainerRef };
+};
 
 const LinksContainer = () => {
+    const { linksContainerRef } = useLinksContainer();
     return (
-        <div className="links-container">
+        <div className="links-container" ref={linksContainerRef}>
             <em
                 data-text="After a few years working in differents fields, I chose to
                 follow my dream and I started studying to become a web

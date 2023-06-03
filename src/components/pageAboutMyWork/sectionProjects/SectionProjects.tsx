@@ -11,9 +11,11 @@ const SectionProjects = ({ projects }: SectionProjectsPropsType) => {
         <section className="section-projects">
             <h2>Projects</h2>
             <div className="projects-container">
-                {projects.map((project, i) => (
-                    <ProjectCard key={`project-${i}`} project={project} />
-                ))}
+                {projects
+                    .sort((a, b) => b.id - a.id)
+                    .map((project, i) => (
+                        <ProjectCard key={`project-${i}`} project={project} />
+                    ))}
             </div>
         </section>
     );

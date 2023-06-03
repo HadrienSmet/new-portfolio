@@ -8,7 +8,7 @@ const Personality = () => {
             </p>
             <div className="about-me__personality-links">
                 <a
-                    href="https://www.16personalities.com/profiles/e1c56a2322a0e"
+                    href="https://drive.google.com/file/d/1-QeTq0lufeknbFwk2UyQT3n9cbgYitUm/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
