@@ -1,6 +1,22 @@
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useEffect, useRef } from "react";
+
+const usePersonalityOnScroll = () => {
+    const personalityRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 1,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (personalityRef.current) observer?.observe(personalityRef.current);
+    }, [personalityRef, observer]);
+    return { personalityRef };
+};
+
 const Personality = () => {
+    const { personalityRef } = usePersonalityOnScroll();
     return (
-        <div id="perso" className="about-me__personality">
+        <div id="perso" className="about-me__personality" ref={personalityRef}>
             <h2>Personality</h2>
             <p>
                 If you wants to learn more about what kind of person I am here

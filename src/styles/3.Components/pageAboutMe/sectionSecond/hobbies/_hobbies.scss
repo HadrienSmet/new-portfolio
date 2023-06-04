@@ -2,6 +2,15 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    h2 {
+        transform: translateX(-10%);
+        opacity: 0;
+        transition: 0.5s ease-out;
+        &.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
     ul {
         padding-left: 5%;
         width: 90%;

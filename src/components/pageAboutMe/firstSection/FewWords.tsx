@@ -1,6 +1,22 @@
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useRef, useEffect } from "react";
+
+const useFewWordsOnScroll = () => {
+    const fewWordsRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.2,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (fewWordsRef.current) observer?.observe(fewWordsRef.current);
+    }, [fewWordsRef, observer]);
+    return { fewWordsRef };
+};
+
 const FewWords = () => {
+    const { fewWordsRef } = useFewWordsOnScroll();
     return (
-        <div className="about-me__few-words">
+        <div className="about-me__few-words" ref={fewWordsRef}>
             <h2>Few words</h2>
             <div className="text-container">
                 <p>

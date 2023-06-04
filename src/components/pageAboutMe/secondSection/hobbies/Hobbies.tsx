@@ -2,9 +2,10 @@
 import { hobbiesData } from "@/data/hobbiesData";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect, MouseEvent, useRef } from "react";
 import HobbyImage from "./HobbyImage";
 import Hobby from "./Hobby";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const hobbyArray = [
     {
@@ -60,13 +61,26 @@ const useHobbies = () => {
     };
 };
 
+const useTitleOnScroll = () => {
+    const titleRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.25,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (titleRef.current) observer?.observe(titleRef.current);
+    }, [titleRef, observer]);
+    return { titleRef };
+};
+
 const Hobbies = () => {
     const { x, y } = useMousePosition();
     const { screenWidth } = useHobbiesSize();
     const { activeIndex, handleActiveIndex, resetActiveIndex } = useHobbies();
+    const { titleRef } = useTitleOnScroll();
     return (
         <div className="about-me__hobbies">
-            <h2>Hobbies</h2>
+            <h2 ref={titleRef}>Hobbies</h2>
             <ul>
                 {hobbyArray.map((hobby) => (
                     <Hobby

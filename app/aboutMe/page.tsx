@@ -1,12 +1,27 @@
+"use client";
 import Image from "next/image";
 import splashInk from "../../public/images/ink-splash.jpg";
-import FewWords from "@/components/pageAboutMe/FewWords";
-import Hobbies from "@/components/pageAboutMe/hobbies/Hobbies";
-import Personality from "@/components/pageAboutMe/Personality";
-import SoftSkills from "@/components/pageAboutMe/SoftSkills";
 import BackgroundLayout from "@/components/BackgroundLayout";
+import FirstSection from "@/components/pageAboutMe/firstSection/FirstSection";
+import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection";
+import { useEffect, useRef } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+
+const useAboutMePage = () => {
+    const titleRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.2,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (titleRef.current) observer?.observe(titleRef.current);
+    }, [titleRef, observer]);
+    return { titleRef };
+};
 
 const page = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { titleRef } = useAboutMePage();
     return (
         <>
             <main className="about-me">
@@ -18,15 +33,9 @@ const page = () => {
                         src={splashInk}
                     />
                 </BackgroundLayout>
-                <h1>About me</h1>
-                <section className="about-me__first-section">
-                    <SoftSkills />
-                    <FewWords />
-                </section>
-                <section className="about-me__second-section">
-                    <Hobbies />
-                    <Personality />
-                </section>
+                <h1 ref={titleRef}>About me</h1>
+                <FirstSection />
+                <SecondSection />
             </main>
         </>
     );
