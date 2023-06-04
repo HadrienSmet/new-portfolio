@@ -1,7 +1,25 @@
 .work {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 45px;
     z-index: 2;
+    &.visible {
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 1px;
+        left: 15%;
+        bottom: -25px;
+        background-color: $clr-2-op7;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 1.2s ease-in-out;
+    }
 }

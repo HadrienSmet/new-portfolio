@@ -8,7 +8,10 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const useLinksContainer = () => {
     const linksContainerRef = useRef<HTMLDivElement | null>(null);
-    const observer = useIntersectionObserver();
+    const observer = useIntersectionObserver({
+        threshold: 0.1,
+        rootMargin: "0px",
+    });
     useEffect(() => {
         if (linksContainerRef.current)
             observer?.observe(linksContainerRef.current);

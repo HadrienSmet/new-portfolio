@@ -15,6 +15,54 @@
         align-items: center;
         gap: 65px;
         background-color: $clr-1;
+        transform: scale(0) translateY(5px);
+        opacity: 0;
+        transition: 0.3s ease-out;
+        &.visible {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            .contact {
+                &__first-row::after {
+                    transform: scaleX(1);
+                }
+                &__links-container {
+                    h2 {
+                        animation: appearFromLeft 0.3s ease-out 0.28s forwards;
+                    }
+                    p {
+                        animation: appearFromLeft 0.3s ease-out 0.38s forwards;
+                    }
+                    .social-media-container a {
+                        animation: appearFromTop 0.3s ease-out forwards;
+                    }
+                }
+                &__future-picture {
+                    animation: appearFromRight 0.3s ease-out 0.32s forwards;
+                }
+                &__form {
+                    > div {
+                        &:nth-child(1) span {
+                            animation-delay: 0.63s !important;
+                        }
+                        &:nth-child(2) span {
+                            animation-delay: 0.7s !important;
+                        }
+                        span {
+                            animation: appearFromTop 0.3s ease-out forwards;
+                        }
+                    }
+                    input {
+                        animation: appearFromRight 0.3s ease-out 0.52s forwards;
+                    }
+                    textarea {
+                        animation: appearFromLeft 0.3s ease-out 0.6s forwards;
+                    }
+                    .gradient {
+                        animation: appearFromBottom 0.3s ease-out 0.68s forwards;
+                    }
+                }
+            }
+        }
     }
     h2 {
         font-family: "black-fonts";
@@ -35,5 +83,7 @@
         background-size: 1000%;
         background-clip: text;
         animation: backgroundTitleAnim 20s linear alternate infinite;
+        transform: translateY(-10%);
+        opacity: 0;
     }
 }

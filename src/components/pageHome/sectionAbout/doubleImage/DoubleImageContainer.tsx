@@ -76,7 +76,10 @@ const useImageMouseMove = () => {
 };
 
 const useImageOnScroll = ({ doubleImgRef }: ImgOnScrollPropsType) => {
-    const observer = useIntersectionObserver();
+    const observer = useIntersectionObserver({
+        threshold: 1,
+        rootMargin: "100px",
+    });
     useEffect(() => {
         if (doubleImgRef.current !== null && observer !== null)
             observer.observe(doubleImgRef.current);

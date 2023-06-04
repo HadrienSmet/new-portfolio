@@ -12,6 +12,9 @@
             left: 10%;
             bottom: -45px;
             background-color: $clr-2-op5;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 1.3s ease-in-out;
         }
     }
     &__links-container {
@@ -21,6 +24,8 @@
         p {
             font-size: 2em;
             color: $clr-2-op7;
+            transform: translateY(-10%);
+            opacity: 0;
         }
         .social-media-container {
             height: 80px;
@@ -29,6 +34,13 @@
             align-items: center;
             gap: 15px;
             a {
+                transform: translateY(-60%);
+                opacity: 0;
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: delayCalculator($i) + 0.15s !important;
+                    }
+                }
                 &:not(:last-of-type) {
                     position: relative;
                     height: 80px;
@@ -85,5 +97,7 @@
         width: 241px;
         border-radius: 50%;
         background-color: $clr-2;
+        transform: translateX(-10%);
+        opacity: 0;
     }
 }

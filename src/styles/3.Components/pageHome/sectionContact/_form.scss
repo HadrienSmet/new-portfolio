@@ -15,6 +15,8 @@
             position: absolute;
             text-transform: uppercase;
             transition: 0.2s ease-in-out;
+            transform: translateY(-60%);
+            opacity: 0;
         }
     }
     input,
@@ -28,20 +30,29 @@
             transform: translateX(-150%);
         }
     }
+    input {
+        opacity: 0;
+        transform: translateX(10%);
+    }
     textarea {
         resize: none;
+        opacity: 0;
+        transform: translateX(-10%);
     }
     .gradient {
         border: 3px solid transparent;
         border-radius: 4px;
         width: 50%;
         transition: 0.2s;
+        opacity: 0;
+        transform: translateY(60%);
         &:hover {
             background: linear-gradient($clr-1, $clr-1),
                 linear-gradient($clr-2, $clr-2);
             background-clip: padding-box, border-box;
             background-origin: border-box;
-            transform: translateY(-3px) scale(1.05, 0.95);
+            translate: 0px -3px;
+            scale: 1.05 0.95;
             button {
                 background: $clr-2;
                 background-clip: text;

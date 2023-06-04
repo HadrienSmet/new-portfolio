@@ -1,18 +1,33 @@
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ProjectInterface } from "@/interfaces/Project";
 import Image from "next/image";
-import { MouseEvent } from "react";
+import { MouseEvent, useEffect, useRef } from "react";
 
 type PropsType = {
     project: ProjectInterface;
     handleProjectName: (event: MouseEvent) => void;
 };
 
+const useProjectCardOnScroll = () => {
+    const projectRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.1,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (projectRef.current) observer?.observe(projectRef.current);
+    }, [projectRef, observer]);
+    return { projectRef };
+};
+
 const OnlineProjectCard = ({ project, handleProjectName }: PropsType) => {
+    const { projectRef } = useProjectCardOnScroll();
     return (
         <div
             onClick={handleProjectName}
             className="online-project__card"
             id={project.name}
+            ref={projectRef}
         >
             <Image
                 src={`/images/${project.image_link}`}

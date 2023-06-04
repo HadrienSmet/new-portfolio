@@ -1,4 +1,5 @@
 "use client";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -28,10 +29,22 @@ const useDetailsOnMouseMove = () => {
         myWorkRef,
     };
 };
+const useDetailsOnScroll = () => {
+    const detailsRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.1,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (detailsRef.current) observer?.observe(detailsRef.current);
+    }, [detailsRef, observer]);
+    return { detailsRef };
+};
 const DetailsContainer = () => {
     const { myRef, myWorkRef } = useDetailsOnMouseMove();
+    const { detailsRef } = useDetailsOnScroll();
     return (
-        <div className="details-container">
+        <div ref={detailsRef} className="details-container">
             <Link
                 href={"/aboutMyWork"}
                 ref={myWorkRef}

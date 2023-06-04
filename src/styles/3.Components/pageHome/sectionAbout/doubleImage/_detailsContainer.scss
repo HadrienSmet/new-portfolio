@@ -8,6 +8,10 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        opacity: 0;
+        &.visible {
+            animation: increaseOpacity 0.2s ease-out 0.15s forwards;
+        }
         > a {
             cursor: pointer;
             position: relative;
@@ -32,7 +36,7 @@
                     white-space: nowrap;
                     color: $clr-1;
                     overflow: hidden;
-                    animation: titleAnim 2s linear 0.2s forwards;
+                    animation: titleAnim 1s linear 0.2s forwards;
                 }
             }
             &:first-of-type {
@@ -41,6 +45,9 @@
                 transform: translateX(15%);
                 &.visible {
                     transform: translateX(0);
+                    ul li {
+                        animation: appearFromTop 0.15s ease-out forwards;
+                    }
                 }
                 ul li {
                     padding-left: 15px;
@@ -57,6 +64,9 @@
                 transform: translateX(-15%);
                 &.visible {
                     transform: translateX(0);
+                    ul li {
+                        animation: appearFromTop 0.15s ease-out forwards;
+                    }
                 }
                 ul li {
                     padding-right: 15px;
@@ -96,6 +106,14 @@
                     pointer-events: none;
                     font-size: 1.2em;
                     position: relative;
+                    transform: translateY(-60%);
+                    opacity: 0;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: delayCalculator($i) +
+                                0.15s !important;
+                        }
+                    }
                     &::before {
                         content: "";
                         position: absolute;

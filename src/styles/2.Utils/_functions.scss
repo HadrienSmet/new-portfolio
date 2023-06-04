@@ -2,3 +2,7 @@
     $delay: 50ms + ($i * 60ms);
     @return $delay;
 }
+@function longDelayCalculator($i) {
+    $delay: 50ms + ($i * 200ms);
+    @return $delay;
+}

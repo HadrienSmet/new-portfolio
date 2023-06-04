@@ -1,4 +1,5 @@
 .about {
+    height: unset !important;
     padding-top: 120px;
     position: relative;
     z-index: 2;
@@ -6,4 +7,18 @@
     flex-direction: column;
     gap: 25px;
     align-items: center;
+    &.visible h2 {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    h2 {
+        width: 100%;
+        font-family: "black-fonts";
+        font-size: 2em;
+        text-transform: uppercase;
+        text-align: left;
+        opacity: 0;
+        transform: translateX(-10%);
+        transition: 0.3s ease-out;
+    }
 }

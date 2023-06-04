@@ -1,27 +1,48 @@
 "use client";
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, MouseEvent, useRef, useEffect } from "react";
 import { ProjectInterface } from "@/interfaces/Project";
 import OnlineProjectCard from "./OnlineProjectCard";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import GradientBorder from "@/components/ui/GradientBorder";
 
 type PropsType = {
     projects: ProjectInterface[];
 };
-const OnlineProjectsContainer = ({ projects }: PropsType) => {
+const useOnlineProjectsDetails = () => {
     const [projectName, setProjectName] = useState<string | null>(null);
     const handleProjectName = (e: MouseEvent) => {
         const target = e.target as Element;
         setProjectName(target.id);
     };
+    return {
+        projectName,
+        handleProjectName,
+    };
+};
+
+const useProjectsOnScroll = () => {
+    const projectsRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.1,
+        rootMargin: "0px",
+    });
     useEffect(() => {
-        console.log(projectName);
-    }, [projectName]);
+        if (projectsRef.current) observer?.observe(projectsRef.current);
+    }, [projectsRef, observer]);
+    return { projectsRef };
+};
+
+const OnlineProjectsContainer = ({ projects }: PropsType) => {
+    const { projectName, handleProjectName } = useOnlineProjectsDetails();
+    const { projectsRef } = useProjectsOnScroll();
     return (
-        <div className="online-projects-division">
+        <div ref={projectsRef} className="online-projects-division">
             <h2>My online projects</h2>
             <div className="online-projects-container">
                 {projects &&
                     projects
                         .filter((project) => project.link !== null)
+                        .sort((a, b) => b.id - a.id)
                         .map((project) => (
                             <OnlineProjectCard
                                 key={project.id}
@@ -39,13 +60,15 @@ const OnlineProjectsContainer = ({ projects }: PropsType) => {
                             className="online-project__more-details"
                         >
                             <p>{project.description}</p>
-                            <a
-                                href={project.link!}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                See the website
-                            </a>
+                            <GradientBorder>
+                                <a
+                                    href={project.link!}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    See the website
+                                </a>
+                            </GradientBorder>
                         </div>
                     ))}
         </div>

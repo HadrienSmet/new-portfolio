@@ -7,6 +7,14 @@
         opacity: 1;
     }
 }
+@keyframes translateDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 @keyframes titleAnim {
     0% {
         border-right: 2px solid $clr-1;
@@ -83,9 +91,20 @@
         opacity: 1;
     }
 }
+
 @keyframes appearFromBottom {
     0% {
         transform: translateY(60%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes appearFromTop {
+    0% {
+        transform: translateY(-60%);
         opacity: 0;
     }
     100% {
