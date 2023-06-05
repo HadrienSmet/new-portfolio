@@ -26,8 +26,8 @@
         border: 2px solid $clr-2;
         border-radius: 4px;
         &:focus-within + span {
-            opacity: 0;
-            transform: translateX(-150%);
+            scale: 0.5;
+            translate: -35px -30px;
         }
     }
     input {

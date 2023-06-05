@@ -54,7 +54,6 @@ const DetailsContainer = () => {
                 <ul>
                     <li>All my projects</li>
                     <li>The tools I use</li>
-                    <li>Technicals skills</li>
                 </ul>
             </Link>
             <Link href={"/aboutMe"} ref={myRef} className="details-about-me">
@@ -63,6 +62,7 @@ const DetailsContainer = () => {
                     <li>Soft skills</li>
                     <li>Some pictures</li>
                     <li>Some of my hobbies</li>
+                    <li>Results from personality tests</li>
                 </ul>
             </Link>
         </div>

@@ -7,10 +7,25 @@ import SvgMongoDB from "../../../assets/svg/SvgMongoDB";
 import SvgPostgreSQL from "../../../assets/svg/SvgPostgreSQL";
 import SvgSocketIO from "../../../assets/svg/SvgSocketIO";
 import SvgTypeScript from "../../../assets/svg/SvgTypeScript";
+import { useEffect, useRef } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
-const SectionTools = () => {
+const useToolsOnScroll = () => {
+    const toolsRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.2,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (toolsRef.current) observer?.observe(toolsRef.current);
+    }, [toolsRef, observer]);
+    return { toolsRef };
+};
+
+const Tools = () => {
+    const { toolsRef } = useToolsOnScroll();
     return (
-        <section className="section-tools">
+        <section className="section-tools" ref={toolsRef}>
             <h2>Stacks</h2>
             <div className="tools-container">
                 <SvgSass />
@@ -27,4 +42,4 @@ const SectionTools = () => {
     );
 };
 
-export default SectionTools;
+export default Tools;

@@ -1,13 +1,10 @@
 "use client";
 import { useState, MouseEvent, useRef, useEffect } from "react";
-import { ProjectInterface } from "@/interfaces/Project";
 import OnlineProjectCard from "./OnlineProjectCard";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import GradientBorder from "@/components/ui/GradientBorder";
+import { ProjectsAsProps } from "../../../../../types/ProjectsAsProps";
 
-type PropsType = {
-    projects: ProjectInterface[];
-};
 const useOnlineProjectsDetails = () => {
     const [projectName, setProjectName] = useState<string | null>(null);
     const handleProjectName = (e: MouseEvent) => {
@@ -32,7 +29,7 @@ const useProjectsOnScroll = () => {
     return { projectsRef };
 };
 
-const OnlineProjectsContainer = ({ projects }: PropsType) => {
+const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
     const { projectName, handleProjectName } = useOnlineProjectsDetails();
     const { projectsRef } = useProjectsOnScroll();
     return (

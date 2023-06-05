@@ -1,8 +1,18 @@
 .project-card {
     overflow: hidden;
     position: relative;
-    width: calc((((100vw - 16px) - (100vw / 6)) / 4) - 10px);
-    height: calc((((100vw - 16px) - (100vw / 6)) / 4) - 10px);
+    width: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
+    height: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
+    transform: translateY(10%);
+    opacity: 0;
+    &.visible {
+        animation: appearFromBottom 0.4s ease-out forwards;
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: (($i + 2) % 3) * 0.25s !important;
+            }
+        }
+    }
     &:hover {
         .project-card__content {
             background-color: $clr-2-op7;

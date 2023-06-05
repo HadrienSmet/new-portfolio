@@ -1,13 +1,9 @@
 "use client";
 import OnlineProjectsContainer from "./onlineProjects/OnlineProjectsContainer";
-import { ProjectInterface } from "@/interfaces/Project";
 import StacksContainer from "./StacksContainer";
 import { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-
-type WorkPropsType = {
-    projects: ProjectInterface[];
-};
+import { ProjectsAsProps } from "../../../../types/ProjectsAsProps";
 
 const useWorkOnScroll = () => {
     const workRef = useRef<HTMLDivElement | null>(null);
@@ -21,7 +17,7 @@ const useWorkOnScroll = () => {
     return { workRef };
 };
 
-const Work = ({ projects }: WorkPropsType) => {
+const Work = ({ projects }: ProjectsAsProps) => {
     const { workRef } = useWorkOnScroll();
     return (
         <section className="work" ref={workRef}>

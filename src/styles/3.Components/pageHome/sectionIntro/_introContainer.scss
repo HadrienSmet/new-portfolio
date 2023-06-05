@@ -10,7 +10,7 @@
         left: 0;
         transform: translate(-45%, -50%);
         opacity: 0;
-        animation: increaseOpacity 1.3s ease-in forwards;
+        animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }
     .intro-title {
         display: flex;

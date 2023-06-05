@@ -10,19 +10,22 @@ const FirstRow = () => {
                 <h2>Wants to work together?</h2>
                 <p>Get in touch with me via social media or mail</p>
                 <div className="social-media-container">
-                    <a href="https://github.com/HadrienSmet">
+                    <a href="https://github.com/HadrienSmet" target="_blank">
                         <span className="link-border"></span>
-                        <SvgGithub />
+                        <SvgGithub color="#000" />
                     </a>
-                    <a href="https://github.com/HadrienSmet">
+                    <a
+                        href="https://www.linkedin.com/in/hadrien-smet-b80022207/"
+                        target="_blank"
+                    >
                         <span className="link-border"></span>
                         <SvgLinkedIn />
                     </a>
-                    <a href="https://github.com/HadrienSmet">
+                    <a href="https://github.com/HadrienSmet" target="_blank">
                         <span className="link-border"></span>
                         <SvgFacebook />
                     </a>
-                    <a href="https://github.com/HadrienSmet">
+                    <a href="https://github.com/HadrienSmet" target="_blank">
                         <span className="link-border"></span>
                         <SvgTwitter />
                     </a>

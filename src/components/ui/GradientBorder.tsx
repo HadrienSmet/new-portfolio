@@ -9,8 +9,7 @@ export const findDegree = (
     element: HTMLDivElement,
     event: MouseEvent
 ): number => {
-    const rect =
-        element !== undefined ? element.getBoundingClientRect() : undefined;
+    const rect = element !== null ? element.getBoundingClientRect() : undefined;
 
     if (rect !== undefined) {
         const x = event.clientX - rect.left;
@@ -30,7 +29,7 @@ const useGradientBorder = (): MutableRefObject<HTMLDivElement> => {
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
             const degree = findDegree(ref.current, e);
-            ref.current.style.setProperty(
+            ref.current?.style.setProperty(
                 "--gradient-rotation",
                 `${degree + 110}deg`
             );

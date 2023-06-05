@@ -1,13 +1,24 @@
-import { ProjectInterface } from "@/interfaces/Project";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { ProjectAsProps } from "../../../../types/ProjectAsProps";
 
-type ProjectCardPropsType = {
-    project: ProjectInterface;
+const useProjectsOnScroll = () => {
+    const projectRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.15,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (projectRef.current) observer?.observe(projectRef.current);
+    }, [projectRef, observer]);
+    return { projectRef };
 };
 
-const ProjectCard = ({ project }: ProjectCardPropsType) => {
+const ProjectCard = ({ project }: ProjectAsProps) => {
+    const { projectRef } = useProjectsOnScroll();
     return (
-        <div className="project-card">
+        <div className="project-card" ref={projectRef}>
             <Image
                 src={`/images/${project.image_link}`}
                 alt={`Illustration du projet: ${project.name}`}
@@ -21,7 +32,7 @@ const ProjectCard = ({ project }: ProjectCardPropsType) => {
                         <li key={`tool-${i}`}>{tool}</li>
                     ))}
                 </ul>
-                <a href="/">more</a>
+                <a href={`/project/${project.id}`}>more</a>
             </div>
         </div>
     );

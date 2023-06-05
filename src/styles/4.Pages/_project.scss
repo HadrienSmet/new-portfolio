@@ -1,0 +1,53 @@
+.project-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 100vh;
+    .background-layout img {
+        transform: translate(-60%, -35%);
+        opacity: 0;
+        animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
+    }
+    h1 {
+        margin-top: 120px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-family: "black-fonts";
+        text-transform: uppercase;
+        font-size: 3em;
+        color: transparent;
+        background: linear-gradient(
+            90deg,
+            $clr-2-op3,
+            $clr-2,
+            $clr-2-op5,
+            $clr-2,
+            $clr-2-op4,
+            $clr-2,
+            $clr-2-op5
+        );
+        background-position: 0%;
+        background-size: 1000%;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        opacity: 0;
+        transform: translateY(-60%);
+        transition: 0.5s ease-out;
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    section {
+        padding-left: calc((100vw - 16px) / 12);
+        padding-right: calc((100vw - 16px) / 12);
+    }
+    &__content {
+        position: relative;
+        display: flex;
+        margin-bottom: 50px;
+    }
+}

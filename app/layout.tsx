@@ -23,6 +23,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <head>
+                <title>Hadrien Smet</title>
+                <meta
+                    name="description"
+                    content="Hadrien Smet, fullstack junior developer enthousiast to the idea to tackle new challenges"
+                />
+                <meta name="robots" content="index, follow"></meta>
+            </head>
             <body className={inter.className} suppressHydrationWarning={true}>
                 <NavigationContext>
                     <Header />

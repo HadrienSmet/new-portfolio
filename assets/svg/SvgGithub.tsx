@@ -1,7 +1,12 @@
-const SvgGithub = () => {
+type SVGProps = {
+    dynamicClass?: string;
+    color: string;
+};
+
+const SvgGithub = ({ dynamicClass, color }: SVGProps) => {
     return (
-        <svg viewBox="0 0 128 128">
-            <g fill="#181616">
+        <svg className={dynamicClass} viewBox="0 0 128 128">
+            <g fill={color}>
                 <path
                     fillRule="evenodd"
                     clipRule="evenodd"

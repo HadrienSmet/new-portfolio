@@ -1,14 +1,15 @@
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useProjectOnMouseMove } from "@/hooks/useProjectOnMouseMove";
 import { ProjectInterface } from "@/interfaces/Project";
 import Image from "next/image";
-import { MouseEvent, useEffect, useRef } from "react";
+import { useEffect, useRef, MouseEvent } from "react";
 
 type PropsType = {
     project: ProjectInterface;
     handleProjectName: (event: MouseEvent) => void;
 };
 
-const useProjectCardOnScroll = () => {
+const useProjectOnScroll = () => {
     const projectRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
         threshold: 0.1,
@@ -21,15 +22,21 @@ const useProjectCardOnScroll = () => {
 };
 
 const OnlineProjectCard = ({ project, handleProjectName }: PropsType) => {
-    const { projectRef } = useProjectCardOnScroll();
+    const { projectRef } = useProjectOnScroll();
+    const { imgRef, handleMouseEnter, handleMouseLeave } =
+        useProjectOnMouseMove();
     return (
         <div
             onClick={handleProjectName}
             className="online-project__card"
             id={project.name}
             ref={projectRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
             <Image
+                ref={imgRef}
+                id={`illuproject-${project.id}`}
                 src={`/images/${project.image_link}`}
                 alt={`Illustration du projet: ${project.name}`}
                 width={300}

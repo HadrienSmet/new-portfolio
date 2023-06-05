@@ -10,6 +10,8 @@
         top: 0;
         right: 0;
         transform: translate(40%, -45%) rotate(250deg);
+        opacity: 0;
+        animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }
     h1 {
         padding-top: 110px;
@@ -21,6 +23,13 @@
         font-size: 5em;
         color: transparent;
         -webkit-text-stroke: 3px $clr-2;
+        opacity: 0;
+        transform: translateY(-60%);
+        transition: 0.5s ease-out;
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     h2 {
         font-family: "black-fonts";

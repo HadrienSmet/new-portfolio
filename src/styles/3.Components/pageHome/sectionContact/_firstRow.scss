@@ -84,7 +84,8 @@
                     align-items: center;
                     transition: 0.12s ease-in-out;
                     &:hover {
-                        transform: translate(-2px) scale(1.05, 0.95);
+                        translate: 0 -2px;
+                        scale: 1.05 0.95;
                         background-color: $clr-1;
                         color: $clr-2;
                     }

@@ -1,0 +1,34 @@
+import { useEffect, useRef } from "react";
+import ProjectCard from "./ProjectCard";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { ProjectsAsProps } from "../../../../types/ProjectsAsProps";
+
+const useProjectsOnScroll = () => {
+    const projectsRef = useRef<HTMLDivElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.2,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (projectsRef.current) observer?.observe(projectsRef.current);
+    }, [projectsRef, observer]);
+    return { projectsRef };
+};
+
+const Projects = ({ projects }: ProjectsAsProps) => {
+    const { projectsRef } = useProjectsOnScroll();
+    return (
+        <section className="section-projects" ref={projectsRef}>
+            <h2>All my projects</h2>
+            <div className="projects-container">
+                {projects
+                    .sort((a, b) => b.id - a.id)
+                    .map((project, i) => (
+                        <ProjectCard key={`project-${i}`} project={project} />
+                    ))}
+            </div>
+        </section>
+    );
+};
+
+export default Projects;

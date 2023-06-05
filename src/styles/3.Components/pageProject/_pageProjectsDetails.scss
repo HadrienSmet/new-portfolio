@@ -1,0 +1,103 @@
+.project-page__details {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    p {
+        font-size: 1.5em;
+        color: $clr-2-op7;
+        text-align: justify;
+        transform: translateX(10%);
+        opacity: 0;
+        transition: 0.5s ease-out;
+        &.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        &.visible {
+            li {
+                animation: appearFromBottom 0.12s ease-out forwards;
+            }
+        }
+        li {
+            padding: 10px;
+            background-color: $clr-2-op8;
+            color: $clr-1;
+            border-radius: 4px;
+            transform: translateY(60%);
+            opacity: 0;
+            @for $i from 1 through 13 {
+                &:nth-child(#{$i}) {
+                    animation-delay: ($i * 0.05s) + 0.1s !important;
+                }
+            }
+        }
+    }
+    &__btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        &.visible {
+            .gradient {
+                animation: appearFromBottom 0.25s ease-out forwards;
+            }
+        }
+        .gradient {
+            width: 30%;
+            height: 60px;
+            border-radius: 80px;
+            border: 3px solid transparent;
+            transition: 0.15s ease-in-out;
+            transform: translateY(60%);
+            opacity: 0;
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.1s + $i * 0.12s;
+                }
+            }
+            &:hover {
+                background: linear-gradient($clr-1, $clr-1),
+                    linear-gradient($clr-2, $clr-2);
+                background-clip: padding-box, border-box;
+                background-origin: border-box;
+                translate: 0px -3px;
+                scale: 1.05 0.95;
+                a {
+                    background: $clr-2;
+                    background-clip: text;
+                    transform: scale(0.95) translateY(2px);
+                }
+            }
+            a {
+                transition: 0.2s ease-out;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+                font-family: "black-fonts";
+                color: transparent;
+                background: linear-gradient(
+                    90deg,
+                    $clr-2-op3,
+                    $clr-2,
+                    $clr-2-op5,
+                    $clr-2,
+                    $clr-2-op4,
+                    $clr-2,
+                    $clr-2-op5
+                );
+                background-position: 0%;
+                background-size: 1000%;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+            }
+        }
+    }
+}
