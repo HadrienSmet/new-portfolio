@@ -1,3 +1,13 @@
+@media screen and (min-width: 1025px) {
+    .online-project__more-details .gradient {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .online-project__more-details .gradient {
+        width: 90%;
+    }
+}
 .online-projects {
     &-division {
         padding: 15px 0 0;
@@ -32,7 +42,7 @@
     justify-content: space-between;
     gap: 20px;
     align-items: center;
-    min-height: calc(100vh - 703px);
+    min-height: calc(100vh - 603px);
     p {
         text-align: justify;
         font-size: 1.4em;
@@ -40,8 +50,8 @@
         line-height: 1.5;
         max-height: calc(100vh - 703px);
         display: -webkit-box;
-        -webkit-line-clamp: 6;
-        line-clamp: 6;
+        -webkit-line-clamp: 9;
+        line-clamp: 9;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -53,7 +63,6 @@
         border: 3px solid transparent;
         transition: 0.2s;
         height: 60px;
-        width: 30%;
         transform: translateX(10%);
         opacity: 0;
         &:hover {

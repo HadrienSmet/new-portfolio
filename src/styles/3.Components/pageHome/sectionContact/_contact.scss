@@ -67,7 +67,7 @@
     h2 {
         font-family: "black-fonts";
         text-transform: uppercase;
-        font-size: 3em;
+        font-size: clamp(1.8em, 2.5vw, 3em);
         color: transparent;
         background: linear-gradient(
             90deg,

@@ -7,6 +7,30 @@
         opacity: 1;
     }
 }
+@keyframes increaseWidth {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes decreaseWidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+@keyframes increaseScaleX {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
 @keyframes translateDown {
     0% {
         transform: translateY(-100%);

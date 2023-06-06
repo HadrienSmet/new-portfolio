@@ -1,3 +1,26 @@
+@media screen and (min-width: 1025px) {
+    .online-project__card img {
+        width: calc(((100vw - (100vw / 6)) / 3) + 100px);
+        height: auto;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .online-project__card {
+        img {
+            width: auto;
+            height: 100%;
+        }
+        &-content {
+            ul {
+                height: 100px;
+                overflow: hidden;
+                li {
+                    height: 28px;
+                }
+            }
+        }
+    }
+}
 .online-project__card {
     cursor: pointer;
     position: relative;
@@ -40,8 +63,6 @@
     }
     img {
         position: absolute;
-        width: calc(((100vw - (100vw / 6)) / 3) + 100px);
-        height: auto;
     }
     &-content {
         pointer-events: none;

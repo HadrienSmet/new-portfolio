@@ -1,6 +1,42 @@
+@media screen and (min-width: 1025px) {
+    .contact {
+        &__first-row {
+            width: 80%;
+        }
+        &__links-container {
+            .social-media-container {
+                position: relative;
+            }
+        }
+        &__future-picture {
+            height: 241px;
+            min-width: 241px;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .contact {
+        &__first-row {
+            width: 100%;
+        }
+        &__links-container {
+            p {
+                margin-bottom: 120px;
+            }
+            .social-media-container {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+        &__future-picture {
+            height: 150px;
+            min-width: 150px;
+        }
+    }
+}
+
 .contact {
     &__first-row {
-        width: 80%;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -22,15 +58,14 @@
         flex-direction: column;
         gap: 25px;
         p {
-            font-size: 2em;
+            font-size: clamp(1em, 1.8vw, 2em);
             color: $clr-2-op7;
             transform: translateY(-10%);
             opacity: 0;
         }
         .social-media-container {
-            height: 80px;
-            position: relative;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 15px;
             a {
@@ -44,7 +79,7 @@
                 &:not(:last-of-type) {
                     position: relative;
                     height: 80px;
-                    width: 80px;
+                    min-width: 80px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -77,8 +112,9 @@
                     border-radius: 8px;
                     background-color: $clr-2;
                     color: $clr-1;
-                    height: 70%;
-                    width: 50%;
+                    height: 56px;
+                    width: calc(100% - 380px);
+                    min-width: 140px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -94,8 +130,6 @@
         }
     }
     &__future-picture {
-        height: 241px;
-        min-width: 241px;
         border-radius: 50%;
         background-color: $clr-2;
         transform: translateX(-10%);

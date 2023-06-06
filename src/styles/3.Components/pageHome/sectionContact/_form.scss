@@ -1,3 +1,18 @@
+@media screen and (min-width: 1025px) {
+    .contact__form {
+        > div {
+            width: 60%;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .contact__form {
+        > div {
+            width: 100%;
+        }
+    }
+}
+
 .contact__form {
     display: flex;
     flex-direction: column;
@@ -8,7 +23,6 @@
         display: flex;
         align-items: center;
         position: relative;
-        width: 60%;
         span {
             left: 25px;
             top: 15px;
@@ -67,7 +81,7 @@
 
             text-transform: uppercase;
             font-family: "black-fonts";
-            font-size: 1.8em;
+            font-size: clamp(1.2em, 1.8vw, 2em);
 
             display: flex;
             justify-content: center;

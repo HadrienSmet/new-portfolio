@@ -1,5 +1,9 @@
+@media screen and (min-width: 1025px) {
+    .about {
+        height: unset !important;
+    }
+}
 .about {
-    height: unset !important;
     padding-top: 120px;
     position: relative;
     z-index: 2;

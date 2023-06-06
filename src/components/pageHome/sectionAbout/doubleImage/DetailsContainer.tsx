@@ -1,9 +1,28 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const useCurrentSize = () => {
+    const [screenWidth, setScreenWidth] = useState<number | undefined>(
+        undefined
+    );
+    const windowSize = useWindowSize();
+
+    useEffect(() => {
+        if (windowSize.width === undefined) {
+            setScreenWidth(window.innerWidth);
+        } else {
+            setScreenWidth(windowSize.width);
+        }
+    }, [windowSize.width]);
+
+    return { screenWidth };
+};
 
 const useDetailsOnMouseMove = () => {
+    const { screenWidth } = useCurrentSize();
     const myRef = useRef<HTMLAnchorElement | null>(null);
     const myWorkRef = useRef<HTMLAnchorElement | null>(null);
     useEffect(() => {
@@ -18,11 +37,18 @@ const useDetailsOnMouseMove = () => {
                 myRef.current?.classList.add("visible");
             }
         };
-        window.addEventListener("mousemove", handlePictureOnMouseMove);
+        console.log(screenWidth);
+        if (screenWidth && screenWidth > 1025) {
+            window.addEventListener("mousemove", handlePictureOnMouseMove);
+        }
+        if (screenWidth && screenWidth < 1025) {
+            myWorkRef.current?.classList.add("visible");
+            myRef.current?.classList.add("visible");
+        }
         return () => {
             window.removeEventListener("mousemove", handlePictureOnMouseMove);
         };
-    }, []);
+    }, [screenWidth]);
 
     return {
         myRef,
@@ -62,7 +88,7 @@ const DetailsContainer = () => {
                     <li>Soft skills</li>
                     <li>Some pictures</li>
                     <li>Some of my hobbies</li>
-                    <li>Results from personality tests</li>
+                    <li>Personality tests</li>
                 </ul>
             </Link>
         </div>
