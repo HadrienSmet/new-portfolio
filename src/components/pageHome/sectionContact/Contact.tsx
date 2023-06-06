@@ -7,7 +7,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 const useContactOnScroll = () => {
     const contactContentRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
-        threshold: 0.75,
+        threshold: 0.25,
         rootMargin: "0px",
     });
     useEffect(() => {

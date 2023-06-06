@@ -8,7 +8,7 @@ import { ProjectsAsProps } from "../../../../types/ProjectsAsProps";
 const useWorkOnScroll = () => {
     const workRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
-        threshold: 0.8,
+        threshold: 0.5,
         rootMargin: "0px",
     });
     useEffect(() => {

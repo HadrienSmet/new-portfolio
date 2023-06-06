@@ -8,11 +8,30 @@
         }
     }
 }
+@media screen and (min-width: 768px) {
+    .intro-container {
+        height: 125px;
+        .intro-title {
+            font-size: 4.5em;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .intro-container {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .intro-title {
+            font-size: 2em;
+            text-align: center;
+        }
+    }
+}
 
 .intro-container {
-    height: 100%;
+    // height: 100%;
     position: relative;
-    height: 125px;
     width: 565px;
     .intro-title {
         display: flex;
@@ -20,7 +39,6 @@
         font-family: "black-fonts";
         letter-spacing: 2px;
         line-height: 1;
-        font-size: 4.5em;
         position: absolute;
         span {
             white-space: nowrap;

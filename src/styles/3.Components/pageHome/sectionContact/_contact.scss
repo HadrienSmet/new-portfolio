@@ -1,3 +1,22 @@
+@media screen and (min-width: 768px) {
+    .contact__content {
+        padding: 50px;
+        h2 {
+            font-size: clamp(1.8em, 2.5vw, 3em);
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .contact {
+        height: unset !important;
+        &__content {
+            padding: 25px;
+            h2 {
+                font-size: clamp(1.2em, 2vw, 2em);
+            }
+        }
+    }
+}
 .contact {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -8,7 +27,6 @@
         center/cover;
     &__content {
         border-radius: 25px;
-        padding: 50px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -67,7 +85,6 @@
     h2 {
         font-family: "black-fonts";
         text-transform: uppercase;
-        font-size: clamp(1.8em, 2.5vw, 3em);
         color: transparent;
         background: linear-gradient(
             90deg,

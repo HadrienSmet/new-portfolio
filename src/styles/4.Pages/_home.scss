@@ -1,3 +1,13 @@
+@media screen and (min-width: 768px) {
+    .home-page .background-layout img {
+        transform: translate(-45%, -50%);
+    }
+}
+@media screen and (max-width: 767px) {
+    .home-page .background-layout img {
+        transform: translate(-50%, -55%) scale(0.85);
+    }
+}
 .home-page {
     position: relative;
     display: flex;
@@ -6,7 +16,6 @@
         position: absolute;
         top: 250px;
         left: calc((100vw - 16px) / 12);
-        transform: translate(-45%, -50%);
 
         pointer-events: none;
         opacity: 0;

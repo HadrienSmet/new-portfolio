@@ -2,6 +2,7 @@
     .links-container {
         width: 450px;
         height: 100%;
+        background-color: $clr-1-op5;
         em {
             width: 75%;
         }
@@ -26,11 +27,42 @@
     .links-container {
         width: 100%;
         height: 70%;
+        background-color: $clr-1;
         em {
             width: 65%;
+            font-size: 1.5em;
         }
         &-buttons {
             width: 75%;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .links-container {
+        .icons a {
+            height: 100px;
+            width: 100px;
+        }
+        .gradient {
+            font-size: 1.8em;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .links-container {
+        em {
+            width: 100%;
+            font-size: 1em;
+        }
+        .icons a {
+            width: 50px;
+            height: 50px;
+        }
+        &-buttons {
+            width: 100%;
+        }
+        .gradient {
+            font-size: 1.2em;
         }
     }
 }
@@ -44,7 +76,7 @@
     position: relative;
     padding: 20px;
     border-radius: 8px;
-    background-color: $clr-1-op5;
+    // background-color: $clr-1-op5;
     &.visible {
         em {
             animation: toolsAppearsAnim 0.35s ease-out 0.39s forwards;
@@ -72,7 +104,6 @@
     em {
         position: relative;
         text-align: center;
-        font-size: 1.5em;
         line-height: 1.5;
         color: $clr-2-op7;
         transform: scale(0) translateY(5px);
@@ -89,8 +120,8 @@
         justify-content: space-around;
         a {
             position: relative;
-            height: 100px;
-            width: 100px;
+            // height: 100px;
+            // width: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -149,7 +180,6 @@
             height: 100%;
 
             font-family: "black-fonts";
-            font-size: 1.8em;
 
             display: flex;
             justify-content: center;

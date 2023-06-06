@@ -3,6 +3,20 @@
         height: unset !important;
     }
 }
+@media screen and (min-width: 768px) {
+    .about h2 {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 767px) {
+    .about {
+        margin-bottom: 50px;
+        h2 {
+            font-size: 1.5em;
+        }
+    }
+}
+
 .about {
     padding-top: 120px;
     position: relative;
@@ -18,7 +32,6 @@
     h2 {
         width: 100%;
         font-family: "black-fonts";
-        font-size: 2em;
         text-transform: uppercase;
         text-align: left;
         opacity: 0;
