@@ -1,30 +1,12 @@
 "use client";
-import { hobbiesData } from "@/data/hobbiesData";
+import { hobbiesData, hobbyArray } from "@/data/hobbiesData";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { useState, useEffect, MouseEvent, useRef } from "react";
 import HobbyImage from "./HobbyImage";
 import Hobby from "./Hobby";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-
-const hobbyArray = [
-    {
-        index: 0,
-        text: "Travelling alone with my backpack",
-    },
-    {
-        index: 1,
-        text: "Coding",
-    },
-    {
-        index: 2,
-        text: "Learning new things",
-    },
-    {
-        index: 3,
-        text: "Reading philosophy",
-    },
-];
+import MobileHobbies from "./MobileHobbies";
 
 const useHobbiesSize = () => {
     const windowSize = useWindowSize();
@@ -81,17 +63,21 @@ const Hobbies = () => {
     return (
         <div id="hobbies" className="about-me__hobbies">
             <h2 ref={titleRef}>Hobbies</h2>
-            <ul>
-                {hobbyArray.map((hobby) => (
-                    <Hobby
-                        key={hobby.index}
-                        text={hobby.text}
-                        index={hobby.index}
-                        handleActiveIndex={handleActiveIndex}
-                        resetActiveIndex={resetActiveIndex}
-                    />
-                ))}
-            </ul>
+            {screenWidth && screenWidth > 1024 ? (
+                <ul>
+                    {hobbyArray.map((hobby) => (
+                        <Hobby
+                            key={hobby.index}
+                            text={hobby.text}
+                            index={hobby.index}
+                            handleActiveIndex={handleActiveIndex}
+                            resetActiveIndex={resetActiveIndex}
+                        />
+                    ))}
+                </ul>
+            ) : (
+                <MobileHobbies />
+            )}
             {screenWidth && screenWidth > 1024 && (
                 <div className="hobbies-pictures">
                     {hobbiesData.map(({ mediaUrl }, index) => {

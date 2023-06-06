@@ -1,5 +1,14 @@
+@media screen and (min-width: 1025px) {
+    .about-me__second-section {
+        height: 100vh;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .about-me__second-section {
+        margin-bottom: 60px;
+    }
+}
 .about-me__second-section {
     width: 100%;
-    height: 100vh;
     padding-top: 130px;
 }

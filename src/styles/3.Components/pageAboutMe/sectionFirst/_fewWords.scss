@@ -1,3 +1,19 @@
+@media screen and (min-width: 768px) {
+    .about-me__few-words {
+        .text-container p {
+            font-size: 1.5em;
+            padding: 0 20%;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .about-me__few-words {
+        .text-container p {
+            font-size: 1.1em;
+            padding: 0 10%;
+        }
+    }
+}
 .about-me__few-words {
     position: relative;
     width: 100%;
@@ -35,10 +51,8 @@
         flex-direction: column;
         justify-content: space-around;
         p {
-            padding: 0 20%;
             width: 100%;
             text-align: justify;
-            font-size: 1.5em;
             color: $clr-2-op7;
             &:nth-child(1) {
                 transform: translateX(10%);

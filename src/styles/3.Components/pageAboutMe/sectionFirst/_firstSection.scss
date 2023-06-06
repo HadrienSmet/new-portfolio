@@ -1,5 +1,14 @@
+@media screen and (min-width: 1025px) {
+    .about-me__first-section {
+        height: calc(100vh - 255px);
+    }
+}
+@media screen and (max-width: 1024px) {
+    .about-me__first-section {
+        flex-direction: column;
+    }
+}
 .about-me__first-section {
-    height: calc(100vh - 255px);
     width: 100%;
     display: flex;
     justify-content: space-between;

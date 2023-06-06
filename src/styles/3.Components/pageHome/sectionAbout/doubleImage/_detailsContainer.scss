@@ -70,7 +70,7 @@
                     animation-delay: 0.45s;
                 }
                 &:last-of-type h3::after {
-                    animation-delay: 0.75s;
+                    animation-delay: 0.8s;
                 }
             }
             h3::after {
@@ -150,6 +150,11 @@
             padding: 0px 25px;
             width: 100%;
             height: unset;
+            &:last-of-type {
+                h3::after {
+                    transform-origin: right;
+                }
+            }
             ul {
                 display: none;
             }

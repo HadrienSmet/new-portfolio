@@ -1,9 +1,81 @@
+@media screen and (min-width: 1025px) {
+    .about-me__soft-skills {
+        flex-direction: column;
+        .progress {
+            color: $clr-2;
+            background: linear-gradient(to right, transparent 50%, $clr-2 0%);
+            &::before {
+                background-color: $clr-2;
+            }
+            &::after {
+                background-color: $clr-1;
+            }
+        }
+        > a {
+            color: $clr-2;
+            background-color: $clr-1;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .about-me__soft-skills {
+        .progress {
+            color: $clr-3;
+            background: linear-gradient(to right, transparent 50%, $clr-3 0%);
+            &::before {
+                background-color: $clr-3;
+            }
+            &::after {
+                background-color: $clr-2;
+            }
+            h3 {
+                color: $clr-3;
+            }
+        }
+        > a {
+            color: $clr-1;
+            background-color: $clr-2;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .about-me__soft-skills {
+        justify-content: center;
+        gap: 15px;
+        .progress {
+            height: 150px;
+            width: 150px;
+            &::after {
+                inset: 10px;
+            }
+            h4 {
+                top: 56%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .about-me__soft-skills {
+        justify-content: space-between;
+        .progress {
+            height: 95px;
+            width: 95px;
+            &::after {
+                inset: 6px;
+            }
+            svg {
+                display: none;
+            }
+            h4 {
+                top: 68%;
+                font-size: 0.8em;
+            }
+        }
+    }
+}
 .about-me__soft-skills {
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
     &:hover {
         > a {
             opacity: 1;
@@ -15,11 +87,7 @@
     .progress {
         transition: opacity 0.22s ease-in;
         position: relative;
-        height: 150px;
-        width: 150px;
         border-radius: 50%;
-        color: $clr-2;
-        background: linear-gradient(to right, transparent 50%, $clr-2 0%);
         transform: translateX(-100%);
         opacity: 0;
         @for $i from 1 through 4 {
@@ -34,15 +102,12 @@
             margin-left: 50%;
             border-radius: 0 100% 100% 0/50%;
             transform-origin: left;
-            background-color: $clr-2;
             transform: rotate(calc((var(--i) - 50) * 0.01turn));
         }
         &::after {
             content: "";
             position: absolute;
-            inset: 10px;
             border-radius: 50%;
-            background-color: $clr-1;
         }
         h3 {
             position: absolute;
@@ -64,15 +129,12 @@
         }
         h4 {
             position: absolute;
-            top: 56%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
         }
     }
     > a {
-        color: $clr-2;
-        background-color: $clr-1;
         padding: 15px;
         position: absolute;
         opacity: 0;

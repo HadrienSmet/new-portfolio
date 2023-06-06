@@ -1,3 +1,15 @@
+@media screen and (min-width: 768px) {
+    .about-me__personality-links a {
+        font-size: 2em;
+        width: 25%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .about-me__personality-links a {
+        font-size: 1.2em;
+        width: 45%;
+    }
+}
 .about-me__personality {
     display: flex;
     flex-direction: column;
@@ -39,9 +51,7 @@
         a {
             font-family: "black-fonts";
             letter-spacing: 2px;
-            font-size: 2em;
             padding: 10px 0;
-            width: 25%;
             text-align: center;
             border: 2px solid $clr-2;
             border-radius: 4px;

@@ -50,10 +50,10 @@
         }
         .double-img-container.visible {
             > .first-img-container {
-                animation: increaseWidth 1.7s ease-in-out forwards;
+                animation: increaseWidth 1.2s ease-in-out forwards;
             }
             > .second-img-container {
-                animation: decreaseWidth 1.7s ease-in-out forwards;
+                animation: decreaseWidth 1.2s ease-in-out forwards;
             }
         }
         @media screen and (min-height: 901px) {
@@ -106,7 +106,8 @@
         width: calc(100vw - (100vw / 6));
         flex-direction: column;
         position: absolute !important;
-        transform: translateY(-100px);
+        transform: translateY(-50%);
+        top: 50%;
         > div {
             width: 100%;
             > img {
