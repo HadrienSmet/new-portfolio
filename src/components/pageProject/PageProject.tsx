@@ -33,10 +33,10 @@ const PageProject = ({ project }: ProjectAsProps) => {
                 />
             </BackgroundLayout>
             <h1 ref={titleRef}>{project?.name}</h1>
-            <div className="project-page__content">
+            <section className="project-page__content">
                 {project && <ScreenShotsContainer project={project} />}
                 {project && <PageProjectDetails project={project} />}
-            </div>
+            </section>
         </main>
     );
 };

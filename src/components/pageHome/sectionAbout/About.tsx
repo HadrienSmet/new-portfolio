@@ -18,7 +18,7 @@ const useAboutOnScroll = () => {
 const About = () => {
     const { aboutRef } = useAboutOnScroll();
     return (
-        <section className="about" ref={aboutRef}>
+        <section id="about" className="about" ref={aboutRef}>
             <h2>If you want to learn...</h2>
             <DoubleImageDivision />
         </section>

@@ -1,9 +1,19 @@
+@media screen and (min-width: 1025px) {
+    .intro {
+        justify-content: space-between;
+    }
+    @media screen and (max-width: 1233px) {
+        .intro {
+            justify-content: center;
+        }
+    }
+}
 .intro {
     padding-top: 250px;
     position: relative;
     z-index: 1;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     .intro-title {
         display: flex;
         flex-direction: column;

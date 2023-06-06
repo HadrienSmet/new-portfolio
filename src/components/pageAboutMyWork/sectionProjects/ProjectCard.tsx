@@ -6,7 +6,7 @@ import { ProjectAsProps } from "../../../../types/ProjectAsProps";
 const useProjectsOnScroll = () => {
     const projectRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px",
     });
     useEffect(() => {

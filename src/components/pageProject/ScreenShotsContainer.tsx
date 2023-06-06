@@ -3,7 +3,7 @@ import { ProjectAsProps } from "../../../types/ProjectAsProps";
 
 const ScreenShotsContainer = ({ project }: ProjectAsProps) => {
     return (
-        <section className="screenshots-container">
+        <div className="screenshots-container">
             {project.images.map((img, i) => (
                 <Image
                     key={`img-${i}`}
@@ -16,7 +16,7 @@ const ScreenShotsContainer = ({ project }: ProjectAsProps) => {
                 />
             ))}
             <em>Click on the image to see it in its full size</em>
-        </section>
+        </div>
     );
 };
 

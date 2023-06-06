@@ -1,6 +1,17 @@
 .home-page {
+    position: relative;
     display: flex;
     flex-direction: column;
+    .background-layout img {
+        position: absolute;
+        top: 250px;
+        left: calc((100vw - 16px) / 12);
+        transform: translate(-45%, -50%);
+
+        pointer-events: none;
+        opacity: 0;
+        animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
+    }
     section {
         height: 100vh;
         padding-left: calc((100vw - 16px) / 12);

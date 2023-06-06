@@ -79,7 +79,7 @@ const Hobbies = () => {
     const { activeIndex, handleActiveIndex, resetActiveIndex } = useHobbies();
     const { titleRef } = useTitleOnScroll();
     return (
-        <div className="about-me__hobbies">
+        <div id="hobbies" className="about-me__hobbies">
             <h2 ref={titleRef}>Hobbies</h2>
             <ul>
                 {hobbyArray.map((hobby) => (

@@ -20,7 +20,7 @@ const useWorkOnScroll = () => {
 const Work = ({ projects }: ProjectsAsProps) => {
     const { workRef } = useWorkOnScroll();
     return (
-        <section className="work" ref={workRef}>
+        <section id="work" className="work" ref={workRef}>
             <StacksContainer />
             <OnlineProjectsContainer projects={projects} />
         </section>

@@ -9,7 +9,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(40%, -45%) rotate(250deg);
+        transform: translate(10%, -15%) rotate(-50deg) scale(0.8);
+        // transform: translate(40%, -45%) rotate(250deg);
         opacity: 0;
         animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }

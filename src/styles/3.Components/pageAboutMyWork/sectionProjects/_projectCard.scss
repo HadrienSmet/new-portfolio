@@ -2,7 +2,9 @@
     overflow: hidden;
     position: relative;
     width: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
-    height: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
+    // height: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
+    height: 320px;
+    border-radius: 8px;
     transform: translateY(10%);
     opacity: 0;
     &.visible {

@@ -24,7 +24,7 @@ const useNavigation = () => {
 const Navigation = () => {
     const { navRef, closeNav } = useNavigation();
     return (
-        <nav ref={navRef}>
+        <nav className="app-nav" ref={navRef}>
             <ul>
                 <li>
                     <Link href="/" onClick={closeNav}>

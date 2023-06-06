@@ -1,4 +1,5 @@
 import { useMyNavigationContext } from "@/context/NavigationContext";
+import { usePathname, useRouter } from "next/navigation";
 import {
     MouseEvent,
     MutableRefObject,
@@ -65,13 +66,67 @@ const useHeaderButton = ({ headerRef }: PropsType) => {
     };
 };
 
+const useHeader = () => {
+    const [pageNav, setPageNav] = useState<JSX.Element | null>(null);
+    const pathname = usePathname();
+    useEffect(() => {
+        console.log(pathname);
+        switch (true) {
+            case pathname === "/":
+                console.log("should display the home nav");
+                const homeNav = (
+                    <nav>
+                        <a href="#intro">Intro</a>
+                        <a href="#work">Projects</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                );
+                setPageNav(homeNav);
+                break;
+            case pathname === "/aboutMe":
+                console.log("should display the about me nav");
+                const myNav = (
+                    <nav>
+                        <a href="#my-intro">Intro</a>
+                        <a href="#hobbies">Hobbies</a>
+                        <a href="#perso">Personality</a>
+                    </nav>
+                );
+                setPageNav(myNav);
+                break;
+            case pathname === "/aboutMyWork":
+                console.log("should display the about my work nav");
+                console.log("should display the about me nav");
+                const workNav = (
+                    <nav>
+                        <a href="#stacks">Stacks</a>
+                        <a href="#projects">Projects</a>
+                    </nav>
+                );
+                setPageNav(workNav);
+                break;
+            case pathname.startsWith("/project/"):
+                console.log("should display the project nav");
+                setPageNav(null);
+                break;
+            default:
+                console.log("unknown page");
+                setPageNav(null);
+        }
+    }, [pathname]);
+    return { pageNav };
+};
+
 const Header = () => {
     const headerRef = useRef<HTMLDivElement | null>(null);
     const { buttonRef, handleButtonBehavior } = useHeaderButton({ headerRef });
     useHeaderOnScroll({ headerRef });
+    const { pageNav } = useHeader();
     return (
         <header ref={headerRef}>
             <h1>Hadri</h1>
+            {pageNav && pageNav}
             <button
                 ref={buttonRef}
                 className="menu"

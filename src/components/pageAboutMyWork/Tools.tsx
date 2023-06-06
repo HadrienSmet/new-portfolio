@@ -25,7 +25,7 @@ const useToolsOnScroll = () => {
 const Tools = () => {
     const { toolsRef } = useToolsOnScroll();
     return (
-        <section className="section-tools" ref={toolsRef}>
+        <section id="stacks" className="section-tools" ref={toolsRef}>
             <h2>Stacks</h2>
             <div className="tools-container">
                 <SvgSass />

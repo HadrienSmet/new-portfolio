@@ -20,7 +20,7 @@ const useContactOnScroll = () => {
 const Contact = () => {
     const { contactContentRef } = useContactOnScroll();
     return (
-        <section className="contact">
+        <section id="contact" className="contact">
             <div className="contact__content" ref={contactContentRef}>
                 <FirstRow />
                 <Form />

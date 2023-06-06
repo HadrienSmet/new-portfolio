@@ -1,17 +1,18 @@
+@media screen and (min-width: 1025px) {
+    .intro-container {
+        width: 565px;
+    }
+    @media screen and (max-width: 1233px) {
+        .intro-container {
+            width: 100%;
+        }
+    }
+}
+
 .intro-container {
-    width: 70%;
     height: 100%;
     position: relative;
-    img {
-        pointer-events: none;
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-45%, -50%);
-        opacity: 0;
-        animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
-    }
+    height: 125px;
     .intro-title {
         display: flex;
         flex-direction: column;
@@ -20,6 +21,9 @@
         line-height: 1;
         font-size: 4.5em;
         position: absolute;
+        span {
+            white-space: nowrap;
+        }
         &.visible {
             .hadrien-smet {
                 animation: appearFromLeft 0.45s ease-out 0.1s forwards,

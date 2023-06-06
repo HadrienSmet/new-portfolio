@@ -3,7 +3,7 @@ import FewWords from "./FewWords";
 
 const FirstSection = () => {
     return (
-        <section className="about-me__first-section">
+        <section id="my-intro" className="about-me__first-section">
             <SoftSkills />
             <FewWords />
         </section>

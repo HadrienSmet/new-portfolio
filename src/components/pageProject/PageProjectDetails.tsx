@@ -30,7 +30,7 @@ const PageProjectDetails = ({ project }: ProjectAsProps) => {
     const { textRef } = useTextOnScroll();
     const { toolsRef } = useToolsOnScroll();
     return (
-        <section className="project-page__details">
+        <div className="project-page__details">
             <p ref={textRef}>{project.description}</p>
             <ul className="tools-used" ref={toolsRef}>
                 {project.tools.map((tool) => (
@@ -38,7 +38,7 @@ const PageProjectDetails = ({ project }: ProjectAsProps) => {
                 ))}
             </ul>
             <ButtonsContainer project={project} />
-        </section>
+        </div>
     );
 };
 

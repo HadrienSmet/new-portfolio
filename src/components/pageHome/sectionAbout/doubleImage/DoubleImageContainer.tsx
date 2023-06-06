@@ -14,7 +14,8 @@ const handleDoubleImageTranslateX = (
     element: MutableRefObject<HTMLDivElement | null>
 ) => {
     if (element.current !== null) {
-        let translateInPx = 400 - 2 * 4 * ratio;
+        // -300px < translateInPx < 300px
+        let translateInPx = 300 - 2 * 3 * ratio;
         element.current.style.setProperty(
             "--div-translation",
             `${translateInPx}px`

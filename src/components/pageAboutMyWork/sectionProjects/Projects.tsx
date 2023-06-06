@@ -18,7 +18,7 @@ const useProjectsOnScroll = () => {
 const Projects = ({ projects }: ProjectsAsProps) => {
     const { projectsRef } = useProjectsOnScroll();
     return (
-        <section className="section-projects" ref={projectsRef}>
+        <section id="projects" className="section-projects" ref={projectsRef}>
             <h2>All my projects</h2>
             <div className="projects-container">
                 {projects
