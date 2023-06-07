@@ -18,26 +18,23 @@ const useContainerOnScroll = () => {
 const ButtonsContainer = ({ project }: ProjectAsProps) => {
     const { containerRef } = useContainerOnScroll();
     return (
-        <div
-            className="project-page__details__btn-container"
-            ref={containerRef}
-        >
+        <div className="project-page__btn-container" ref={containerRef}>
             <GradientBorder>
                 <a href={project.code_link} target="_blank">
-                    See the code
+                    Code
                 </a>
             </GradientBorder>
             {project.code_server_link && (
                 <GradientBorder>
                     <a href={project.code_server_link} target="_blank">
-                        See the server code
+                        Server code
                     </a>
                 </GradientBorder>
             )}
             {project.link && (
                 <GradientBorder>
                     <a href={project.link} target="_blank">
-                        Visit the website
+                        Website
                     </a>
                 </GradientBorder>
             )}

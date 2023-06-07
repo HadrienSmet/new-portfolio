@@ -1,3 +1,8 @@
+@media screen and (min-width: 1025px) {
+    .contact {
+        height: unset !important;
+    }
+}
 @media screen and (min-width: 768px) {
     .contact__content {
         padding: 50px;
@@ -40,18 +45,20 @@
             transform: scale(1) translateY(0);
             opacity: 1;
             .contact {
-                &__first-row::after {
-                    transform: scaleX(1);
+                &__first-section {
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                    .social-media-container a {
+                        animation: appearFromTop 0.3s ease-out forwards;
+                    }
                 }
-                &__links-container {
+                &__title-container {
                     h2 {
                         animation: appearFromLeft 0.3s ease-out 0.28s forwards;
                     }
                     p {
                         animation: appearFromLeft 0.3s ease-out 0.38s forwards;
-                    }
-                    .social-media-container a {
-                        animation: appearFromTop 0.3s ease-out forwards;
                     }
                 }
                 &__future-picture {
@@ -65,7 +72,7 @@
                         &:nth-child(2) span {
                             animation-delay: 0.7s !important;
                         }
-                        span {
+                        label {
                             animation: appearFromTop 0.3s ease-out forwards;
                         }
                     }

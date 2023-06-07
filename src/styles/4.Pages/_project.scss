@@ -1,3 +1,49 @@
+@media screen and (min-width: 1025px) {
+    .project-page {
+        .background-layout img {
+            transform: translate(-60%, -35%);
+        }
+        h1 {
+            font-size: 3em;
+            span {
+                font-size: 0.5em;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .project-page {
+        .background-layout img {
+            transform: translate(-60%, -35%) scale(0.75);
+        }
+        h1 {
+            font-size: 2.5em;
+            span {
+                font-size: 0.5em;
+            }
+        }
+        &__content {
+            flex-direction: column;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .project-page {
+        .background-layout img {
+            transform: translate(-60%, -35%) scale(0.5);
+        }
+        h1 {
+            font-size: 2em;
+            span {
+                font-size: 0.5em;
+            }
+        }
+        &__content {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
 .project-page {
     position: relative;
     display: flex;
@@ -5,37 +51,41 @@
     gap: 30px;
     min-height: 100vh;
     .background-layout img {
-        transform: translate(-60%, -35%);
         opacity: 0;
         animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }
     h1 {
+        padding: 0 8.333%;
         margin-top: 120px;
         position: relative;
         z-index: 1;
         text-align: center;
         font-family: "black-fonts";
         text-transform: uppercase;
-        font-size: 3em;
         color: transparent;
         background: linear-gradient(
             90deg,
-            $clr-2-op3,
-            $clr-2,
+            $clr-2-op7,
             $clr-2-op5,
+            $clr-2-op8,
             $clr-2,
-            $clr-2-op4,
-            $clr-2,
-            $clr-2-op5
+            $clr-2-op7,
+            $clr-2-op5,
+            $clr-2-op3
         );
         background-position: 0%;
         background-size: 1000%;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        -webkit-text-stroke: 1px $clr-1-op5;
         background-clip: text;
+        animation: backgroundTitleAnim 11s linear alternate infinite;
         opacity: 0;
         transform: translateY(-60%);
         transition: 0.5s ease-out;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
         &.visible {
             opacity: 1;
             transform: translateY(0);
@@ -49,6 +99,6 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 50px;
+        min-height: calc(100vh - 427px);
     }
 }

@@ -47,6 +47,14 @@
         transform: scaleX(1);
     }
 }
+@keyframes increaseScaleY {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
 @keyframes translateDown {
     0% {
         transform: translateY(-100%);

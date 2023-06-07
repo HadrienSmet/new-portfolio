@@ -74,6 +74,8 @@
             opacity: 0;
             transform: translateY(50%);
             transition: 0.5s ease-in-out;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
 }

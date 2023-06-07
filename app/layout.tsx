@@ -31,7 +31,10 @@ export default function RootLayout({
                 />
                 <meta name="robots" content="index, follow"></meta>
             </head>
-            <body className={inter.className} suppressHydrationWarning={true}>
+            <body
+                // className={inter.className}
+                suppressHydrationWarning={true}
+            >
                 <NavigationContext>
                     <Header />
                     {children}

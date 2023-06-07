@@ -1,5 +1,4 @@
 import { useRef, useEffect } from "react";
-import ButtonsContainer from "./ButtonsContainer";
 import { ProjectAsProps } from "../../../types/ProjectAsProps";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
@@ -37,7 +36,6 @@ const PageProjectDetails = ({ project }: ProjectAsProps) => {
                     <li key={tool}>{tool}</li>
                 ))}
             </ul>
-            <ButtonsContainer project={project} />
         </div>
     );
 };

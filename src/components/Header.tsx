@@ -1,4 +1,5 @@
 import { useMyNavigationContext } from "@/context/NavigationContext";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import { usePathname, useRouter } from "next/navigation";
 import {
     MouseEvent,
@@ -137,7 +138,7 @@ const Header = () => {
                     id="toggle-nav-button"
                     width="100"
                     height="100"
-                    viewBox="0 0 100 100"
+                    viewBox={`0 0 100 100`}
                 >
                     <path
                         className="line line1"

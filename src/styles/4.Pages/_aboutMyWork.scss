@@ -1,3 +1,55 @@
+@media screen and (min-width: 1025px) {
+    .about-my-work {
+        .background-layout > img {
+            transform: translate(10%, -15%) rotate(-50deg) scale(0.8);
+        }
+        h1 {
+            font-size: 5em;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .about-my-work {
+        .background-layout > img {
+            transform: translate(30%, -15%) rotate(-50deg) scale(0.6);
+        }
+        h1 {
+            font-size: 4em;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .about-my-work {
+        h1 {
+            -webkit-text-stroke: 3px $clr-2;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .about-my-work {
+        .background-layout > img {
+            transform: translate(40%, -15%) rotate(-80deg) scale(0.6);
+        }
+        h1 {
+            font-size: 2em;
+            background: linear-gradient(
+                90deg,
+                $clr-2-op7,
+                $clr-2-op4,
+                $clr-2-op6,
+                $clr-2-op8,
+                $clr-2-op5,
+                $clr-2-op3,
+                $clr-2-op6,
+                $clr-2-op9
+            );
+            background-size: 1000%;
+            background-position: 0%;
+            background-clip: text;
+            animation: backgroundTitleAnim 14s linear alternate infinite;
+        }
+    }
+}
 .about-my-work {
     position: relative;
     display: flex;
@@ -9,8 +61,6 @@
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(10%, -15%) rotate(-50deg) scale(0.8);
-        // transform: translate(40%, -45%) rotate(250deg);
         opacity: 0;
         animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }
@@ -21,9 +71,7 @@
         text-align: center;
         font-family: "black-fonts";
         text-transform: uppercase;
-        font-size: 5em;
         color: transparent;
-        -webkit-text-stroke: 3px $clr-2;
         opacity: 0;
         transform: translateY(-60%);
         transition: 0.5s ease-out;

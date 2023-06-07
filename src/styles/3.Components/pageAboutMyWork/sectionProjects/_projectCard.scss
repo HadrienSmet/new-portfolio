@@ -1,19 +1,45 @@
+@media screen and (min-width: 1025px) {
+    .project-card {
+        width: calc((((100vw - 16px) - (100vw / 6)) / 3) - 10px);
+        height: 350px !important;
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: (($i + 2) % 3) * 0.25s !important;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .project-card {
+        width: calc((((100vw - 16px) - (100vw / 6)) / 2) - 5px);
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: (($i + 1) % 2) * 0.25s !important;
+            }
+        }
+        &__content ul {
+            max-height: 105px;
+            overflow: hidden;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .project-card {
+        width: calc((100vw - 16px) - (100vw / 6));
+        animation-delay: 0.25s;
+    }
+}
 .project-card {
+    font-family: "main-fonts";
     overflow: hidden;
     position: relative;
-    width: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
-    // height: calc((((100vw - 16px) - (100vw / 6)) / 3) - 110px);
+    max-width: 520px;
     height: 320px;
     border-radius: 8px;
     transform: translateY(10%);
     opacity: 0;
     &.visible {
         animation: appearFromBottom 0.4s ease-out forwards;
-        @for $i from 1 through 10 {
-            &:nth-child(#{$i}) {
-                animation-delay: (($i + 2) % 3) * 0.25s !important;
-            }
-        }
     }
     &:hover {
         .project-card__content {

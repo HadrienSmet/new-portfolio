@@ -6,7 +6,7 @@ import { ProjectsAsProps } from "../../../../types/ProjectsAsProps";
 const useProjectsOnScroll = () => {
     const projectsRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
-        threshold: 0.2,
+        threshold: 0.5,
         rootMargin: "0px",
     });
     useEffect(() => {
@@ -18,8 +18,8 @@ const useProjectsOnScroll = () => {
 const Projects = ({ projects }: ProjectsAsProps) => {
     const { projectsRef } = useProjectsOnScroll();
     return (
-        <section id="projects" className="section-projects" ref={projectsRef}>
-            <h2>All my projects</h2>
+        <section id="projects" className="section-projects">
+            <h2 ref={projectsRef}>All my projects</h2>
             <div className="projects-container">
                 {projects
                     .sort((a, b) => b.id - a.id)

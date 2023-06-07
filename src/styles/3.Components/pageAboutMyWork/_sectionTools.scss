@@ -1,9 +1,26 @@
+@media screen and (min-width: 1025px) {
+    .section-tools .tools-container {
+        width: 45%;
+        min-width: 710px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .section-tools .tools-container {
+        display: flex;
+    }
+}
+@media screen and (max-width: 767px) {
+    .section-tools .tools-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+}
 .section-tools {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
-
     &.visible {
         h2 {
             opacity: 1;
@@ -19,11 +36,8 @@
         transition: 0.7s ease-out;
     }
     .tools-container {
-        display: flex;
         gap: 10px;
         svg {
-            height: 60px;
-            width: 60px;
             transform: translateY(10%);
             opacity: 0;
             @for $i from 1 through 10 {

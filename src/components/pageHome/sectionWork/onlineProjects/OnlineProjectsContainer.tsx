@@ -68,6 +68,12 @@ const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
                             </GradientBorder>
                         </div>
                     ))}
+            {projectName === null && (
+                <em id="start-info">
+                    Click on a card to learn more about the site and to display
+                    a link
+                </em>
+            )}
         </div>
     );
 };
