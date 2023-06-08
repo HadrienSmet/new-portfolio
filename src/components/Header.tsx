@@ -1,6 +1,5 @@
 import { useMyNavigationContext } from "@/context/NavigationContext";
-import { useWindowSize } from "@/hooks/useWindowSize";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
     MouseEvent,
     MutableRefObject,
@@ -14,7 +13,7 @@ type PropsType = {
 };
 
 const useHeaderOnScroll = ({ headerRef }: PropsType) => {
-    const [isNavOpen, setIsNavOpen] = useMyNavigationContext();
+    const [isNavOpen] = useMyNavigationContext();
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -71,10 +70,8 @@ const useHeader = () => {
     const [pageNav, setPageNav] = useState<JSX.Element | null>(null);
     const pathname = usePathname();
     useEffect(() => {
-        console.log(pathname);
         switch (true) {
             case pathname === "/":
-                console.log("should display the home nav");
                 const homeNav = (
                     <nav>
                         <a href="#intro">Intro</a>
@@ -86,7 +83,6 @@ const useHeader = () => {
                 setPageNav(homeNav);
                 break;
             case pathname === "/aboutMe":
-                console.log("should display the about me nav");
                 const myNav = (
                     <nav>
                         <a href="#my-intro">Intro</a>
@@ -97,8 +93,6 @@ const useHeader = () => {
                 setPageNav(myNav);
                 break;
             case pathname === "/aboutMyWork":
-                console.log("should display the about my work nav");
-                console.log("should display the about me nav");
                 const workNav = (
                     <nav>
                         <a href="#stacks">Stacks</a>
@@ -108,11 +102,9 @@ const useHeader = () => {
                 setPageNav(workNav);
                 break;
             case pathname.startsWith("/project/"):
-                console.log("should display the project nav");
                 setPageNav(null);
                 break;
             default:
-                console.log("unknown page");
                 setPageNav(null);
         }
     }, [pathname]);

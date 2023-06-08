@@ -37,7 +37,6 @@ const useDetailsOnMouseMove = () => {
                 myRef.current?.classList.add("visible");
             }
         };
-        console.log(screenWidth);
         if (screenWidth && screenWidth > 1025) {
             window.addEventListener("mousemove", handlePictureOnMouseMove);
         }

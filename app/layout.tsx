@@ -31,15 +31,13 @@ export default function RootLayout({
                 />
                 <meta name="robots" content="index, follow"></meta>
             </head>
-            <body
-                // className={inter.className}
-                suppressHydrationWarning={true}
-            >
+            <body suppressHydrationWarning={true}>
                 <NavigationContext>
                     <Header />
                     {children}
                     <Navigation />
                     <Footer />
+                    <div id="portal"></div>
                 </NavigationContext>
             </body>
         </html>

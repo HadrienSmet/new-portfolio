@@ -66,11 +66,14 @@
                 }
                 &__form {
                     > div {
-                        &:nth-child(1) span {
+                        &:nth-child(1) label {
                             animation-delay: 0.63s !important;
                         }
-                        &:nth-child(2) span {
+                        &:nth-child(2) label {
                             animation-delay: 0.7s !important;
+                        }
+                        &:nth-child(3) label {
+                            animation-delay: 0.8s !important;
                         }
                         label {
                             animation: appearFromTop 0.3s ease-out forwards;
