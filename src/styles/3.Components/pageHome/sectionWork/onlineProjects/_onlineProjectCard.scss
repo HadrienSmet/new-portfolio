@@ -10,13 +10,11 @@
             width: auto;
             height: 100%;
         }
-        &-content {
-            ul {
-                height: 100px;
-                overflow: hidden;
-                li {
-                    height: 28px;
-                }
+        &-content ul {
+            height: 100px;
+            overflow: hidden;
+            li {
+                height: 28px;
             }
         }
     }
@@ -69,7 +67,6 @@
         }
     }
     &:hover {
-        // width: 125%;
         .online-project__card-content {
             background-color: $clr-2-op7;
             backdrop-filter: blur(3px);
@@ -125,7 +122,6 @@
                 @for $i from 1 through 9 {
                     &:nth-child(#{$i}) {
                         animation-delay: delayCalculator($i) !important;
-                        // animation-delay: calc(50ms + ($i * 150ms)) !important;
                     }
                 }
             }

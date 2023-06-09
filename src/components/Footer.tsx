@@ -1,12 +1,5 @@
 import { handleScrollToTop } from "@/utils/handleScrolltoTop";
-import React from "react";
-import {
-    FaAngleDoubleUp,
-    FaFacebook,
-    FaLinkedin,
-    FaRegEnvelope,
-} from "react-icons/fa";
-import SvgLinkedIn from "../../assets/svg/SvgLinkedIn";
+import { FaAngleDoubleUp, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 import SvgGithub from "../../assets/svg/SvgGithub";
 
 const Footer = () => {
@@ -27,18 +20,6 @@ const Footer = () => {
                     />
                     <FaLinkedin aria-label="Link to my linkedIn" />
                 </a>
-                {/* <a
-                    href="https://www.facebook.com/hadrien.smet/"
-                    target="_blank"
-                    id="footer-facebook"
-                    className="footer__link-container"
-                >
-                    <FaFacebook
-                        className="active"
-                        aria-label="Link to my facebook"
-                    />
-                    <FaFacebook aria-label="Link to my facebook" />
-                </a> */}
                 <a
                     href="https://www.linkedin.com/in/hadrien-smet-b80022207/"
                     target="_blank"

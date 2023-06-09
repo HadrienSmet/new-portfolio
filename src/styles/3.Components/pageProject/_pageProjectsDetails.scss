@@ -46,10 +46,8 @@
         display: flex;
         justify-content: center;
         gap: 15px;
-        &.visible {
-            li {
-                animation: appearFromBottom 0.12s ease-out forwards;
-            }
+        &.visible li {
+            animation: appearFromBottom 0.12s ease-out forwards;
         }
         li {
             padding: 10px;

@@ -19,10 +19,8 @@
     }
 }
 @media screen and (min-width: 768px) {
-    .about-my-work {
-        h1 {
-            -webkit-text-stroke: 3px $clr-2;
-        }
+    .about-my-work h1 {
+        -webkit-text-stroke: 3px $clr-2;
     }
 }
 @media screen and (max-width: 767px) {

@@ -2,13 +2,10 @@
 
 import Header from "@/components/Header";
 import "../src/styles/index.scss";
-import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import NavigationContext from "@/context/NavigationContext";
 import Navigation from "@/components/Navigation";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Hadrien Smet",

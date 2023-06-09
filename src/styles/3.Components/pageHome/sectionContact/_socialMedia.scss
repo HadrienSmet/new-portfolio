@@ -26,9 +26,6 @@
 }
 @media screen and (max-width: 767px) {
     .social-media-container {
-        // position: absolute;
-        // bottom: 0;
-        // width: calc(100vw - (100vw / 6) - 50px);
         display: grid;
         row-gap: 10px;
         grid-template-columns: repeat(4, 1fr);
@@ -103,7 +100,6 @@
             background-color: $clr-2;
             color: $clr-1;
 
-            // width: calc(100% - 380px);
             min-width: 140px;
             display: flex;
             justify-content: center;

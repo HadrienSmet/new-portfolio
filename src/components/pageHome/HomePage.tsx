@@ -16,6 +16,7 @@ const HomePage = ({ projects }: ProjectsAsProps) => {
                     width={2700}
                     alt="Splash of ink"
                     src={splashInk}
+                    priority
                 />
             </BackgroundLayout>
             <Intro />

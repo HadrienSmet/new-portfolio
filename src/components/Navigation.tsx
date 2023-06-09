@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRef, useEffect } from "react";
 
 const useNavigation = () => {
-    // const isBrowser = typeof window !== "undefined";
     const navRef = useRef<HTMLDivElement | null>(null);
     const [isNavOpen, setIsNavOpen] = useMyNavigationContext();
     useEffect(() => {

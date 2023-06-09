@@ -69,7 +69,7 @@
     > svg {
         cursor: pointer;
         font-size: 45px;
-        z-index: 2;
+        z-index: 1;
     }
     a {
         color: $clr-1;
@@ -102,9 +102,9 @@
         svg {
             position: absolute;
             transition: 0.2s ease-in-out;
-        }
-        svg.active {
-            transform: translateY(-75px);
+            &.active {
+                transform: translateY(-75px);
+            }
         }
     }
 }

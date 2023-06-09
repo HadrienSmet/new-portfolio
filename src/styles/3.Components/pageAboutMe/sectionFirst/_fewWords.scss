@@ -1,17 +1,13 @@
 @media screen and (min-width: 768px) {
-    .about-me__few-words {
-        .text-container p {
-            font-size: 1.5em;
-            padding: 0 20%;
-        }
+    .about-me__few-words .text-container p {
+        font-size: 1.5em;
+        padding: 0 20%;
     }
 }
 @media screen and (max-width: 767px) {
-    .about-me__few-words {
-        .text-container p {
-            font-size: 1.1em;
-            padding: 0 10%;
-        }
+    .about-me__few-words .text-container p {
+        font-size: 1.1em;
+        padding: 0 10%;
     }
 }
 .about-me__few-words {

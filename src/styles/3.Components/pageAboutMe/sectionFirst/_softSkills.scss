@@ -1,6 +1,11 @@
 @media screen and (min-width: 1025px) {
     .about-me__soft-skills {
         flex-direction: column;
+        &:hover {
+            > a {
+                opacity: 1;
+            }
+        }
         .progress {
             color: $clr-2;
             background: linear-gradient(to right, transparent 50%, $clr-2 0%);
@@ -76,11 +81,6 @@
 .about-me__soft-skills {
     position: relative;
     display: flex;
-    &:hover {
-        > a {
-            opacity: 1;
-        }
-    }
     &.visible .progress {
         animation: appearFromLeft 0.3s ease-in-out forwards;
     }

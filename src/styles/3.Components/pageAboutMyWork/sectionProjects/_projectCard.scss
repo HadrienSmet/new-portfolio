@@ -96,7 +96,6 @@
                 @for $i from 1 through 9 {
                     &:nth-child(#{$i}) {
                         animation-delay: delayCalculator($i) !important;
-                        // animation-delay: calc(50ms + ($i * 150ms)) !important;
                     }
                 }
             }

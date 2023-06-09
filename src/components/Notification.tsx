@@ -3,16 +3,21 @@ import ReactDOM from "react-dom";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
 type NotificationType = {
-    ref: MutableRefObject<HTMLDivElement | null>;
+    dynamicRef: MutableRefObject<HTMLDivElement | null>;
     text: string;
     error: boolean;
     isOpen: boolean;
 };
 
-const Notification = ({ ref, text, error, isOpen }: NotificationType) => {
+const Notification = ({
+    dynamicRef,
+    text,
+    error,
+    isOpen,
+}: NotificationType) => {
     if (!isOpen) return null;
     return ReactDOM.createPortal(
-        <div ref={ref} className="notification-container">
+        <div ref={dynamicRef} className="notification-container">
             {error ? <FaTimes /> : <FaCheck />}
             <p>{text}</p>
         </div>,

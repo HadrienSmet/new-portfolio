@@ -13,20 +13,19 @@
         > div {
             width: 100%;
         }
+        textarea {
+            height: 180px;
+        }
     }
 }
 @media screen and (min-width: 768px) {
-    .contact__form {
-        .gradient {
-            width: 50%;
-        }
+    .contact__form .gradient {
+        width: 50%;
     }
 }
 @media screen and (max-width: 767px) {
-    .contact__form {
-        .gradient {
-            width: 100%;
-        }
+    .contact__form .gradient {
+        width: 100%;
     }
 }
 
@@ -49,6 +48,10 @@
             transition: 0.2s ease-in-out;
             transform: translateY(-60%);
             opacity: 0;
+            &.fill {
+                scale: 0.5;
+                translate: -35px -30px;
+            }
         }
     }
     input,

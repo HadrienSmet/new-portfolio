@@ -17,10 +17,8 @@
     justify-content: center;
     gap: 15px;
     margin-bottom: 50px;
-    &.visible {
-        .gradient {
-            animation: appearFromBottom 0.25s ease-out forwards;
-        }
+    &.visible .gradient {
+        animation: appearFromBottom 0.25s ease-out forwards;
     }
     .gradient {
         height: 60px;

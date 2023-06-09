@@ -66,10 +66,8 @@ header {
                     animation-delay: ($i * 0.11s) + 0.55s;
                 }
             }
-            &:hover {
-                &::after {
-                    transform: scaleX(1);
-                }
+            &:hover::after {
+                transform: scaleX(1);
             }
             &::after {
                 content: "";
