@@ -63,6 +63,15 @@
                 }
                 &__future-picture {
                     animation: appearFromRight 0.3s ease-out 0.32s forwards;
+                    span {
+                        animation: appearFromBottom 0.4s ease-out forwards;
+                        &:nth-child(1) {
+                            animation-delay: 0.47s !important;
+                        }
+                        &:nth-child(2) {
+                            animation-delay: 0.62s !important;
+                        }
+                    }
                 }
                 &__form {
                     > div {

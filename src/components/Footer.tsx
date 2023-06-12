@@ -1,3 +1,4 @@
+"use client";
 import { handleScrollToTop } from "@/utils/handleScrolltoTop";
 import { FaAngleDoubleUp, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 import SvgGithub from "../../assets/svg/SvgGithub";
@@ -21,7 +22,7 @@ const Footer = () => {
                     <FaLinkedin aria-label="Link to my linkedIn" />
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/hadrien-smet-b80022207/"
+                    href="https://github.com/HadrienSmet"
                     target="_blank"
                     id="footer-linkedin"
                     className="footer__link-container"

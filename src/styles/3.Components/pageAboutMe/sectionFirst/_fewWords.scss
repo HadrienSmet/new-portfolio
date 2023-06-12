@@ -1,7 +1,14 @@
+@media screen and (min-width: 1025px) {
+    .about-me__few-words .text-container p {
+        padding: 0 20%;
+    }
+}
 @media screen and (min-width: 768px) {
     .about-me__few-words .text-container p {
         font-size: 1.5em;
-        padding: 0 20%;
+        @media screen and (max-width: 1024px) {
+            padding: 0 12.5%;
+        }
     }
 }
 @media screen and (max-width: 767px) {

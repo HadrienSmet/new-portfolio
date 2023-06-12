@@ -102,44 +102,33 @@ const useInputs = () => {
         textLabelRef,
     };
 };
+
 type FormHookType = {
     state: State;
     dispatch: any;
 };
+
 const useForm = ({ state, dispatch }: FormHookType) => {
+    const [showSuccessNotif, setShowSuccessNotif] = useState(false);
+    const [showErrorNotif, setShowErrorNotif] = useState(false);
+    const [isCorrectlySend, setIsCorrectlySend] = useState<boolean | undefined>(
+        undefined
+    );
     const formRef = useRef<HTMLFormElement | null>(null);
-    const responseRef = useRef<HTMLDivElement | null>(null);
-    const errorRef = useRef<HTMLDivElement | null>(null);
-    const [isCorrectlySend, sendIsCorrectlySend] = useState<
-        boolean | undefined
-    >(undefined);
 
-    const childRemover = (ref: MutableRefObject<HTMLDivElement | null>) => {
-        const portal = document.getElementById("portal");
-        setTimeout(() => {
-            portal?.removeChild(ref.current!);
-        }, 3000);
-    };
-
-    const resetForm = () => {
-        dispatch({
-            type: "change_name",
-            newName: "",
-        });
-        dispatch({
-            type: "change_mail",
-            newMail: "",
-        });
-        dispatch({
-            type: "change_message",
-            newMessage: "",
-        });
-    };
-
-    const handleDOM = (success: boolean) => {
-        resetForm();
-        if (success) childRemover(responseRef);
-        if (!success) childRemover(errorRef);
+    const handleNotifs = (success: boolean) => {
+        if (success) {
+            setShowSuccessNotif(true);
+            setTimeout(() => {
+                setShowSuccessNotif(false);
+            }, 3010);
+        }
+        if (!success) {
+            setShowErrorNotif(true);
+            setTimeout(() => {
+                setShowErrorNotif(false);
+            }, 3010);
+        }
     };
 
     const sendEmail = (e: FormEvent) => {
@@ -153,21 +142,41 @@ const useForm = ({ state, dispatch }: FormHookType) => {
             )
             .then(
                 (result) => {
-                    sendIsCorrectlySend(true);
-                    handleDOM(true);
+                    setIsCorrectlySend(true);
                 },
                 (error) => {
-                    sendIsCorrectlySend(false);
-                    handleDOM(false);
+                    setIsCorrectlySend(false);
                 }
             );
     };
 
+    useEffect(() => {
+        const resetForm = () => {
+            dispatch({
+                type: "change_name",
+                newName: "",
+            });
+            dispatch({
+                type: "change_mail",
+                newMail: "",
+            });
+            dispatch({
+                type: "change_message",
+                newMessage: "",
+            });
+        };
+        const handleDOM = (success: boolean) => {
+            resetForm();
+            handleNotifs(success);
+        };
+        if (isCorrectlySend) handleDOM(true);
+        if (isCorrectlySend === false) handleDOM(false);
+    }, [isCorrectlySend, dispatch]);
+
     return {
         formRef,
-        responseRef,
-        errorRef,
-        isCorrectlySend,
+        showErrorNotif,
+        showSuccessNotif,
         sendEmail,
     };
 };
@@ -175,8 +184,10 @@ const useForm = ({ state, dispatch }: FormHookType) => {
 const Form = () => {
     const { state, dispatch, nameLabelRef, mailLabelRef, textLabelRef } =
         useInputs();
-    const { formRef, responseRef, errorRef, isCorrectlySend, sendEmail } =
-        useForm({ state, dispatch });
+    const { formRef, showErrorNotif, showSuccessNotif, sendEmail } = useForm({
+        state,
+        dispatch,
+    });
     return (
         <form ref={formRef} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form__name-division">
@@ -223,17 +234,17 @@ const Form = () => {
             <GradientBorder>
                 <input type="submit" value="Send" />
             </GradientBorder>
-            {isCorrectlySend === false && (
+            {showErrorNotif && (
                 <Notification
-                    dynamicRef={errorRef}
+                    dynamicId="email_error"
                     isOpen={true}
                     text="An error occured during the submission"
                     error={true}
                 />
             )}
-            {isCorrectlySend === true && (
+            {showSuccessNotif === true && (
                 <Notification
-                    dynamicRef={responseRef}
+                    dynamicId="email_success"
                     isOpen={true}
                     text="Your email has been send"
                     error={false}

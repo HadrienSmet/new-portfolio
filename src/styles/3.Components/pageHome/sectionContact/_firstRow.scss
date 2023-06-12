@@ -6,6 +6,9 @@
         &__future-picture {
             height: 150px;
             min-width: 150px;
+            span {
+                font-size: 50px;
+            }
         }
     }
 }
@@ -17,6 +20,9 @@
         &__future-picture {
             height: 130px;
             min-width: 130px;
+            span {
+                font-size: 40px;
+            }
         }
     }
 }
@@ -24,6 +30,9 @@
     .contact__future-picture {
         height: 90px;
         min-width: 90px;
+        span {
+            font-size: 30px;
+        }
     }
 }
 
@@ -68,5 +77,14 @@
         background-color: $clr-2;
         transform: translateX(-10%);
         opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            color: $clr-1;
+            font-family: "graff-fonts";
+            transform: translateY(60%);
+            opacity: 0;
+        }
     }
 }

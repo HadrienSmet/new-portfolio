@@ -1,3 +1,4 @@
+"use client";
 import { useMyNavigationContext } from "@/context/NavigationContext";
 import { usePathname } from "next/navigation";
 import {

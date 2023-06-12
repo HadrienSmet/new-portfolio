@@ -1,16 +1,22 @@
-"use client";
-
 import Header from "@/components/Header";
 import "../src/styles/index.scss";
-import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import NavigationContext from "@/context/NavigationContext";
 import Navigation from "@/components/Navigation";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Hadrien Smet",
+    title: "Hadrien Smet | Home",
     description:
-        "Hadrien Smet, fullstack junior developer enthousiast to the idea to tackle new challenges",
+        "Junior fullstack developer with a preference for JavaScript frameworks such as React and NextJS",
+    icons: [
+        {
+            rel: "shortcut icon",
+            type: "image/x-icon",
+            sizes: "48x48",
+            url: "/images/favicon.ico",
+        },
+    ],
 };
 
 export default function RootLayout({
@@ -20,15 +26,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <head>
-                <title>Hadrien Smet</title>
-                <meta
-                    name="description"
-                    content="Hadrien Smet, fullstack junior developer enthousiast to the idea to tackle new challenges"
-                />
-                <meta name="robots" content="index, follow"></meta>
-            </head>
-            <body suppressHydrationWarning={true}>
+            <body>
                 <NavigationContext>
                     <Header />
                     {children}

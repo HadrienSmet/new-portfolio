@@ -11,7 +11,10 @@ const FirstRow = () => {
                     <h2>Wants to work together?</h2>
                     <p>Get in touch with me via social media or mail</p>
                 </div>
-                <div className="contact__future-picture"></div>
+                <div className="contact__future-picture">
+                    <span>H</span>
+                    <span>S</span>
+                </div>
             </div>
             <div className="social-media-container">
                 <a href="https://github.com/HadrienSmet" target="_blank">

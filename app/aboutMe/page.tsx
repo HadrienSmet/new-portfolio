@@ -1,44 +1,22 @@
-"use client";
-import Image from "next/image";
-import splashInk from "../../public/images/ink-splash.jpg";
-import BackgroundLayout from "@/components/BackgroundLayout";
-import FirstSection from "@/components/pageAboutMe/firstSection/FirstSection";
-import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection";
-import { useEffect, useRef } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import AboutMePage from "@/components/pageAboutMe/AboutMePage";
+import { Metadata } from "next";
 
-const useAboutMePage = () => {
-    const titleRef = useRef<HTMLDivElement | null>(null);
-    const observer = useIntersectionObserver({
-        threshold: 0.2,
-        rootMargin: "0px",
-    });
-    useEffect(() => {
-        if (titleRef.current) observer?.observe(titleRef.current);
-    }, [titleRef, observer]);
-    return { titleRef };
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: `Hadrien Smet | About me`,
+        description:
+            "On this page you will discover more about my soft skills and my hobbies",
+        icons: [
+            {
+                rel: "shortcut icon",
+                type: "image/x-icon",
+                sizes: "48x48",
+                url: "/images/favicon.ico",
+            },
+        ],
+    };
+}
 
-const page = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { titleRef } = useAboutMePage();
-    return (
-        <>
-            <main className="about-me">
-                <BackgroundLayout>
-                    <Image
-                        height={2700}
-                        width={2700}
-                        alt="Splash of ink"
-                        src={splashInk}
-                    />
-                </BackgroundLayout>
-                <h1 ref={titleRef}>About me</h1>
-                <FirstSection />
-                <SecondSection />
-            </main>
-        </>
-    );
-};
-
-export default page;
+export default async function page() {
+    return <AboutMePage />;
+}
