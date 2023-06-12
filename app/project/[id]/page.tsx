@@ -1,6 +1,6 @@
-import { prisma } from "@/db/prisma";
 import PageProject from "@/components/pageProject/PageProject";
 import { Metadata } from "next";
+import { projectsData } from "@/data/projectsData";
 
 type Props = {
     params: { id: string };
@@ -8,9 +8,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const projectId = parseInt(params.id);
-    const project = await prisma.projects.findUnique({
-        where: { id: projectId },
-    });
+    const project = projectsData.find((project) => project.id === projectId);
     return {
         title: `Hadrien Smet | ${project?.name}`,
         description: project?.description,
@@ -27,9 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const Project = async ({ params }: Props) => {
     const projectId = parseInt(params.id);
-    const project = await prisma.projects.findUnique({
-        where: { id: projectId },
-    });
+    const project = projectsData.find((project) => project.id === projectId);
     return <>{project && <PageProject project={project} />}</>;
 };
 

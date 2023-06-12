@@ -38,7 +38,7 @@ const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
             <div className="online-projects-container">
                 {projects &&
                     projects
-                        .filter((project) => project.link !== null)
+                        .filter((project) => project.link !== undefined)
                         .sort((a, b) => b.id - a.id)
                         .map((project) => (
                             <OnlineProjectCard

@@ -7,6 +7,6 @@ export interface ProjectInterface {
     description: string;
     tools: string[];
     code_link: string;
-    code_server_link: string | null;
-    link: string | null;
+    code_server_link?: string | null;
+    link?: string | null;
 }

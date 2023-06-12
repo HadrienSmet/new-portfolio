@@ -1,8 +1,8 @@
 import HomePage from "@/components/pageHome/HomePage";
-import { prisma } from "@/db/prisma";
+import { projectsData } from "@/data/projectsData";
 
 export default async function Home() {
-    const projects = await prisma.projects.findMany();
+    const projects = projectsData;
 
     return <HomePage projects={projects} />;
 }

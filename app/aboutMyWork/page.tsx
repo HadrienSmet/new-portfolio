@@ -1,6 +1,6 @@
-import { prisma } from "@/db/prisma";
 import AboutMyWorkPage from "@/components/pageAboutMyWork/AboutMyWorkPage";
 import { Metadata } from "next";
+import { projectsData } from "@/data/projectsData";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -19,6 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function page() {
-    const projects = await prisma.projects.findMany();
+    const projects = projectsData;
     return <AboutMyWorkPage projects={projects} />;
 }
