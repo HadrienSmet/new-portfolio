@@ -31,6 +31,7 @@ const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
                         width={2700}
                         alt="Splash of ink"
                         src={splashInk}
+                        loading="lazy"
                     />
                 </BackgroundLayout>
                 <h1 ref={titleRef}>About my work</h1>

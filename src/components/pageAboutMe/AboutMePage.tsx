@@ -29,6 +29,7 @@ const AboutMePage = () => {
                     width={2700}
                     alt="Splash of ink"
                     src={splashInk}
+                    loading="lazy"
                 />
             </BackgroundLayout>
             <h1 ref={titleRef}>About me</h1>
