@@ -192,6 +192,7 @@ const Form = () => {
         <form ref={formRef} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form__name-division">
                 <input
+                    id="from_name"
                     value={state.name}
                     type="text"
                     name="from_name"
@@ -202,10 +203,13 @@ const Form = () => {
                         })
                     }
                 />
-                <label ref={nameLabelRef}>Name</label>
+                <label htmlFor="from_name" ref={nameLabelRef}>
+                    Name
+                </label>
             </div>
             <div className="contact__form__adress-division">
                 <input
+                    id="email_id"
                     value={state.mail}
                     type="email"
                     name="email_id"
@@ -216,10 +220,13 @@ const Form = () => {
                         })
                     }
                 />
-                <label ref={mailLabelRef}>Email</label>
+                <label htmlFor="email_id" ref={mailLabelRef}>
+                    Email
+                </label>
             </div>
             <div className="contact__form__mail-division">
                 <textarea
+                    id="message"
                     value={state.message}
                     name="message"
                     onChange={(e) =>
@@ -229,7 +236,9 @@ const Form = () => {
                         })
                     }
                 />
-                <label ref={textLabelRef}>Message</label>
+                <label htmlFor="message" ref={textLabelRef}>
+                    Message
+                </label>
             </div>
             <GradientBorder>
                 <input type="submit" value="Send" />

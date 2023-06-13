@@ -19,25 +19,25 @@ const SoftSkills = () => {
     return (
         <div className="about-me__soft-skills" ref={softSkillsRef}>
             <div className="progress" style={{ ["--i" as any]: 75 }}>
-                <h3>
+                <h2>
                     75<span>%</span>
-                </h3>
+                </h2>
                 <FaBook />
-                <h4>Learning</h4>
+                <h3>Learning</h3>
             </div>
             <div className="progress" style={{ ["--i" as any]: 72 }}>
-                <h3>
+                <h2>
                     72<span>%</span>
-                </h3>
+                </h2>
                 <FaMedapps />
-                <h4>Thinking</h4>
+                <h3>Thinking</h3>
             </div>
             <div className="progress" style={{ ["--i" as any]: 62 }}>
-                <h3>
+                <h2>
                     62<span>%</span>
-                </h3>
+                </h2>
                 <FaHandsHelping />
-                <h4>Inclusive</h4>
+                <h3>Inclusive</h3>
             </div>
             <a href="#perso">
                 How?

@@ -14,41 +14,30 @@ const Footer = () => {
                     target="_blank"
                     id="footer-linkedin"
                     className="footer__link-container"
+                    aria-label="Link to my linkedIn"
                 >
-                    <FaLinkedin
-                        className="active"
-                        aria-label="Link to my linkedIn"
-                    />
-                    <FaLinkedin aria-label="Link to my linkedIn" />
+                    <FaLinkedin className="active" />
+                    <FaLinkedin />
                 </a>
                 <a
                     href="https://github.com/HadrienSmet"
                     target="_blank"
-                    id="footer-linkedin"
+                    id="footer-github"
                     className="footer__link-container"
+                    aria-label="Link to my github"
                 >
-                    <SvgGithub
-                        dynamicClass="active"
-                        color="#0076b2"
-                        aria-label="Link to my linkedIn"
-                    />
-                    <SvgGithub
-                        dynamicClass=""
-                        color="#fff"
-                        aria-label="Link to my linkedIn"
-                    />
+                    <SvgGithub dynamicClass="active" color="#0076b2" />
+                    <SvgGithub dynamicClass="" color="#fff" />
                 </a>
                 <a
                     href="mailto:hadriensmet96@gmail.com"
                     target="_blank"
                     id="footer-mail"
                     className="footer__link-container"
+                    aria-label="Send me a mail from you mailbox"
                 >
-                    <FaRegEnvelope
-                        className="active"
-                        aria-label="Send me a mail from you mailbox"
-                    />
-                    <FaRegEnvelope aria-label="Send me a mail from you mailbox" />
+                    <FaRegEnvelope className="active" />
+                    <FaRegEnvelope />
                 </a>
             </div>
         </footer>

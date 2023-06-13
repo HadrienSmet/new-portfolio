@@ -5,7 +5,7 @@ import Work from "./sectionWork/Work";
 import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
 import BackgroundLayout from "../BackgroundLayout";
 import Image from "next/image";
-import splashInk from "../../../public/images/ink-splash.jpg";
+import splashInk from "../../../public/images/ink-splash.webp";
 
 const HomePage = ({ projects }: ProjectsAsProps) => {
     return (

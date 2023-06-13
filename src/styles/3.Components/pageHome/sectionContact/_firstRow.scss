@@ -65,7 +65,8 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
-        p {
+        h3 {
+            font-family: "main-fonts";
             font-size: clamp(1em, 1.8vw, 2em);
             color: $clr-2-op7;
             transform: translateY(-10%);
@@ -81,6 +82,7 @@
         justify-content: center;
         align-items: center;
         span {
+            cursor: default;
             color: $clr-1;
             font-family: "graff-fonts";
             transform: translateY(60%);

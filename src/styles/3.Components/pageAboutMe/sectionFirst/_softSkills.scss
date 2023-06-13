@@ -38,7 +38,7 @@
             &::after {
                 background-color: $clr-2;
             }
-            h3 {
+            h2 {
                 color: $clr-3;
             }
         }
@@ -58,7 +58,7 @@
             &::after {
                 inset: 10px;
             }
-            h4 {
+            h3 {
                 top: 56%;
             }
         }
@@ -76,7 +76,7 @@
             svg {
                 display: none;
             }
-            h4 {
+            h3 {
                 top: 68%;
                 font-size: 0.8em;
             }
@@ -114,7 +114,7 @@
             position: absolute;
             border-radius: 50%;
         }
-        h3 {
+        h2 {
             position: absolute;
             font-family: "main-fonts";
             top: 40%;
@@ -133,7 +133,7 @@
             transform: translate(-50%, -50%);
             z-index: 1;
         }
-        h4 {
+        h3 {
             font-family: "main-fonts";
             position: absolute;
             left: 50%;

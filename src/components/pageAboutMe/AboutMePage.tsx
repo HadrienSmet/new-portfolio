@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import splashInk from "../../../public/images/ink-splash.jpg";
+import splashInk from "../../../public/images/ink-splash.webp";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import FirstSection from "@/components/pageAboutMe/firstSection/FirstSection";
 import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection";

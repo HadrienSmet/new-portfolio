@@ -32,7 +32,7 @@ const ProjectCard = ({ project }: ProjectAsProps) => {
                         <li key={`tool-${i}`}>{tool}</li>
                     ))}
                 </ul>
-                <a href={`/project/${project.id}`}>more</a>
+                <a href={`/project/${project.id}`}>See details</a>
             </div>
         </div>
     );

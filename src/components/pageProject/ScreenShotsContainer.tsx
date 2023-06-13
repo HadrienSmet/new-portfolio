@@ -10,7 +10,7 @@ const ScreenShotsContainer = ({ project }: ProjectAsProps) => {
                     onClick={() => window.open("/images/" + img, "_blank")}
                     priority
                     src={"/images/" + img}
-                    alt={"Screenshoot du projet " + project.name}
+                    alt={`Screenshoot number ${i} of ${project.name}`}
                     width={256}
                     height={124}
                 />

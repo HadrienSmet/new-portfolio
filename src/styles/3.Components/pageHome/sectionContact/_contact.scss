@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../../../../../public/images/grunge-pattern.jpg)
+    background: url(../../../../../public/images/grunge-pattern.webp)
         center/cover;
     &__content {
         border-radius: 25px;
@@ -57,7 +57,7 @@
                     h2 {
                         animation: appearFromLeft 0.3s ease-out 0.28s forwards;
                     }
-                    p {
+                    h3 {
                         animation: appearFromLeft 0.3s ease-out 0.38s forwards;
                     }
                 }

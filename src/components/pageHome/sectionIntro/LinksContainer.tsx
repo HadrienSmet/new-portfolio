@@ -36,18 +36,27 @@ const LinksContainer = () => {
             </em>
             <div className="links-container-buttons">
                 <div className="icons">
-                    <a href="https://github.com/HadrienSmet" target="_blank">
+                    <a
+                        aria-label="Link to my Github"
+                        href="https://github.com/HadrienSmet"
+                        target="_blank"
+                    >
                         <span className="link-border"></span>
                         <GithubSVG color="#000" />
                     </a>
                     <a
+                        aria-label="Link to my linkedIn"
                         href="https://www.linkedin.com/in/hadrien-smet-b80022207/"
                         target="_blank"
                     >
                         <span className="link-border"></span>
                         <LinkedInSVG />
                     </a>
-                    <a href="mailto:hadriensmet96@gmail.com" target="_blank">
+                    <a
+                        aria-label="Link to send me a mail"
+                        href="mailto:hadriensmet96@gmail.com"
+                        target="_blank"
+                    >
                         <span className="link-border"></span>
                         <FaRegEnvelope />
                     </a>

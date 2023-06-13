@@ -119,7 +119,7 @@ const Header = () => {
     const { pageNav } = useHeader();
     return (
         <header ref={headerRef}>
-            <h1>Hadri</h1>
+            <span>Hadri</span>
             {pageNav && pageNav}
             <button
                 ref={buttonRef}

@@ -5,7 +5,7 @@ import PageProjectDetails from "./PageProjectDetails";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import BackgroundLayout from "../BackgroundLayout";
 import Image from "next/image";
-import splashInk from "../../../public/images/ink-splash.jpg";
+import splashInk from "../../../public/images/ink-splash.webp";
 import { ProjectAsProps } from "../../../types/ProjectAsProps";
 import { ProjectInterface } from "@/interfaces/Project";
 import ButtonsContainer from "./ButtonsContainer";

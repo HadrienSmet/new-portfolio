@@ -2,16 +2,17 @@ import Image from "next/image";
 
 type HobbyImgPropsType = {
     url: string;
+    index: number;
     active: boolean;
     x: number;
     y: number;
 };
-const HobbyImage = ({ url, active, x, y }: HobbyImgPropsType) => {
+const HobbyImage = ({ url, index, active, x, y }: HobbyImgPropsType) => {
     return (
         <Image
             className={active ? "is-active" : ""}
             src={"/images/" + url}
-            alt="Picture of my hobby"
+            alt={`Picture of my ${index}th hobby`}
             width={400}
             height={400}
             style={{

@@ -19,7 +19,7 @@ export const hobbiesData: HobbiesDataType = [
         mediaUrl: "hobby-coding.webp",
     },
     {
-        mediaUrl: "hobby-learning.png",
+        mediaUrl: "hobby-learn.webp",
     },
     {
         mediaUrl: "hobby-philo.webp",
@@ -53,7 +53,7 @@ export const mobileHobbies: MobileHobbiesData = [
         text: "Coding",
     },
     {
-        mediaUrl: "hobby-learning.png",
+        mediaUrl: "hobby-learn.webp",
         text: "Learning new things",
     },
     {

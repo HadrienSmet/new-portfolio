@@ -87,6 +87,7 @@ const Hobbies = () => {
                         return (
                             <HobbyImage
                                 key={index}
+                                index={index}
                                 url={mediaUrl}
                                 active={isActive}
                                 x={posX}

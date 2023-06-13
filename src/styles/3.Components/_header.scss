@@ -42,8 +42,8 @@ header {
     &:hover {
         background-color: $clr-2;
     }
-    h1 {
-        cursor: pointer;
+    span {
+        cursor: default;
         font-family: "graff-fonts";
         font-size: 1em;
         color: $clr-1;

@@ -4,7 +4,7 @@ import BackgroundLayout from "../BackgroundLayout";
 import Tools from "./Tools";
 import Projects from "./sectionProjects/Projects";
 import Image from "next/image";
-import splashInk from "../../../public/images/ink-splash.jpg";
+import splashInk from "../../../public/images/ink-splash.webp";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
 
