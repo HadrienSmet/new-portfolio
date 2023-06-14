@@ -28,7 +28,6 @@ export const useProjectOnMouseMove = () => {
             const rect = imgRef.current?.getBoundingClientRect();
             if (rect) {
                 const index = imgRef.current?.id.split("-")[1];
-                console.log(index);
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const ratioX = -(x / rect.width) * 40 + 20;
