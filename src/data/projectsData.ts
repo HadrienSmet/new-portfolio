@@ -5,7 +5,7 @@ export const projectsData: ProjectInterface[] = [
         id: 0,
         name: "Booki - First project for OpenClassrooms",
         image_link: "booki-square.webp",
-        images: ["booki.webp", "booki-mobile.webp", "booki-pad.webp"],
+        images: ["booki-home.webp", "booki-mobile.webp", "booki-pad.webp"],
         legends: ["Desktop version", "Mobile version", "Pad version"],
         description:
             "The goal of this project was to teach us how to integrate a basic template only using HTML and CSS. So we learned how to improve our workflow and wich details required most attention.",
