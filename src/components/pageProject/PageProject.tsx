@@ -34,10 +34,10 @@ const handleTitle = (project: ProjectInterface) => {
     }
     return { mainTitle, detailsTitle };
 };
-
 const PageProject = ({ project }: ProjectAsProps) => {
     const { titleRef } = usePageOnScroll();
     const { mainTitle, detailsTitle } = handleTitle(project);
+    // if (project.id === undefined) throw Error("This project does not exist");
     return (
         <main className="project-page">
             <BackgroundLayout>

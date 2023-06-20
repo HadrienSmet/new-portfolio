@@ -6,9 +6,14 @@ type Props = {
     params: { id: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const projectId = parseInt(params.id);
+const getRightProject = (id: string) => {
+    const projectId = parseInt(id);
     const project = projectsData.find((project) => project.id === projectId);
+    return project;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const project = getRightProject(params.id);
     return {
         title: `Hadrien Smet | ${project?.name}`,
         description: project?.description,
@@ -24,8 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const Project = async ({ params }: Props) => {
-    const projectId = parseInt(params.id);
-    const project = projectsData.find((project) => project.id === projectId);
+    const project = getRightProject(params.id);
+    if (project === undefined) throw Error("This project does not exist");
     return <>{project && <PageProject project={project} />}</>;
 };
 
