@@ -4,7 +4,7 @@ import splashInk from "../../../public/images/ink-splash.webp";
 import BackgroundLayout from "@/components/BackgroundLayout";
 import FirstSection from "@/components/pageAboutMe/firstSection/FirstSection";
 import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const useAboutMePage = () => {
@@ -22,20 +22,22 @@ const useAboutMePage = () => {
 const AboutMePage = () => {
     const { titleRef } = useAboutMePage();
     return (
-        <main className="about-me">
-            <BackgroundLayout>
-                <Image
-                    height={2700}
-                    width={2700}
-                    alt="Splash of ink"
-                    src={splashInk}
-                    loading="lazy"
-                />
-            </BackgroundLayout>
-            <h1 ref={titleRef}>About me</h1>
-            <FirstSection />
-            <SecondSection />
-        </main>
+        <Suspense fallback={<p>Loading...</p>}>
+            <main className="about-me">
+                <BackgroundLayout>
+                    <Image
+                        height={2700}
+                        width={2700}
+                        alt="Splash of ink"
+                        src={splashInk}
+                        loading="lazy"
+                    />
+                </BackgroundLayout>
+                <h1 ref={titleRef}>About me</h1>
+                <FirstSection />
+                <SecondSection />
+            </main>
+        </Suspense>
     );
 };
 

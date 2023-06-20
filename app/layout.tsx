@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import NavigationContext from "@/context/NavigationContext";
 import Navigation from "@/components/Navigation";
 import { Metadata } from "next";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
     title: "Hadrien Smet | Home",
@@ -29,7 +31,7 @@ export default function RootLayout({
             <body>
                 <NavigationContext>
                     <Header />
-                    {children}
+                    <Suspense fallback={<Loading />}>{children}</Suspense>
                     <Navigation />
                     <Footer />
                     <div id="portal"></div>

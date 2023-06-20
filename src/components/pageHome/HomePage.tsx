@@ -6,24 +6,27 @@ import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
 import BackgroundLayout from "../BackgroundLayout";
 import Image from "next/image";
 import splashInk from "../../../public/images/ink-splash.webp";
+import { Suspense } from "react";
 
 const HomePage = ({ projects }: ProjectsAsProps) => {
     return (
-        <main className="home-page">
-            <BackgroundLayout>
-                <Image
-                    height={2700}
-                    width={2700}
-                    alt="Splash of ink"
-                    src={splashInk}
-                    loading="lazy"
-                />
-            </BackgroundLayout>
-            <Intro />
-            <Work projects={projects} />
-            <About />
-            <Contact />
-        </main>
+        <Suspense fallback={<p>Loading...</p>}>
+            <main className="home-page">
+                <BackgroundLayout>
+                    <Image
+                        height={2700}
+                        width={2700}
+                        alt="Splash of ink"
+                        src={splashInk}
+                        loading="lazy"
+                    />
+                </BackgroundLayout>
+                <Intro />
+                <Work projects={projects} />
+                <About />
+                <Contact />
+            </main>
+        </Suspense>
     );
 };
 

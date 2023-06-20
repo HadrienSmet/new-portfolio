@@ -7,8 +7,7 @@ type Props = {
 };
 
 const getRightProject = (id: string) => {
-    const projectId = parseInt(id);
-    const project = projectsData.find((project) => project.id === projectId);
+    const project = projectsData.find((project) => project.id === parseInt(id));
     return project;
 };
 

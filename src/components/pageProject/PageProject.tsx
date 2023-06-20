@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Suspense } from "react";
 import ScreenShotsContainer from "./ScreenShotsContainer";
 import PageProjectDetails from "./PageProjectDetails";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -48,15 +48,17 @@ const PageProject = ({ project }: ProjectAsProps) => {
                     src={splashInk}
                 />
             </BackgroundLayout>
-            <h1 ref={titleRef}>
-                {mainTitle} <br />
-                <span>{detailsTitle}</span>
-            </h1>
-            <section className="project-page__content">
-                {project && <ScreenShotsContainer project={project} />}
-                {project && <PageProjectDetails project={project} />}
-            </section>
-            <ButtonsContainer project={project} />
+            <Suspense fallback={<p>Loading...</p>}>
+                <h1 ref={titleRef}>
+                    {mainTitle} <br />
+                    <span>{detailsTitle}</span>
+                </h1>
+                <section className="project-page__content">
+                    {project && <ScreenShotsContainer project={project} />}
+                    {project && <PageProjectDetails project={project} />}
+                </section>
+                <ButtonsContainer project={project} />
+            </Suspense>
         </main>
     );
 };

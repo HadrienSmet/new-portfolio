@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import BackgroundLayout from "../BackgroundLayout";
 import Tools from "./Tools";
 import Projects from "./sectionProjects/Projects";
@@ -23,7 +23,7 @@ const useTitleOnScroll = () => {
 const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
     const { titleRef } = useTitleOnScroll();
     return (
-        <>
+        <Suspense fallback={<p>Loading...</p>}>
             <main className="about-my-work">
                 <BackgroundLayout>
                     <Image
@@ -38,7 +38,7 @@ const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
                 <Tools />
                 <Projects projects={projects} />
             </main>
-        </>
+        </Suspense>
     );
 };
 
