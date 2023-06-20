@@ -6,6 +6,7 @@ import FirstSection from "@/components/pageAboutMe/firstSection/FirstSection";
 import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection";
 import { Suspense, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import LoadingLayout from "../LoadingLayout";
 
 const useAboutMePage = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +23,7 @@ const useAboutMePage = () => {
 const AboutMePage = () => {
     const { titleRef } = useAboutMePage();
     return (
-        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
+        <Suspense fallback={<LoadingLayout />}>
             <main className="about-me">
                 <BackgroundLayout>
                     <Image

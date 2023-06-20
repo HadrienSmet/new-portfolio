@@ -1,7 +1,8 @@
+import LoadingLayout from "@/components/LoadingLayout";
 import React from "react";
 
 const Loading = () => {
-    return <div className="loading-layout">Loading...</div>;
+    return <LoadingLayout />;
 };
 
 export default Loading;

@@ -9,6 +9,7 @@ import splashInk from "../../../public/images/ink-splash.webp";
 import { ProjectInterface } from "@/interfaces/Project";
 import ButtonsContainer from "./ButtonsContainer";
 import { projectsData } from "@/data/projectsData";
+import LoadingLayout from "../LoadingLayout";
 
 type PropsType = {
     projectId: string;
@@ -48,9 +49,7 @@ const PageProject = ({ projectId }: PropsType) => {
     if (project === undefined) throw Error("This project does not exist");
     return (
         <main className="project-page">
-            <Suspense
-                fallback={<div className="loading-layout">Loading...</div>}
-            >
+            <Suspense fallback={<LoadingLayout />}>
                 <BackgroundLayout>
                     <Image
                         height={2700}

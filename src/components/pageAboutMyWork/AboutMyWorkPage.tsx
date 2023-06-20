@@ -7,6 +7,7 @@ import Image from "next/image";
 import splashInk from "../../../public/images/ink-splash.webp";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
+import LoadingLayout from "../LoadingLayout";
 
 const useTitleOnScroll = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -23,7 +24,7 @@ const useTitleOnScroll = () => {
 const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
     const { titleRef } = useTitleOnScroll();
     return (
-        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
+        <Suspense fallback={<LoadingLayout />}>
             <main className="about-my-work">
                 <BackgroundLayout>
                     <Image

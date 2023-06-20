@@ -7,10 +7,11 @@ import BackgroundLayout from "../BackgroundLayout";
 import Image from "next/image";
 import splashInk from "../../../public/images/ink-splash.webp";
 import { Suspense } from "react";
+import LoadingLayout from "../LoadingLayout";
 
 const HomePage = ({ projects }: ProjectsAsProps) => {
     return (
-        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
+        <Suspense fallback={<LoadingLayout />}>
             <main className="home-page">
                 <BackgroundLayout>
                     <Image
