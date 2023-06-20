@@ -10,7 +10,7 @@ import { Suspense } from "react";
 
 const HomePage = ({ projects }: ProjectsAsProps) => {
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
             <main className="home-page">
                 <BackgroundLayout>
                     <Image

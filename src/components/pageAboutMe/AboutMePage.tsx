@@ -22,7 +22,7 @@ const useAboutMePage = () => {
 const AboutMePage = () => {
     const { titleRef } = useAboutMePage();
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
             <main className="about-me">
                 <BackgroundLayout>
                     <Image

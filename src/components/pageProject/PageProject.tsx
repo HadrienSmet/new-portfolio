@@ -6,9 +6,13 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import BackgroundLayout from "../BackgroundLayout";
 import Image from "next/image";
 import splashInk from "../../../public/images/ink-splash.webp";
-import { ProjectAsProps } from "../../../types/ProjectAsProps";
 import { ProjectInterface } from "@/interfaces/Project";
 import ButtonsContainer from "./ButtonsContainer";
+import { projectsData } from "@/data/projectsData";
+
+type PropsType = {
+    projectId: string;
+};
 
 const usePageOnScroll = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -34,21 +38,27 @@ const handleTitle = (project: ProjectInterface) => {
     }
     return { mainTitle, detailsTitle };
 };
-const PageProject = ({ project }: ProjectAsProps) => {
+
+const PageProject = ({ projectId }: PropsType) => {
+    const project = projectsData.find(
+        (project) => project.id === parseInt(projectId)
+    );
     const { titleRef } = usePageOnScroll();
-    const { mainTitle, detailsTitle } = handleTitle(project);
-    // if (project.id === undefined) throw Error("This project does not exist");
+    const { mainTitle, detailsTitle } = handleTitle(project!);
+    if (project === undefined) throw Error("This project does not exist");
     return (
         <main className="project-page">
-            <BackgroundLayout>
-                <Image
-                    height={2700}
-                    width={2700}
-                    alt="Splash of ink"
-                    src={splashInk}
-                />
-            </BackgroundLayout>
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense
+                fallback={<div className="loading-layout">Loading...</div>}
+            >
+                <BackgroundLayout>
+                    <Image
+                        height={2700}
+                        width={2700}
+                        alt="Splash of ink"
+                        src={splashInk}
+                    />
+                </BackgroundLayout>
                 <h1 ref={titleRef}>
                     {mainTitle} <br />
                     <span>{detailsTitle}</span>
@@ -57,7 +67,7 @@ const PageProject = ({ project }: ProjectAsProps) => {
                     {project && <ScreenShotsContainer project={project} />}
                     {project && <PageProjectDetails project={project} />}
                 </section>
-                <ButtonsContainer project={project} />
+                <ButtonsContainer project={project!} />
             </Suspense>
         </main>
     );

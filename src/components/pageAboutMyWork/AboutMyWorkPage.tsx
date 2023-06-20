@@ -23,7 +23,7 @@ const useTitleOnScroll = () => {
 const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
     const { titleRef } = useTitleOnScroll();
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<div className="loading-layout">Loading...</div>}>
             <main className="about-my-work">
                 <BackgroundLayout>
                     <Image
