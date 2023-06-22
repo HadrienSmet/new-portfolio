@@ -1,3 +1,4 @@
+import { poppins, rockSalt } from "../../../../assets/fonts";
 import SvgFacebook from "../../../../assets/svg/SvgFacebook";
 import SvgGithub from "../../../../assets/svg/SvgGithub";
 import SvgLinkedIn from "../../../../assets/svg/SvgLinkedIn";
@@ -8,10 +9,14 @@ const FirstRow = () => {
         <div className="contact__first-section">
             <div className="contact__first-row">
                 <div className="contact__title-container">
-                    <h2>Wants to work together?</h2>
+                    <h2 className={poppins.className}>
+                        Wants to work together?
+                    </h2>
                     <h3>Get in touch with me via social media or mail</h3>
                 </div>
-                <div className="contact__future-picture">
+                <div
+                    className={"contact__future-picture " + rockSalt.className}
+                >
                     <span>H</span>
                     <span>S</span>
                 </div>

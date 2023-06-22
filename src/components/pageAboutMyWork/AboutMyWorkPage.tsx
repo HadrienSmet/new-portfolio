@@ -8,6 +8,7 @@ import splashInk from "../../../public/images/ink-splash.webp";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
 import LoadingLayout from "../LoadingLayout";
+import { poppins } from "../../../assets/fonts";
 
 const useTitleOnScroll = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -35,7 +36,9 @@ const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
                         loading="lazy"
                     />
                 </BackgroundLayout>
-                <h1 ref={titleRef}>About my work</h1>
+                <h1 className={poppins.className} ref={titleRef}>
+                    About my work
+                </h1>
                 <Tools />
                 <Projects projects={projects} />
             </main>

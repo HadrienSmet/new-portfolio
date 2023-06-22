@@ -1,4 +1,5 @@
 import { MouseEvent, useRef, useEffect } from "react";
+import { rockSalt } from "../../../../../assets/fonts";
 
 type HobbyPropsType = {
     text: string;
@@ -43,7 +44,7 @@ const Hobby = ({
     return (
         <li
             ref={hobbyRef}
-            className="hobby"
+            className={"hobby " + rockSalt.className}
             id={`hobby-${index}`}
             onMouseEnter={handleActiveIndex}
             onMouseLeave={resetActiveIndex}

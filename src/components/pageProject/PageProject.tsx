@@ -10,6 +10,7 @@ import { ProjectInterface } from "@/interfaces/Project";
 import ButtonsContainer from "./ButtonsContainer";
 import { projectsData } from "@/data/projectsData";
 import LoadingLayout from "../LoadingLayout";
+import { poppins } from "../../../assets/fonts";
 
 type PropsType = {
     projectId: string;
@@ -58,7 +59,7 @@ const PageProject = ({ projectId }: PropsType) => {
                         src={splashInk}
                     />
                 </BackgroundLayout>
-                <h1 ref={titleRef}>
+                <h1 ref={titleRef} className={poppins.className}>
                     {mainTitle} <br />
                     <span>{detailsTitle}</span>
                 </h1>

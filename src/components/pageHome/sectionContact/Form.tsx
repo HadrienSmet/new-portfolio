@@ -9,6 +9,7 @@ import {
     useEffect,
     useReducer,
 } from "react";
+import { poppins } from "../../../../assets/fonts";
 
 interface State {
     name: string;
@@ -241,7 +242,11 @@ const Form = () => {
                 </label>
             </div>
             <GradientBorder>
-                <input type="submit" value="Send" />
+                <input
+                    className={poppins.className}
+                    type="submit"
+                    value="Send"
+                />
             </GradientBorder>
             {showErrorNotif && (
                 <Notification

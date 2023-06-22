@@ -1,6 +1,6 @@
 "use client"; // Error components must be Client Components
 
-import GradientBorder from "@/components/ui/GradientBorder";
+import ErrorLayout from "@/components/ErrorLayout";
 import { useEffect } from "react";
 
 export default function Error({
@@ -15,23 +15,5 @@ export default function Error({
         console.error(error);
     }, [error]);
 
-    return (
-        <div className="error-layout">
-            <div className="error-layout">
-                <h1>Oops !</h1>
-                <h2>Something went wrong on the project page!</h2>
-                <p>{error.message}</p>
-                <GradientBorder>
-                    <button
-                        onClick={
-                            // Attempt to recover by trying to re-render the segment
-                            () => reset()
-                        }
-                    >
-                        Try again
-                    </button>
-                </GradientBorder>
-            </div>
-        </div>
-    );
+    return <ErrorLayout error={error} reset={reset} />;
 }

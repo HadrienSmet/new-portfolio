@@ -67,7 +67,6 @@
         position: relative;
         z-index: 1;
         text-align: center;
-        font-family: "black-fonts";
         text-transform: uppercase;
         color: transparent;
         opacity: 0;
@@ -79,7 +78,6 @@
         }
     }
     h2 {
-        font-family: "black-fonts";
         text-transform: uppercase;
         color: $clr-2-op8;
         font-size: 2em;

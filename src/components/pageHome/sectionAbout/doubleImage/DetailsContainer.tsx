@@ -3,6 +3,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { poppins } from "../../../../../assets/fonts";
 
 const useCurrentSize = () => {
     const [screenWidth, setScreenWidth] = useState<number | undefined>(
@@ -75,14 +76,14 @@ const DetailsContainer = () => {
                 ref={myWorkRef}
                 className="details-about-my-work"
             >
-                <h3 data-text="More about my work">More about my work</h3>
+                <h3 className={poppins.className}>More about my work</h3>
                 <ul>
                     <li>All my projects</li>
                     <li>The tools I use</li>
                 </ul>
             </Link>
             <Link href={"/aboutMe"} ref={myRef} className="details-about-me">
-                <h3 data-text="More about me">More about me</h3>
+                <h3 className={poppins.className}>More about me</h3>
                 <ul>
                     <li>Soft skills</li>
                     <li>Some pictures</li>

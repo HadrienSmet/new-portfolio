@@ -9,6 +9,7 @@ import SvgSocketIO from "../../../assets/svg/SvgSocketIO";
 import SvgTypeScript from "../../../assets/svg/SvgTypeScript";
 import { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { poppins } from "../../../assets/fonts";
 
 const useToolsOnScroll = () => {
     const toolsRef = useRef<HTMLDivElement | null>(null);
@@ -26,7 +27,7 @@ const Tools = () => {
     const { toolsRef } = useToolsOnScroll();
     return (
         <section id="stacks" className="section-tools" ref={toolsRef}>
-            <h2>Stacks</h2>
+            <h2 className={poppins.className}>Stacks</h2>
             <div className="tools-container">
                 <SvgSass />
                 <SvgTypeScript />

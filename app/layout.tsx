@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { inter } from "../assets/fonts";
 
 export const metadata: Metadata = {
     title: "Hadrien Smet | Home",
@@ -28,7 +29,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
+            <body className={inter.className}>
                 <NavigationContext>
                     <Header />
                     <Suspense fallback={<Loading />}>{children}</Suspense>

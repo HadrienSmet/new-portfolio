@@ -44,7 +44,6 @@ header {
     }
     span {
         cursor: default;
-        font-family: "graff-fonts";
         font-size: 1em;
         color: $clr-1;
     }
@@ -52,7 +51,6 @@ header {
         justify-content: space-around;
         width: 40vw;
         a {
-            font-family: "main-fonts";
             color: $clr-1;
             text-transform: uppercase;
             letter-spacing: 2px;
