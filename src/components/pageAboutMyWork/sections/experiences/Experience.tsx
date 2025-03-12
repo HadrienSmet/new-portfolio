@@ -4,6 +4,10 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 export type ExperienceProps = {
     readonly company: string;
     readonly description: string;
+    readonly period: {
+        readonly from: string;
+        readonly to: string;
+    };
     readonly stacks: Array<string>;
     readonly title: string;
 };
@@ -21,6 +25,10 @@ export const Experience = (props: ExperienceProps) => {
             </div>
             {isExpanded && (
                 <div className="experience-content">
+                    <div className="experience-row">
+                        <p>Period</p>
+                        <p>From {props.period.from.toLocaleLowerCase()} to {props.period.to.toLocaleLowerCase()}.</p>
+                    </div>
                     <div className="experience-row">
                         <p>Title</p>
                         <p>{props.title}</p>
