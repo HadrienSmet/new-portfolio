@@ -1,15 +1,18 @@
-import SvgReact from "../../../assets/svg/SvgReact";
-import SvgNextJS from "../../../assets/svg/SvgNextJS";
-import SvgSass from "../../../assets/svg/SvgSass";
-import SvgNodeJS from "../../../assets/svg/SvgNodeJS";
-import SvgExpress from "../../../assets/svg/SvgExpress";
-import SvgMongoDB from "../../../assets/svg/SvgMongoDB";
-import SvgPostgreSQL from "../../../assets/svg/SvgPostgreSQL";
-import SvgSocketIO from "../../../assets/svg/SvgSocketIO";
-import SvgTypeScript from "../../../assets/svg/SvgTypeScript";
 import { useEffect, useRef } from "react";
+
+import { poppins } from "../../../../assets/fonts";
+import SvgReact from "../../../../assets/svg/SvgReact";
+import SvgNextJS from "../../../../assets/svg/SvgNextJS";
+import SvgSass from "../../../../assets/svg/SvgSass";
+import SvgNodeJS from "../../../../assets/svg/SvgNodeJS";
+import SvgExpress from "../../../../assets/svg/SvgExpress";
+import SvgMongoDB from "../../../../assets/svg/SvgMongoDB";
+import SvgPostgreSQL from "../../../../assets/svg/SvgPostgreSQL";
+import SvgSocketIO from "../../../../assets/svg/SvgSocketIO";
+import SvgTypeScript from "../../../../assets/svg/SvgTypeScript";
+import { SvgAws, SvgDocker} from "../../../../assets";
+
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { poppins } from "../../../assets/fonts";
 
 const useToolsOnScroll = () => {
     const toolsRef = useRef<HTMLDivElement | null>(null);
@@ -23,7 +26,7 @@ const useToolsOnScroll = () => {
     return { toolsRef };
 };
 
-const Tools = () => {
+export const Tools = () => {
     const { toolsRef } = useToolsOnScroll();
     return (
         <section id="stacks" className="section-tools" ref={toolsRef}>
@@ -38,9 +41,9 @@ const Tools = () => {
                 <SvgSocketIO />
                 <SvgMongoDB />
                 <SvgPostgreSQL />
+                <SvgAws />
+                <SvgDocker />
             </div>
         </section>
     );
 };
-
-export default Tools;

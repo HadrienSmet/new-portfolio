@@ -9,6 +9,8 @@ import SvgExpress from "../../../../assets/svg/SvgExpress";
 import SvgSocketIO from "../../../../assets/svg/SvgSocketIO";
 import SvgMongoDB from "../../../../assets/svg/SvgMongoDB";
 import SvgPostgreSQL from "../../../../assets/svg/SvgPostgreSQL";
+import { SvgAws, SvgDocker} from "../../../../assets";
+
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const useStacksContainer = () => {
@@ -37,6 +39,8 @@ const StacksContainer = () => {
             <SvgSocketIO />
             <SvgMongoDB />
             <SvgPostgreSQL />
+            <SvgAws />
+            <SvgDocker />
         </div>
     );
 };

@@ -1,14 +1,17 @@
 "use client";
 import { Suspense, useEffect, useRef } from "react";
-import BackgroundLayout from "../BackgroundLayout";
-import Tools from "./Tools";
-import Projects from "./sectionProjects/Projects";
 import Image from "next/image";
-import splashInk from "../../../public/images/ink-splash.webp";
+
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
-import LoadingLayout from "../LoadingLayout";
+
 import { poppins } from "../../../assets/fonts";
+import splashInk from "../../../public/images/ink-splash.webp";
+import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
+
+import BackgroundLayout from "../BackgroundLayout";
+import LoadingLayout from "../LoadingLayout";
+
+import { Experiences, Projects, Tools } from "./sections";
 
 const useTitleOnScroll = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -24,6 +27,7 @@ const useTitleOnScroll = () => {
 
 const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
     const { titleRef } = useTitleOnScroll();
+
     return (
         <Suspense fallback={<LoadingLayout />}>
             <main className="about-my-work">
@@ -40,6 +44,7 @@ const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
                     About my work
                 </h1>
                 <Tools />
+                <Experiences />
                 <Projects projects={projects} />
             </main>
         </Suspense>
