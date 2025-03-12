@@ -16,7 +16,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 const useStacksContainer = () => {
     const stacksContainerRef = useRef<HTMLDivElement | null>(null);
     const observer = useIntersectionObserver({
-        threshold: 1,
+        threshold: 0.3,
         rootMargin: "0px",
     });
     useEffect(() => {
