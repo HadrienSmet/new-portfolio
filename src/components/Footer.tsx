@@ -1,6 +1,8 @@
 "use client";
-import { handleScrollToTop } from "@/utils/handleScrolltoTop";
 import { FaAngleDoubleUp, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
+
+import { handleScrollToTop } from "@/utils/handleScrolltoTop";
+
 import SvgGithub from "../../assets/svg/SvgGithub";
 import { rockSalt } from "../../assets/fonts";
 
