@@ -2,6 +2,17 @@ import { useRef, useEffect } from "react";
 import { ProjectAsProps } from "../../../types/ProjectAsProps";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
+const usePreviewOnScroll = () => {
+    const prevRef = useRef<HTMLParagraphElement | null>(null);
+    const observer = useIntersectionObserver({
+        threshold: 0.1,
+        rootMargin: "0px",
+    });
+    useEffect(() => {
+        if (prevRef.current) observer?.observe(prevRef.current);
+    }, [prevRef, observer]);
+    return { prevRef };
+};
 const useTextOnScroll = () => {
     const textRef = useRef<HTMLParagraphElement | null>(null);
     const observer = useIntersectionObserver({
@@ -26,11 +37,14 @@ const useToolsOnScroll = () => {
 };
 
 const PageProjectDetails = ({ project }: ProjectAsProps) => {
+    const { prevRef } = usePreviewOnScroll();
     const { textRef } = useTextOnScroll();
     const { toolsRef } = useToolsOnScroll();
+
     return (
         <div className="project-page__details">
             <p ref={textRef}>{project.description}</p>
+            {project.coming_soon && (<p ref={prevRef}>{project.coming_soon}</p>)}
             <ul className="tools-used" ref={toolsRef}>
                 {project.tools.map((tool) => (
                     <li key={tool}>{tool}</li>
