@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ProjectsAsProps } from "../../../../types/ProjectsAsProps";
-import { poppins } from "../../../../assets/fonts";
 
 const useProjectsOnScroll = () => {
     const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -20,7 +19,7 @@ const Projects = ({ projects }: ProjectsAsProps) => {
     const { projectsRef } = useProjectsOnScroll();
     return (
         <section id="projects" className="section-projects">
-            <h2 className={poppins.className} ref={projectsRef}>
+            <h2 ref={projectsRef}>
                 All my projects
             </h2>
             <div className="projects-container">

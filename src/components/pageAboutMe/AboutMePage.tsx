@@ -7,7 +7,6 @@ import SecondSection from "@/components/pageAboutMe/secondSection/SecondSection"
 import { Suspense, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import LoadingLayout from "../LoadingLayout";
-import { poppins } from "../../../assets/fonts";
 
 const useAboutMePage = () => {
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -35,7 +34,7 @@ const AboutMePage = () => {
                         loading="lazy"
                     />
                 </BackgroundLayout>
-                <h1 ref={titleRef} className={poppins.className}>
+                <h1 ref={titleRef}>
                     About me
                 </h1>
                 <FirstSection />

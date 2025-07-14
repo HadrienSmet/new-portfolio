@@ -7,7 +7,6 @@ import HobbyImage from "./HobbyImage";
 import Hobby from "./Hobby";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import MobileHobbies from "./MobileHobbies";
-import { poppins } from "../../../../../assets/fonts";
 
 const useHobbiesSize = () => {
     const windowSize = useWindowSize();
@@ -63,7 +62,7 @@ const Hobbies = () => {
     const { titleRef } = useTitleOnScroll();
     return (
         <div id="hobbies" className="about-me__hobbies">
-            <h2 className={poppins.className} ref={titleRef}>
+            <h2 ref={titleRef}>
                 Hobbies
             </h2>
             {screenWidth && screenWidth > 1024 ? (

@@ -4,7 +4,6 @@ import OnlineProjectCard from "./OnlineProjectCard";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import GradientBorder from "@/components/ui/GradientBorder";
 import { ProjectsAsProps } from "../../../../../types/ProjectsAsProps";
-import { inter, poppins } from "../../../../../assets/fonts";
 
 const useOnlineProjectsDetails = () => {
     const [projectName, setProjectName] = useState<string | null>(null);
@@ -35,7 +34,7 @@ const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
     const { projectsRef } = useProjectsOnScroll();
     return (
         <div ref={projectsRef} className="online-projects-division">
-            <h2 className={poppins.className}>My online projects</h2>
+            <h2>My online projects</h2>
             <div className="online-projects-container">
                 {projects &&
                     projects
@@ -63,7 +62,6 @@ const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
                                     href={project.link!}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={poppins.className}
                                 >
                                     See the website
                                 </a>
@@ -71,7 +69,7 @@ const OnlineProjectsContainer = ({ projects }: ProjectsAsProps) => {
                         </div>
                     ))}
             {projectName === null && (
-                <em id="start-info" className={inter.className}>
+                <em id="start-info">
                     Click on a card to learn more about the site and to display
                     a link
                 </em>

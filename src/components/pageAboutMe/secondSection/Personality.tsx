@@ -1,6 +1,5 @@
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useEffect, useRef } from "react";
-import { poppins } from "../../../../assets/fonts";
 
 const usePersonalityOnScroll = () => {
     const personalityRef = useRef<HTMLDivElement | null>(null);
@@ -18,12 +17,12 @@ const Personality = () => {
     const { personalityRef } = usePersonalityOnScroll();
     return (
         <div id="perso" className="about-me__personality" ref={personalityRef}>
-            <h2 className={poppins.className}>Personality</h2>
+            <h2>Personality</h2>
             <p>
                 If you wants to learn more about what kind of person I am here
                 are the results of my personality tests
             </p>
-            <div className={"about-me__personality-links " + poppins.className}>
+            <div className="about-me__personality-links">
                 <a
                     href="https://drive.google.com/file/d/1-QeTq0lufeknbFwk2UyQT3n9cbgYitUm/view?usp=sharing"
                     target="_blank"

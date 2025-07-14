@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import DoubleImageDivision from "./doubleImage/DoubleImageDivision";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { poppins } from "../../../../assets/fonts";
 
 const useAboutOnScroll = () => {
     const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -20,7 +19,7 @@ const About = () => {
     const { aboutRef } = useAboutOnScroll();
     return (
         <section id="about" className="about" ref={aboutRef}>
-            <h2 className={poppins.className}>If you want to learn...</h2>
+            <h2>If you want to learn...</h2>
             <DoubleImageDivision />
         </section>
     );

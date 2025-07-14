@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
-import { poppins } from "../../../assets/fonts";
 import splashInk from "../../../public/images/ink-splash.webp";
 import { ProjectsAsProps } from "../../../types/ProjectsAsProps";
 
@@ -40,7 +39,7 @@ const AboutMyWorkPage = ({ projects }: ProjectsAsProps) => {
                         loading="lazy"
                     />
                 </BackgroundLayout>
-                <h1 className={poppins.className} ref={titleRef}>
+                <h1 ref={titleRef}>
                     About my work
                 </h1>
                 <Tools />

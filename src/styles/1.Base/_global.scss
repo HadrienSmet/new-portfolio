@@ -1,5 +1,6 @@
 @import "../2.Utils/variables";
 html {
+    background-color: $clr-2;
     scroll-behavior: smooth;
 }
 * {
@@ -8,6 +9,9 @@ html {
     box-sizing: border-box;
 }
 body {
+    background-color: $clr-1;
+    font-family: var(--main-font);
+
     &::-webkit-scrollbar {
         width: 16px;
         background-color: transparent;

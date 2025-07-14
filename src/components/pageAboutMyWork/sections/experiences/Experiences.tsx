@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
 
-import { poppins } from "../../../../../assets/fonts";
-
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Experience, ExperienceProps } from "./Experience";
 
@@ -34,7 +32,7 @@ export const Experiences = () => {
 
     return (
         <section className="section-experiences" ref={experiencesRef}>
-            <h2 className={poppins.className}>Experiences</h2>
+            <h2>Experiences</h2>
             {EXPERIENCES.map(experience => (<Experience key={`experience-${experience.title}`} {...experience} />))}
         </section>
     );

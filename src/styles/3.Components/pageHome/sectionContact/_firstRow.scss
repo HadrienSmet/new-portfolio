@@ -75,6 +75,7 @@
     &__future-picture {
         border-radius: 50%;
         background-color: $clr-2;
+        font-family: var(--graff-font);
         transform: translateX(-10%);
         opacity: 0;
         display: flex;

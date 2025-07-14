@@ -35,6 +35,11 @@
     align-items: center;
     gap: 15px;
     width: 100%;
+
+    &__submit {
+        font-family: "--Poppins";
+    }
+
     > div {
         display: flex;
         align-items: center;

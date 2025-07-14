@@ -74,6 +74,9 @@
     a {
         color: $clr-1;
     }
+    em {
+        font-family: var(--graff-font);
+    }
     &__links-container {
         position: absolute;
         left: 50%;

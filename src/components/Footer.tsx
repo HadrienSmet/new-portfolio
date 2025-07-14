@@ -4,13 +4,12 @@ import { FaAngleDoubleUp, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 import { handleScrollToTop } from "@/utils/handleScrolltoTop";
 
 import SvgGithub from "../../assets/svg/SvgGithub";
-import { rockSalt } from "../../assets/fonts";
 
 const Footer = () => {
     return (
         <footer className="footer">
             <FaAngleDoubleUp onClick={handleScrollToTop} />
-            <em className={rockSalt.className}>Hadri</em>
+            <em>Hadri</em>
             <div className="footer__links-container">
                 <a
                     href="https://www.linkedin.com/in/hadrien-smet-b80022207/"

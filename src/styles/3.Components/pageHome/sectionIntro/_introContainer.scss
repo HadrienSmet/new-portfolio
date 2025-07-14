@@ -39,6 +39,7 @@
         line-height: 1;
         position: absolute;
         span {
+            font-family: var(--title-font);
             white-space: nowrap;
         }
         &.visible {

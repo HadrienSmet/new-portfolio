@@ -63,6 +63,7 @@
         animation: increaseOpacity 1s cubic-bezier(1, 0, 0.82, 0.96) forwards;
     }
     h1 {
+        font-family: var(--title-font);
         padding-top: 110px;
         position: relative;
         z-index: 1;

@@ -2,7 +2,6 @@
 import { useMyNavigationContext } from "@/context/NavigationContext";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
-import { poppins } from "../../assets/fonts";
 
 const useNavigation = () => {
     const navRef = useRef<HTMLDivElement | null>(null);
@@ -24,7 +23,7 @@ const useNavigation = () => {
 const Navigation = () => {
     const { navRef, closeNav } = useNavigation();
     return (
-        <nav className={`app-nav ${poppins.className}`} ref={navRef}>
+        <nav className={`app-nav`} ref={navRef}>
             <ul>
                 <li>
                     <Link href="/" onClick={closeNav}>

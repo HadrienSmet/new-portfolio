@@ -90,6 +90,7 @@
         animation: appearFromLeft 0.3s ease-in-out forwards;
     }
     .progress {
+        font-family: var(--title-font);
         transition: opacity 0.22s ease-in;
         position: relative;
         border-radius: 50%;

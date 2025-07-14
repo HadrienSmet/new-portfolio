@@ -3,7 +3,6 @@ import { useProjectOnMouseMove } from "@/hooks/useProjectOnMouseMove";
 import { ProjectInterface } from "@/interfaces/Project";
 import Image from "next/image";
 import { useEffect, useRef, MouseEvent } from "react";
-import { inter } from "../../../../../assets/fonts";
 
 type PropsType = {
     project: ProjectInterface;
@@ -43,7 +42,7 @@ const OnlineProjectCard = ({ project, handleProjectName }: PropsType) => {
                 width={300}
                 height={300}
             />
-            <div className={"online-project__card-content " + inter.className}>
+            <div className="online-project__card-content ">
                 <h3>{project.name}</h3>
                 <ul>
                     {project.tools.map((tool) => (

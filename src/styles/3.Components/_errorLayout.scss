@@ -5,6 +5,11 @@
     align-items: center;
     flex-direction: column;
     gap: 25px;
+
+    h1,
+    button {
+        font-family: var(--title-font);
+    }
     p {
         width: 50%;
         text-align: center;

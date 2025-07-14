@@ -85,6 +85,7 @@
         position: absolute;
     }
     &-content {
+        font-family: var(--main-font);
         pointer-events: none;
         position: absolute;
         width: 100%;

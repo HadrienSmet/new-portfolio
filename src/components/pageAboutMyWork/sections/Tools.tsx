@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 
-import { poppins } from "../../../../assets/fonts";
 import SvgReact from "../../../../assets/svg/SvgReact";
 import SvgNextJS from "../../../../assets/svg/SvgNextJS";
 import SvgSass from "../../../../assets/svg/SvgSass";
@@ -30,7 +29,7 @@ export const Tools = () => {
     const { toolsRef } = useToolsOnScroll();
     return (
         <section id="stacks" className="section-tools" ref={toolsRef}>
-            <h2 className={poppins.className}>Stacks</h2>
+            <h2>Stacks</h2>
             <div className="tools-container">
                 <SvgSass />
                 <SvgTypeScript />

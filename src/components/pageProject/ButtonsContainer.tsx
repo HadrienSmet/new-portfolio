@@ -2,7 +2,6 @@ import { useRef, useEffect } from "react";
 import GradientBorder from "../ui/GradientBorder";
 import { ProjectAsProps } from "../../../types/ProjectAsProps";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { poppins } from "../../../assets/fonts";
 
 const useContainerOnScroll = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -20,7 +19,7 @@ const ButtonsContainer = ({ project }: ProjectAsProps) => {
     const { containerRef } = useContainerOnScroll();
     return (
         <div
-            className={"project-page__btn-container " + poppins.className}
+            className={"project-page__btn-container"}
             ref={containerRef}
         >
             <GradientBorder>

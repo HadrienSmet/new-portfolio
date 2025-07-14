@@ -5,7 +5,6 @@ import GithubSVG from "../../../../assets/svg/SvgGithub";
 import LinkedInSVG from "../../../../assets/svg/SvgLinkedIn";
 import GradientBorder from "@/components/ui/GradientBorder";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { poppins } from "../../../../assets/fonts";
 
 const useLinksContainer = () => {
     const linksContainerRef = useRef<HTMLDivElement | null>(null);
@@ -67,7 +66,6 @@ const LinksContainer = () => {
                         href="https://i.ibb.co/KsCMMqL/CV-Frontend-developer.jpg"
                         target="_blank"
                         rel="noreferrer"
-                        className={poppins.variable}
                     >
                         See my CV
                     </a>

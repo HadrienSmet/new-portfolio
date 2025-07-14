@@ -16,8 +16,8 @@ const HobbyImage = ({ url, index, active, x, y }: HobbyImgPropsType) => {
             width={400}
             height={400}
             style={{
-                transform: `translate(${x + 100}px, ${
-                    y - 350
+                transform: `translate(${x + 50}px, ${
+                    y - 120
                 }px) rotate(15deg)`,
             }}
         />

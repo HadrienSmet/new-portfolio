@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { poppins } from "../../../../assets/fonts";
 
 const useIntroTitle = () => {
     const introTitleRef = useRef<HTMLDivElement | null>(null);
@@ -20,10 +19,10 @@ const IntroContainer = () => {
     return (
         <div className="intro-container">
             <h1 className="intro-title" ref={introTitleRef}>
-                <span className={`hadrien-smet ${poppins.className}`}>
+                <span style={{ fontFamily: 'var(--title-font)', fontWeight: 900 }} className={`hadrien-smet`}>
                     Hadrien Smet
                 </span>
-                <span className={`web-developer ${poppins.className}`}>
+                <span className={`web-developer`}>
                     Web developer
                 </span>
             </h1>

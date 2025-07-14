@@ -1,12 +1,14 @@
-import Header from "@/components/Header";
-import "../src/styles/index.scss";
-import Footer from "@/components/Footer";
-import NavigationContext from "@/context/NavigationContext";
-import Navigation from "@/components/Navigation";
 import { Metadata } from "next";
 import { Suspense } from "react";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import NavigationContext from "@/context/NavigationContext";
+
 import Loading from "./loading";
-import { inter } from "../assets/fonts";
+
+import "../src/styles/index.scss";
 
 export const metadata: Metadata = {
     title: "Hadrien Smet | Home",
@@ -29,7 +31,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body>
                 <NavigationContext>
                     <Header />
                     <Suspense fallback={<Loading />}>{children}</Suspense>

@@ -8,7 +8,6 @@ import {
     useRef,
     useState,
 } from "react";
-import { rockSalt } from "../../assets/fonts";
 
 type PropsType = {
     headerRef: MutableRefObject<HTMLDivElement | null>;
@@ -120,7 +119,7 @@ const Header = () => {
     const { pageNav } = useHeader();
     return (
         <header ref={headerRef}>
-            <span className={rockSalt.className}>Hadri</span>
+            <span>Hadri</span>
             {pageNav && pageNav}
             <button
                 ref={buttonRef}
@@ -130,8 +129,8 @@ const Header = () => {
             >
                 <svg
                     id="toggle-nav-button"
-                    width="100"
-                    height="100"
+                    width={50}
+                    height={50}
                     viewBox={`0 0 100 100`}
                 >
                     <path

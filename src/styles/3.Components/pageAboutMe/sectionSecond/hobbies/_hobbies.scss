@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 15px;
     h2 {
+        font-family: var(--title-font);
         transform: translateX(-10%);
         opacity: 0;
         transition: 0.5s ease-out;

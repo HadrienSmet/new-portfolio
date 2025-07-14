@@ -68,8 +68,8 @@
                         position: absolute;
                         top: 0;
                         height: 100%;
-                        width: 3px;
-                        background: linear-gradient($clr-1, $clr-2-op2);
+                        width: 2px;
+                        background: $clr-2;
                         transform: scaleY(0);
                         transform-origin: bottom;
                     }
@@ -160,6 +160,7 @@
             }
         }
         h3 {
+            font-family: var(--title-font);
             pointer-events: none;
             text-transform: uppercase;
             letter-spacing: 2px;

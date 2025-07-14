@@ -27,7 +27,7 @@
 header {
     z-index: 10;
     position: fixed;
-    padding: 0 50px;
+    padding: 12px 50px;
     top: 0;
     left: 0;
     width: 100%;
@@ -44,6 +44,7 @@ header {
     }
     span {
         cursor: default;
+        font-family: var(--graff-font);
         font-size: 1em;
         color: $clr-1;
     }

@@ -1,0 +1,31 @@
+/* Inter – Variable font */
+@font-face {
+  font-family: '--Inter';
+  src: url('/assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900; /* plage complète */
+  font-style: normal;
+}
+
+/* Poppins – Regular */
+@font-face {
+  font-family: '--Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Poppins – Bold */
+@font-face {
+  font-family: '--Poppins';
+  src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Rock Salt */
+@font-face {
+  font-family: '--RockSalt';
+  src: url('/assets/fonts/RockSalt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
