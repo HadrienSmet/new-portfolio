@@ -198,8 +198,8 @@ export const projectsData: ProjectInterface[] = [
     },
     {
         code_link: "https://github.com/HadrienSmet/interpetors_monorepo.git",
-        coming_soon: "Soon, InterPrep will take interpreter preparation to the next level with AI-driven insights. By processing meeting files through advanced language models, our platform will automatically extract key concepts, technical terms, speaker lists, and relevant sources. This will help interpreters save time and focus on what matters. From these AI-generated insights, InterPrep will enrich preparations by automatically retrieving multilingual translations, speaker images, and contextual resources. All preparation sessions, vocabulary terms, and essential notes will be saved and organized in a personal knowledge base—making it easy for interpreters to reuse their work and build expertise over time. This is the next step in creating a smart, adaptive preparation environment where interpreters gain both efficiency and deep understanding.",
-        description: "(Only the client available) InterPrep is a productivity platform designed to help interpreters prepare for meetings with focus and clarity. Users create custom workspaces with multilingual support and personalized color codes to enhance memorization and document navigation. The platform lets interpreters upload meeting files, annotate PDFs (highlight, underline, draw), and turn texts into interactive resources by creating linked notes or adding terms to a multilingual vocabulary table. All interactive elements are cross-referenced for seamless navigation. With a clean, customizable interface—dark/light themes, resizable columns, and draggable sections—InterPrep adapts to each interpreter's workflow, creating a preparation space that's both flexible and efficient.",
+        coming_soon: "Soon, Leonor's App will take interpreter preparation to the next level with AI-driven insights. By processing meeting files through advanced language models, our platform will automatically extract key concepts, technical terms, speaker lists, and relevant sources. This will help interpreters save time and focus on what matters. From these AI-generated insights, Leonor's App will enrich preparations by automatically retrieving multilingual translations, speaker images, and contextual resources. All preparation sessions, vocabulary terms, and essential notes will be saved and organized in a personal knowledge base—making it easy for interpreters to reuse their work and build expertise over time. This is the next step in creating a smart, adaptive preparation environment where interpreters gain both efficiency and deep understanding.",
+        description: "(Only the client available) Leonor's App is a productivity platform designed to help interpreters prepare for meetings with focus and clarity. Users create custom workspaces with multilingual support and personalized color codes to enhance memorization and document navigation. The platform lets interpreters upload meeting files, annotate PDFs (highlight, underline, draw), and turn texts into interactive resources by creating linked notes or adding terms to a multilingual vocabulary table. All interactive elements are cross-referenced for seamless navigation. With a clean, customizable interface—dark/light themes, resizable columns, and draggable sections—Leonor's App adapts to each interpreter's workflow, creating a preparation space that's both flexible and efficient.",
         id: 9,
         images: [
             "leonor-app_0.png",
@@ -211,11 +211,11 @@ export const projectsData: ProjectInterface[] = [
             "Generated Vocabulary",
         ],
         link: "https://leonor-app.netlify.app/",
-        name: "InterPrep",
+        name: "Leonor's App",
         tools: ["React", "TypeScript", "NestJS"],
         videos: [
             {
-                description: "InterPrep is a customisable workspace including dark and light theming, redimensionable columns and draggable sections",
+                description: "Leonor's App is a customisable workspace including dark and light theming, redimensionable columns and draggable sections",
                 title: "Customisable workspace",
                 url: "U58zIAd8eVw",
             },
@@ -225,7 +225,7 @@ export const projectsData: ProjectInterface[] = [
                 url: "C7wPqRiJ_i0",
             },
             {
-                description: "InterPrep files editor includes an actions historic to allow to remove an unwanted modification",
+                description: "Leonor's App files editor includes an actions historic to allow to remove an unwanted modification",
                 title: "Actions historic",
                 url:"vM0fLCzJHAM",
             },
