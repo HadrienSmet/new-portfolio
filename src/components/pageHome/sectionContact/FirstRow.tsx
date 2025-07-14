@@ -54,11 +54,10 @@ const FirstRow = () => {
                     <SvgTwitter />
                 </a>
                 <a
-                    href="https://i.ibb.co/KsCMMqL/CV-Frontend-developer.jpg"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="/docs/cv_hadrien-smet_full-stack-developper.pdf"
+                    download
                 >
-                    See my CV
+                    Download my CV
                 </a>
             </div>
         </div>
