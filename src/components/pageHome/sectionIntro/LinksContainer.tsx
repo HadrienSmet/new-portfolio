@@ -28,11 +28,9 @@ const LinksContainer = () => {
                 follow my dream and I started studying to become a web
                 developer. Wants to know more about my work?"
             >
-                After a few years working in differents fields, I chose to
-                follow my dream and I started studying to become a web
-                developer.
+                I taught myself web development and spent the last 2 years growing inside a startup. From frontend to backend, I’ve helped shape a SaaS product used by real clients. Now I’m looking for my next challenge.
                 <br />
-                Wants to know more about my work?
+                Want to know more?
             </em>
             <div className="links-container-buttons">
                 <div className="icons">
@@ -63,11 +61,10 @@ const LinksContainer = () => {
                 </div>
                 <GradientBorder>
                     <a
-                        href="https://i.ibb.co/KsCMMqL/CV-Frontend-developer.jpg"
-                        target="_blank"
-                        rel="noreferrer"
+                        href="/docs/cv_hadrien-smet_full-stack-developper.pdf"
+                        download
                     >
-                        See my CV
+                        Download my CV
                     </a>
                 </GradientBorder>
             </div>
